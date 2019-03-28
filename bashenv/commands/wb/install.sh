@@ -2,7 +2,7 @@
 # Tasks managing the workbench environment
 print_help() {
 printf "`cat << EOF
-${BLUE}kd wb <SUBCOMMAND> [OPTIONS]${NC}
+${BLUE}kd wb install [OPTIONS]${NC}
 
 
 EOF
@@ -14,6 +14,9 @@ run() {
 	# verify that the environment is configured
 	vet_environment
 
+	cd $KT_BASE_DIR
+	git submodule update --init
+
 	# abort if venv is already present
 	if [ -d $KT_VENV_PATH ]; then
 		echo "Virtual environment has already been set up"
@@ -23,13 +26,11 @@ run() {
 	$KT_VIRTUALENV -p $KT_PYTHON $KT_VENV_PATH
 	activate_python_environment
 	pip install -r requirements.txt
-	cp -r kernels/* venv/share/jupyter/kernels
+	kd wb kernels
 
 	activate_node_environment
 	npm install -g yarn
 	yarn install
 
-	./rebuild-jupyterlab.sh
-	./relink.sh
-	#yarn build
+	kd wb regen all
 }

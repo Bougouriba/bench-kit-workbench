@@ -16,5 +16,5 @@ run() {
   cd $KT_BASE_DIR
   $KT_YARN build
   kd wb kernels
-  electron .
+  kd wb run
 }

@@ -1,5 +1,5 @@
 #!/bin/bash
-# REVISIT
+# rebuild and run local electron app
 
 print_help() {
 printf "`cat << EOF
@@ -13,6 +13,6 @@ EOF
 }
 
 run() {
-  kd wb clean
-  kd wb install
+  cd $KT_BASE_DIR
+  electron .
 }
