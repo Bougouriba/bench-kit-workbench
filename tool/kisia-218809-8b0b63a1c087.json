@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "kisia-218809",
+  "private_key_id": "8b0b63a1c087ae8160301001c1c3fcb6153503e1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC0YoXXDcYqXXye\nhyk1UxoqJ+LAYfNxIaoZeDL3J0IRgpPNxaEWIOW+P7OsC222BUznBzSdgltERHUq\nlsV55FnfESjJjJBeKOMEVO1XJCPcxubj1Mtxy9PKY6KXoQn/srtOuKORTT7nizno\n0C+oZokscszR1uolaHLhLwAFhNiC4s6MpKn8oPm9QVVieOryqLUlGnpb7Jgu+Tfa\n5dczhMj+nuDU0ufW5gQqCuVkl9SwIuzuf+8Kmn2LFZOV80HDqyy/lZA6BMV8bUnQ\njcIfSfEfYRFX1V4QtNykOZPDmJuFsi2esYKlJqgzfr6KhtCCUzCRtFddWUudamM0\nnssjqFvNAgMBAAECggEAAoOrDOvWuslxzr3gj6s4XqUOrpLO82E+PzujLjnAXIEe\n8UvTan0L5sJ5jSjdnx9kyoWZsKZcAlAX9/+BAilyLT9Oe7y3WHCmdW1/n2rUCyRE\nnKFfMpdePOB1qDpo6sUBgl/le8WBXnXc2UdpmqXPPKze+P/PZLUXgNcIX4tR/0UH\nA7VinVxMSjQLzZSDyKwtulfFByJNLwbTuiSRCJP1nzGDweCyJEMoaQTFbbL5c8Mc\n69qLeu7/BwaEG0yGtPn8hvv4RGa+GGCGXpPEfa1qlLVeSa93tVpqI6eMXzegpJ4G\nTHik4sI6YW1UnN109G8IuBNQhikx2XQJEhn+qW32GwKBgQD1lFCg/hN3hdEWDsOg\n8CaYpXOwOC5oULYED8UxjE9j9cQS/CpgF2Z/WM/M2R7O2+AzpAF9Sgl+LJbqq5Mn\niZqcfB9qCRCGShOkMP59OUNYEUsJ45zZsW+Xlp8lfCx67Rg1uyB56+pd/gd1i0I3\nCGCM7TdOR6aD5z1M9AHDE/tCxwKBgQC8CgL0d8gJbrEfEFx9qWb0ssvRUBGcFt4+\nl1c+n8i+zxY6nCOw0KYkyQ2SUVmX6I9ReJpf9oT1Rj3jHgroV9stNOPLAkqP312A\nUphbnQyM+D3TCK1EYyjT0QTGVx2y9A2XWN0E97KDMcN/3pmz/WJFuy2zDsVpyhsB\nMimjedpYywKBgQCSs80Ov3kFl4z17k/zHkMQQRZBGO6wJjb1ai5UkQsEHdbJuJXf\n3Vq/jGBmcPW0gSkH8FtrawUMuLpW6bP4lH0mKgfiIhQbBLmDBjmguMqAG6SF/dC/\nQv30wmfDztALhwNFZcnay5GwIIZ4M36UvY5f4X1+Z9MTTNoT1FgRHyikFQKBgAbl\nCxSxq6kE4QO1kt6croS8ZZLIL80cXYvH+s/2BeNRLox5mylpjR3+LTw3NWTHhzHC\njU6FeHyR1cUVHetFBWlT7iJMdDVwSDpjTOjXClXE6Gdrgwbl5+JUYKtxGEqufi0V\neg0rk+URlwyCOfqKiObrpRJSsVRer7zMfRBccHAfAoGBALntuwR3h6oC1X2+MHtn\nzHu4t3n0E3fZMxKrNHj0iTLbvsi3LWGs68ZzIM4qXAPOarPPDnt78SusexRDy09A\nYAUryhefVIZBG0/e8MjZBZ150U5Ztrd1NKew9vSL5BhWZAwmkq4BTmiokwB8217g\n6ujSwSU0HzdNlzKWoay2QiCz\n-----END PRIVATE KEY-----\n",
+  "client_email": "kisia-service-account@kisia-218809.iam.gserviceaccount.com",
+  "client_id": "108906233493239909992",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kisia-service-account%40kisia-218809.iam.gserviceaccount.com"
+}

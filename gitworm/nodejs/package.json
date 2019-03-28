@@ -1,0 +1,27 @@
+{
+    "name": "kisia-gitworm",
+    "version": "0.0.1",
+    "description": "GitWorm Serialization for NodeJS",
+    "main": "serializer.js",
+    "scripts": {
+        "dev": "concurrently --kill-others \"npm run watch-ts\"",
+        "serve": "npm run build-ts & npm run start",
+        "build-ts": "tsc -p src",
+        "watch-ts": "tsc-watch -w -p src --onSuccess \"npm run start-dev\"",
+        "start": "node dist/server.js",
+        "start-dev": "NODE_ENV=development nodemon dist/server.js"
+    },
+    "keywords": [
+        "Node",
+        "JS",
+        "Typescript"
+    ],
+    "author": "Korsimoro",
+    "license": undefined,
+    "dependencies": {
+    },
+    "devDependencies": {
+        "tsc-watch": "^1.0.7",
+        "typescript": "^2.4.2"
+    }
+}

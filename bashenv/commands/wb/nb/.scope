@@ -1,0 +1,12 @@
+#!/bin/bash
+# Tasks managing the starter notebooks
+
+print_help() {
+printf "`cat << EOF
+${BLUE}kd wb nb COMMAND [OPTIONS]${NC}
+
+
+EOF
+`\n\n"
+kd_print_kidlist_help wb/nb
+}

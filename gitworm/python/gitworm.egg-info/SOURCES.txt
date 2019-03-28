@@ -1,0 +1,9 @@
+setup.py
+gitworm/__init__.py
+gitworm.egg-info/PKG-INFO
+gitworm.egg-info/SOURCES.txt
+gitworm.egg-info/dependency_links.txt
+gitworm.egg-info/requires.txt
+gitworm.egg-info/top_level.txt
+gitworm/gitcontrol/__init__.py
+gitworm/serializer/__init__.py

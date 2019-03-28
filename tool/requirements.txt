@@ -1,0 +1,10 @@
+click
+sphinx
+beautifulsoup4==4.7.1
+prettytable
+PyGitHub
+gitpython
+python-slugify
+gql
+json-spec
+sqlitebiter

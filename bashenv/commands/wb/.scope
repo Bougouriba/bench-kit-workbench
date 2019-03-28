@@ -1,0 +1,65 @@
+#!/bin/bash
+# Tasks managing the workbench environment
+print_help() {
+printf "`cat << EOF
+${BLUE}kd wb <SUBCOMMAND> [OPTIONS]${NC}
+
+
+EOF
+`\n\n"
+kd_print_kidlist_help wb
+}
+
+run_batch_packages_job() {
+	local CMD="$1"
+	local SCOPE="$2"
+	local ELT_LIST="$3"
+	local BASE="$4"
+
+	local YARN=$KT_YARN
+	local MAX=5
+
+	local OUT=
+	local COUNT=0
+	echo -n "Yarn $CMD $SCOPE :"
+	for x in $ELT_LIST; do
+		echo -n "$x "
+		cd $BASE/$x && $YARN $CMD $OUT &
+		COUNT=$(expr $COUNT + 1 )
+		if [ $(expr $COUNT % $MAX ) == 0 ]; then
+			echo "...."
+			wait
+			echo -n "Continuing with yarn $CMD for $SCOPE : "
+		fi
+	done
+	echo
+	wait
+
+}
+
+relink_packages_to_workbench() {
+	local CMD="$1"
+	local SCOPE="$2"
+	local PREFIX="$3"
+	local ELT_LIST="$4"
+
+	local YARN=$KT_YARN
+	local MAX=5
+
+	local OUT=
+	local COUNT=0
+	echo -n "Yarn $CMD $SCOPE :"
+	for x in $ELT_LIST; do
+		echo -n "$x "
+		cd $KT_BASE_DIR && $YARN $CMD $PREFIX$x $OUT &
+		COUNT=$(expr $COUNT + 1 )
+		if [ $(expr $COUNT % $MAX ) == 0 ]; then
+			echo "...."
+			wait
+			echo -n "Continuing with yarn $CMD for $SCOPE : "
+		fi
+	done
+	echo
+	wait
+
+}

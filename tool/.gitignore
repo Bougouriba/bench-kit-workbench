@@ -1,0 +1,11 @@
+# the python environment
+venv
+*.swp
+*.egg-info
+__pycache__
+_build
+.ipynb_checkpoints
+*.ipynb
+
+# sensitive files
+apis/google/secrets.json

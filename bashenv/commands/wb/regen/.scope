@@ -1,0 +1,11 @@
+#!/bin/bash
+# Tasks managing the workbench environment
+print_help() {
+printf "`cat << EOF
+${BLUE}kd wb regen <SELECTION> [OPTIONS]${NC}
+
+
+EOF
+`\n\n"
+kd_print_kidlist_help wb/regen
+}

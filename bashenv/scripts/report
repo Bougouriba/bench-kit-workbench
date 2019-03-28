@@ -1,0 +1,7 @@
+#!/bin/bash
+SCOPE=$1
+shift 1
+TAG=${REPO_TAG:0:10}
+SCOPE=${SCOPE:0:15}
+MESSAGE=$(echo $@)
+printf "\033[0;32m KIT WORKBENCH BUILD:\033[0;34m %10s/%-15s \033[0;33m %s\033[0m\n" "$TAG" "$SCOPE" "$MESSAGE"

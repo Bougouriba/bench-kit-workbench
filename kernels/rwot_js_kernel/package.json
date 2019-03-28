@@ -1,0 +1,42 @@
+{
+  "name": "rwot-js-kernel",
+  "version": "0.3.5",
+  "description": "ITypescript is a Typescript kernel for the Jupyter notebook (A Modified version of IJavascript module)",
+  "keywords": [
+    "typescript",
+    "kernel",
+    "ipython",
+    "jupyter"
+  ],
+  "homepage": "https://",
+  "bugs": {
+    "url": "https://github.com/korismoro/contractors/issues"
+  },
+  "license": "TBD",
+  "author": {
+    "name": "Eric Welton"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/korsimoro/contractors.git"
+  },
+  "bin": {},
+  "dependencies": {
+    "graphql": "^14.2.0",
+    "ijavascript": "^5.0.20",
+    "koa": "^2.7.0",
+    "sequelize": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.2",
+    "@types/diff": "^4.0.1",
+    "@types/node": "^11.11.3",
+    "@types/uuid": "^3.4.4",
+    "debug": "latest",
+    "tslint": "latest"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/tslint bin/*.ts lib/*.ts",
+    "tsc": "npm run lint; ./node_modules/.bin/tsc"
+  }
+}

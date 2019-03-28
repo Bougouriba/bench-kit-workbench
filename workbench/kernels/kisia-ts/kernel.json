@@ -1,0 +1,14 @@
+{
+ "argv": [
+  "/tmp/wrapper",
+  "/home/ewelton/.nvm/versions/node/v11.6.0/bin/node",
+  "/home/ewelton/Repos/contractors/kisia/jupyter/node_modules/kisia-its-kernel/node_modules/itypescript/lib/kernel.js",
+  "{connection_file}",
+  "--debug",
+  "--startup-script=/home/ewelton/Repos/contractors/kisia/jupyter/kernels/kisia-ts/startup.ts",
+  "--protocol=5.1",
+  "--hide-undefined"
+ ],
+ "display_name": "KISIA-TS",
+ "language": "typescript"
+}

@@ -1,0 +1,12 @@
+{
+ "argv": [
+  "/home/ewelton/Repos/contractors/kisia/jupyter/node_mobudules/.bin/itskernel",
+  "--startup-script",
+  "/tmp/its",
+  "--hide-undefined",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "VC Test Suite",
+ "language": "typescript"
+}

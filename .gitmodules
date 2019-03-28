@@ -1,0 +1,9 @@
+[submodule "jupyterlab"]
+	path = jupyterlab
+	url = git@github.com:korsimoro/jupyterlab
+[submodule "phosphor"]
+	path = phosphor
+	url = git@github.com:korsimoro/phosphor
+[submodule "itypescript"]
+	path = itypescript
+	url = git@github.com:korsimoro/itypescript

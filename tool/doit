@@ -1,0 +1,2 @@
+#!/bin/bash
+echo tool docptr --name "$2" add --tag all --tag sheets --update google-worksheet --sheet "$1:$2"
