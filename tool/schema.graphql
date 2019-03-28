@@ -1,8 +1,0 @@
-< Debugger listening on ws://127.0.0.1:9229/ffb1ec53-6e43-4c26-b072-dba8b11c108d
-< For help see https://nodejs.org/en/docs/inspector
-connecting to 127.0.0.1:9229 ... okdebug> < Debugger attached.
-debug> Break on start in node_modules/tuql/dist/bin/index.js:1
-> 1 (function (exports, require, module, __filename, __dirname) { 
-  2 "use strict";
-  3 
-debug> 

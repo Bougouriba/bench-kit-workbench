@@ -13,6 +13,6 @@ EOF
 }
 
 run() {
-  cd $KT_BASE_DIR
+  cd $KWB_BASE_DIR
   electron .
 }

@@ -12,6 +12,6 @@ EOF
 }
 
 run() {
-  rm -rf $KT_VENV_PATH
-  rm -rf $KT_BASE_DIR/node_modules
+  rm -rf $KWB_VENV_PATH
+  rm -rf $KWB_BASE_DIR/node_modules
 }

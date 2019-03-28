@@ -31,5 +31,8 @@ function run_kd_env() {
   printf "%${WIDTH}s %s\n" "KITWB_SCRIPTS_DIR" "$KITWB_SCRIPTS_DIR"
   printf "%${WIDTH}s %s\n" "KITWB_SERVICES" "$KITWB_SERVICES"
   printf "%${WIDTH}s %s\n" "KITWB_TEMPLATES_DIR" "$KITWB_TEMPLATES_DIR"
+
+  run_kd_wbenv_info
+  run_kd_toolenv_info
 }
 export -f run_kd_env help_kd_env oneline_help_kd_env

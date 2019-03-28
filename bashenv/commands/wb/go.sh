@@ -13,8 +13,8 @@ EOF
 }
 
 run() {
-  cd $KT_BASE_DIR
-  $KT_YARN build
+  cd $KWB_BASE_DIR
+  $KWB_YARN build
   kd wb kernels
   kd wb run
 }

@@ -14,6 +14,6 @@ EOF
 
 run() {
   local WORKSPACE=~/Documents/kisia/jupyterlab-cwd
-  cp $WORKSPACE/* $KT_BASE_DIR/notebook-seeds
-  rm -rf $KT_BASE_DIR/notebook-seeds/Untitled*
+  cp $WORKSPACE/* $KWB_BASE_DIR/notebook-seeds
+  rm -rf $KWB_BASE_DIR/notebook-seeds/Untitled*
 }

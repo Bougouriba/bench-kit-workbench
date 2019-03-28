@@ -8,3 +8,5 @@ python-slugify
 gql
 json-spec
 sqlitebiter
+-e .
+-e ../gitworm/python

@@ -55,7 +55,7 @@ kd_print_kidlist_help() {
 # print the top level help, subsequent subcommands will override this
 # function with the appropriate help
 kd_print_help() {
-  local FUNCS=$(find $KITWB_BASH_FUNCTION_DIR -name \*.sh -printf "%P\n"| sed s/[/]/_/g | sed s/.sh//g | sort )
+  local FUNCS=$(find_dot_sh $KITWB_BASH_FUNCTION_DIR | sed s/[/]/_/g | sed s/.sh//g | sort )
 printf "`cat << EOF
 ${BLUE}kd <command> [help]${NC}
 

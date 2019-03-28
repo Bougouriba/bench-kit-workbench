@@ -14,10 +14,10 @@ EOF
 
 run() {
 
-	rm -rf $KT_VENV_PATH/share/jupyter/kernels/*
+	rm -rf $KWB_VENV_PATH/share/jupyter/kernels/*
 	for KERNEL in sovrin kisia-ts kisia-cli veres.one vc-test-suite rwot-js; do
 		echo "Copying Kernel-Spec $KERNEL from kernels/$KERNEL"
-		cp -r $KT_BASE_DIR/kernels/$KERNEL $KT_VENV_PATH/share/jupyter/kernels/$KERNEL
+		cp -r $KWB_BASE_DIR/kernels/$KERNEL $KWB_VENV_PATH/share/jupyter/kernels/$KERNEL
 	done
 
 }

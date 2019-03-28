@@ -91,6 +91,7 @@ visit() {
 export -f pushdir popdir is_osx is_windows contains pathadd pathrm error visit
 
 
+
 slugify() {
   STRING="$@"
   if is_windows; then
@@ -104,3 +105,19 @@ slugify() {
   fi
 }
 export -f slugify
+
+find_dot_sh() (
+
+  DIR="$1"
+  if is_windows; then
+    echo "not-supported"
+  else
+    if is_osx; then
+      cd $DIR
+      find . -name \*.sh | colrm 1 2
+    else
+      find $DIR -name \*.sh -printf "%P\n"
+    fi
+  fi
+)
+export -f find_dot_sh
