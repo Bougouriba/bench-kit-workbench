@@ -33,6 +33,35 @@ prepare_nvm_and_version() {
   npm install -g yarn
 }
 
+vet_nvm_environment() {
+	if [ "$NVM_DIR" = "" ]; then
+		echo "can not find NVM, please visit https://github.com/creationix/nvm"
+		exit -1;
+	fi
+}
+
+create_python3_env() {
+  if [ -d "$1" ]; then
+    echo "Virtual environment has already been set up"
+    exit -1;
+  fi
+
+  $KITWB_VIRTUALENV -p $KITWB_PYTHON3 $1
+}
+
+vet_python_environment() (
+if [ "$KITWB_PYTHON3" = "" ]; then
+        echo "Missing python3"
+        exit -1;
+fi
+if [ "$KITWB_PYTHON3" = "" ]; then
+        echo "Missing virtualenv"
+        exit -1;
+fi
+exit 0;
+)
+
+
 is_being_sourced() {
 	echo "${BASH_SOURCE[0]}"
 	echo "${0}"

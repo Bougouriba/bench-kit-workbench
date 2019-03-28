@@ -20,62 +20,24 @@ export ITYPESCRIPT_PKG_LIST="."
 # KT for now - need to merge in gitworm, other
 
 export KWB_BASE_DIR=$KITWB_BASE_DIR/workbench
-
+export KWB_NODE_MODULES_DIR=$KWB_BASE_DIR/node_modules
+export KWB_BIN_DIR=$KWB_NODE_MODULES_DIR/.bin
 export KWB_YARN=$(command -v yarn)
 export KWB_NODE_VERSION=v11.6.0
-
-export KWB_PYTHON=$(command -v python3)
-export KWB_PIP=$(command -v pip3)
-export KWB_VIRTUALENV=$(command -v virtualenv)
 export KWB_VENV_PATH=$KWB_BASE_DIR/venv
 
-vet_environment() {
+
+activate_workbench_environment() {
+	export PATH=$ORIGINAL_PATH
+
+	vet_nvm_environment
 	vet_python_environment
-	vet_node_environment
-}
-activate_environment() {
-	activate_python_environment
-	activate_node_environment
-	true
-}
-
-vet_node_environment() {
-if [ "$NVM_DIR" = "" ]; then
-	echo "can not find NVM, please visit https://github.com/creationix/nvm"
-	exit -1;
-fi
-if [ "$KWB_YARN" = "" ]; then
-	echo "Missing yarn"
-	exit -1;
-fi
-
-setup_nvm
-}
-
-
-activate_node_environment() {
 	prepare_nvm_and_version $KWB_NODE_VERSION
 	#export NODE_OPTIONS="--abort-on-uncaught-exception --max-old-space-size=8192"
 	export NODE_OPTIONS="--max-old-space-size=8192"
-	true
-}
 
-
-vet_python_environment() {
-if [ "$KWB_PYTHON" = "" ]; then
-        echo "Missing python3"
-        exit -1;
-fi
-if [ "$KWB_PIP" = "" ]; then
-        echo "Missing pip3"
-        exit -1;
-fi
-if [ "$KWB_VIRTUALENV" = "" ]; then
-        echo "Missing virtualenv"
-        exit -1; fi
-}
-
-activate_python_environment() {
 	. $KWB_VENV_PATH/bin/activate
-	true
+	export PATH=$KWB_BIN_DIR:$PATH
+
+	activate_devenv workbench
 }

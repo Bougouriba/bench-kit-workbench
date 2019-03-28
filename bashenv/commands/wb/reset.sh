@@ -14,5 +14,5 @@ EOF
 
 run() {
   kd wb clean
-  kd wb install
+  kd wb setup
 }

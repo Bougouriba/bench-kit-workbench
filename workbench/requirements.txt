@@ -2,6 +2,3 @@ jupyter
 jupyterlab
 pandas
 json-spec
---editable ../kernels/kisia_kernel
---editable ../tool
---editable ../gitworm/python

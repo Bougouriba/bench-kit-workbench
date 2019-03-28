@@ -6,12 +6,7 @@
 
 # where are we?
 KITWB_BASH_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-#set -x
-. $KITWB_BASH_DIR/activate.sh
 
-# go to the home directory
-#kd cd
-
-# and run a shell
-exec /bin/bash "$@"
+# now run a shell
+/bin/bash --init-file $KITWB_BASH_DIR/activate.sh "$@"
 

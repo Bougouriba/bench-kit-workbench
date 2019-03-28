@@ -11,7 +11,7 @@ EOF
 
 run() (
 	# verify that the environment is configured
-	vet_tool_environment
+	vet_kl_environment
 
 	# abort if venv is already present
 	if [ -d $KK_VENV_PATH ]; then

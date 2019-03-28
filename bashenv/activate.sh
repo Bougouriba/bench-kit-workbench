@@ -17,13 +17,17 @@ export KITWB_TEMPLATES_DIR=$KITWB_BASH_DIR/templates
 export KITWB_FILES_DIR=$KITWB_BASH_DIR/files
 
 export KITWB_BASE_DIR=$(pathof $KITWB_BASH_DIR/..)
+export KITWB_PYTHON3=$(command -v python3)
+export KITWB_VIRTUALENV=$(command -v virtualenv)
 
 # this just keeps an activation count, for reference
 if [ -z "$KITWB_ACTIVATION_COUNT" ]; then
   KITWB_ACTIVATION_COUNT=0
+  ORIGINAL_PATH=$PATH
 else
   KITWB_ACTIVATION_COUNT=$(expr $KITWB_ACTIVATION_COUNT + 1 )
 fi
+export KITWB_ACTIVATION_COUNT
 
 . $KITWB_BASH_DIR/util/helpsystem.sh
 . $KITWB_BASH_DIR/util/entrypoint.sh
@@ -42,3 +46,5 @@ kd require tool
 kd require kisiakernel
 kd require workbench
 kd require rwotjskernel
+
+export PS1="KD:\W> "

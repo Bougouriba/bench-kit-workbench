@@ -10,13 +10,15 @@ EOF
 kd_print_kidlist_help wb/regen
 }
 
+echo "LOADED!"
+
 run_batch_packages_job() {
 	local CMD="$1"
 	local SCOPE="$2"
 	local ELT_LIST="$3"
 	local BASE="$4"
 
-	local YARN=$KT_YARN
+	local YARN=$KWB_YARN
 	local MAX=5
 
 	local OUT=
@@ -43,7 +45,7 @@ relink_packages_to_workbench() {
 	local PREFIX="$3"
 	local ELT_LIST="$4"
 
-	local YARN=$KT_YARN
+	local YARN=$KWB_YARN
 	local MAX=5
 
 	local OUT=

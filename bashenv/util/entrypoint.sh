@@ -14,18 +14,26 @@ kd_execute() (
   fi
 )
 
+#
+# given a command of the form kd <subcommand> .... look for a
+# - command file, to be executed as a subshell
+# - a function to be executed in the current shell
+# - look for 'help' conditions
+# - recurse if it looks like there is recursion
+# - report details if we bottom out
+#
 kd_locate_subcommand() {
   local BASE_DIR=$1
   local COMMAND=$2
   shift 2
   local FILE=$BASE_DIR/$COMMAND.sh
+  local SCOPE=$BASE_DIR/.scope
+  if [ -f "$SCOPE" ]; then
+    . $SCOPE
+  fi
   if [ -f "$FILE" ]; then
     kd_execute $FILE $@
   else
-    local SCOPE=$BASE_DIR/.scope
-    if [ -f "$SCOPE" ]; then
-      . $SCOPE
-    fi
     if [ -z "$COMMAND" ] || [ "help" = "$COMMAND" ]; then
       print_help
     else

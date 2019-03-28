@@ -11,9 +11,9 @@ EOF
 `\n\n"
 }
 
+
 function run_kd_activate_workbench() {
-	vet_environment
-	activate_environment
-	kd wbenv info
+	activate_workbench_environment
+	kd wb env
 }
 export -f run_kd_activate_workbench help_kd_activate_workbench oneline_help_kd_activate_workbench

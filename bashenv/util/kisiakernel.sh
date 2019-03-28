@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 # KT for now - need to merge in gitworm, other
 
 export KK_BASE_DIR=$KITWB_BASE_DIR/kernels/kisia_kernel
@@ -19,20 +17,3 @@ activate_kisia_kernel_environment() {
 		false
 	fi
 }
-
-
-vet_kisia_kernel_environment() (
-if [ "$KK_PYTHON" = "" ]; then
-        echo "Missing python3"
-        exit -1;
-fi
-if [ "$KK_PIP" = "" ]; then
-        echo "Missing pip3"
-        exit -1;
-fi
-if [ "$KK_VIRTUALENV" = "" ]; then
-        echo "Missing virtualenv"
-        exit -1;
-fi
-exit 0;
-)
