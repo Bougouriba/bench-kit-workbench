@@ -22,6 +22,16 @@ prepare_for_long_running_kids() {
   trap 'exit $?' EXIT
 }
 
+prepare_nvm_and_version() {
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+  # if [ "$(nvm ls $1 )" = "$1" ];
+	# TODO - check exit code and verify version
+	nvm install $1
+  nvm use $1
+  npm install -g yarn
+}
 
 is_being_sourced() {
 	echo "${BASH_SOURCE[0]}"

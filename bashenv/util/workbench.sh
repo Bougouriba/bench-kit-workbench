@@ -39,13 +39,6 @@ activate_environment() {
 	true
 }
 
-setup_nvm() {
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-	# TODO - check exit code and verify version
-	nvm install $KWB_NODE_VERSION
-}
-
 vet_node_environment() {
 if [ "$NVM_DIR" = "" ]; then
 	echo "can not find NVM, please visit https://github.com/creationix/nvm"
@@ -61,10 +54,10 @@ setup_nvm
 
 
 activate_node_environment() {
-	setup_nvm
-	nvm use $KWB_NODE_VERSION
+	prepare_nvm_and_version $KWB_NODE_VERSION
+	#export NODE_OPTIONS="--abort-on-uncaught-exception --max-old-space-size=8192"
+	export NODE_OPTIONS="--max-old-space-size=8192"
 	true
-	export NODE_OPTIONS="--abort-on-uncaught-exception --max-old-space-size=8192"
 }
 
 

@@ -24,21 +24,16 @@ function run() {
   echo "NVM_BIN       ="$NVM_BIN
   echo ""
 
-  if [ "true" = "$KT_ENV_ACTIVATED" ]; then
-    echo "Tool Environment is Activated"
+  if [ "$KITWB_ACTIVE_DEVENV" = "tool" ]; then
+    echo "CLI Tool Environment is activated"
   else
-    echo "tool environment has not been activated"
+    echo "Not Activated : CLI Tool Environment is not activated."
     if [ -d "$KT_VENV_PATH" ]; then
-      echo "The tool environment can be activated"
+      echo "The python environment can be activated, there is a valid virtual env"
     else
-      echo "The tool environment is not installed"
-      echo "try kd tool install"
+      echo "The python environment is not installed"
+      echo "try kd kk setup"
     fi
-  fi
-  if [ "true" = "$KWB_ENV_ACTIVATED" ]; then
-    echo "Workbook Environment is Activated"
-  else
-    echo "Workbook environment has not been activated"
   fi
 
 }

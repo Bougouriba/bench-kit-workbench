@@ -1,21 +1,20 @@
 #!/bin/bash
-function oneline_help_kd_activate_kk() {
+function oneline_help_kd_activate_rwot_js() {
   echo "activate workbench node and python environment"
 }
 
-function help_kd_activate_kk() {
+function help_kd_activate_rwot_js() {
 printf "`cat << EOF
-${BLUE}kd kkenv activate${NC}
+${BLUE}kd rwot_jsenv activate${NC}
 
 EOF
 `\n\n"
 }
 
-function run_kd_activate_kk() {
-	if vet_kisia_kernel_environment; then
-    if activate_kisia_kernel_environment; then
-	     kd kk env
-			activate_devenv kk
+function run_kd_activate_rwot_js() {
+    if activate_rwot_js_environment; then
+	     kd rwot_js env
+			activate_devenv rwot_js
        true
     else
       echo "Unable to activate environment for tool, try resetting"
@@ -26,6 +25,5 @@ function run_kd_activate_kk() {
       fi
       false
     fi
-   fi
 }
-export -f run_kd_activate_kk help_kd_activate_kk oneline_help_kd_activate_kk
+export -f run_kd_activate_rwot_js help_kd_activate_rwot_js oneline_help_kd_activate_rwot_js

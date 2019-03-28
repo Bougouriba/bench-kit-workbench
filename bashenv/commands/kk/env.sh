@@ -1,15 +1,15 @@
 #!/bin/bash
-# "Workbench environment information"
+# environment information
 
-function print_help() {
+print_help() {
 printf "`cat << EOF
-${BLUE}kd toolenv info${NC}
+${BLUE}kd kk env${NC}
 
 EOF
 `\n\n"
 }
 
-function run() {
+run() {
   echo "KK_BASE_DIR    :"$KK_BASE_DIR
   echo "KK_YARN        :"$KK_YARN
   echo "KK_NODE_VERSION:"$KK_NODE_VERSION

@@ -36,6 +36,9 @@ kd require completion
 #kd require docker
 kd require git
 kd require script
+
+# now include components
 kd require tool
 kd require kisiakernel
 kd require workbench
+kd require rwotjskernel

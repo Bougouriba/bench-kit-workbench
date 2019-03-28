@@ -1,9 +1,9 @@
 #!/bin/bash
-# Setup a workbench environment
+# Setup development environment
+
 print_help() {
 printf "`cat << EOF
-${BLUE}kd wb setup [OPTIONS]${NC}
-
+${BLUE}kd kk setup [OPTIONS]${NC}
 
 EOF
 `\n\n"

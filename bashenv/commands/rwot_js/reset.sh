@@ -3,7 +3,7 @@
 
 print_help() {
 printf "`cat << EOF
-${BLUE}kd kk reset${NC}
+${BLUE}kd rwot_js reset${NC}
 
 Run yarn install and yarn tsc in the itypescript
 repository, then unlink, then link
@@ -13,6 +13,6 @@ EOF
 }
 
 run() {
-  kd kk clean
-  kd kk setup
+  kd rwot_js clean
+  kd rwot_js setup
 }
