@@ -18,14 +18,23 @@ run() {
 	git submodule update --init
 
 	# abort if venv is already present
-	create_python3_env $KWB_VENV_PATH
+	if ! create_python3_env $KWB_VENV_PATH; then
+		echo "Failed to create python environment"
+		false
+	else
+		echo "Activating Python3 and Node Environments"
+		activate_workbench_environment
 
-	activate_workbench_environment
-	pip install -r requirements.txt
-	kd wb kernels
+		echo "NPM" $(command -v npm)
+		pip install -r requirements.txt > /dev/null
+		kd wb kernels
 
-	npm install -g yarn
-	yarn install
+		npm install -g yarn
+		if yarn install; then
+			kd wb regen all
+		else
+			echo "Yarn install failed, trying to fix this"
+		fi
 
-	kd wb regen all
+	fi
 }

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Activates bash utility framework
+# Activates kd-environment
 #
 
 # where are we?
@@ -29,20 +29,18 @@ else
 fi
 export KITWB_ACTIVATION_COUNT
 
+# this is what makes it behave like an integrated CLI
 . $KITWB_BASH_DIR/util/helpsystem.sh
 . $KITWB_BASH_DIR/util/entrypoint.sh
 
-# pull in our utilities and functions to create the environment.  The functions
-# were broken into external files to improve organization and readability, but
-# these are not used by other scripts - just here.
-#
+# pull in our capabilities to enhance the environment.
 kd require completion
 #kd require docker
 kd require git
 kd require script
 
-# now include components
-kd require tool
+# pull in our environment specific models
+kd require kernel/tool
 kd require kisiakernel
 kd require workbench
 kd require rwotjskernel

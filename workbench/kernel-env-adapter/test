@@ -1,0 +1,2 @@
+#!/bin/bash
+python -m kitwb_adapter ls -al

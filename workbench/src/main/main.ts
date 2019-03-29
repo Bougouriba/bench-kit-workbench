@@ -144,6 +144,8 @@ app.on('ready', () => {
             fs.mkdirSync(process.env.JUPYTERLAB_WORKSPACES_DIR, parseInt('0744',8));
         }
 
+        process.env.KITWB_KERNELSPECS=process.resourcesPath + "/venv/share/jupyter/kernels";
+
         const operatingDir = workspaceDir + '/jupyterlab-cwd';
         if (!fs.existsSync(operatingDir)) {
             fs.mkdirSync(operatingDir, parseInt('0744',8));

@@ -36,8 +36,8 @@ activate_workbench_environment() {
 	#export NODE_OPTIONS="--abort-on-uncaught-exception --max-old-space-size=8192"
 	export NODE_OPTIONS="--max-old-space-size=8192"
 
+	export PATH=$KWB_BIN_DIR:$ORIGINAL_PATH
 	. $KWB_VENV_PATH/bin/activate
-	export PATH=$KWB_BIN_DIR:$PATH
 
 	activate_devenv workbench
 }

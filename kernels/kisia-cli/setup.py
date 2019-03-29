@@ -3,9 +3,9 @@
 from distutils.core import setup
 
 setup(
-    name='KISIA Python Toolkit Kernel',
+    name='KISIA CLI Toolkit Kernel',
     version='0.1',
-    description='KISIA Python Toolkit Kernel',
+    description='KISIA CLI Toolkit Kernel',
     author='Korsimoro',
     author_email='eric@korsimoro.com',
     url='none-yet',

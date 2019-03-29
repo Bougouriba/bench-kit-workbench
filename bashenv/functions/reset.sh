@@ -28,6 +28,7 @@ function run_kd_reset() {
     printf "${RED}kd_reset${NC}\n"
     printf "Do not understand arguments '$@'\n"
   else
+    export PATH=$ORIGINAL_PATH
     kd setenv $KITWB_BASE_DIR
   fi
 }

@@ -1,0 +1,12 @@
+#!/bin/bash
+# W3C
+print_help() {
+printf "`cat << EOF
+${BLUE}kd kernel w3c <SUBCOMMAND> [OPTIONS]${NC}
+
+Kernels in support of the W3C
+
+EOF
+`\n\n"
+kd_print_kidlist_help kernel/w3c
+}

@@ -1,0 +1,3 @@
+ipykernel
+jupyter_kernel_test
+-e ../../tool

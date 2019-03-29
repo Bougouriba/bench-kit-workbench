@@ -1,0 +1,15 @@
+{
+ "argv": [
+  "/tmp/wrapper",
+  "python",
+  "-m",
+  "kitwb_adapter",
+  "python",
+  "-m",
+  "kisia_kernel",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "KISIA Shell",
+ "language": "custom"
+}

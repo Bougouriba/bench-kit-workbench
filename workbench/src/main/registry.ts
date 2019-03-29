@@ -605,7 +605,7 @@ export class Registry implements IRegistry {
 
     private _runCommand(executablePath: string, commands: string[]): Promise<string> {
         return new Promise((resolve, reject) => {
-            log.info("RUNNING PYTHON",executablePath,commands,process.env.path)
+            log.info("registry.ts - Checking",executablePath,commands,"PYTHONPATH=",process.env.PYTHONPATH)
             let executableRun = execFile(executablePath, commands, {
               env: process.env});
             let stdoutBufferChunks: Buffer[] = [];

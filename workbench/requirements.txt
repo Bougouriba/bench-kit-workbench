@@ -2,3 +2,4 @@ jupyter
 jupyterlab
 pandas
 json-spec
+-e ./kernel-env-adapter

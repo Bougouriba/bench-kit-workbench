@@ -1,11 +1,15 @@
 {
  "argv": [
+  "/tmp/wrapper",
   "python",
   "-m",
   "kisia_kernel",
   "-f",
   "{connection_file}"
  ],
- "display_name": "KISIA Shell",
+ "env": [
+  "KITWB_KERNELSPECS"
+ ],
+ "display_name": "Debug Wrapper",
  "language": "custom"
 }

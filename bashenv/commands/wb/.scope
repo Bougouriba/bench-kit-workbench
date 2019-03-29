@@ -9,3 +9,11 @@ EOF
 `\n\n"
 kd_print_kidlist_help wb
 }
+
+require_active_environment() {
+  if [ "workbench" = "$KITWB_ACTIVE_DEVENV" ]; then
+    echo "Workbench Build Environment is Active"
+  else
+    activate_workbench_environment
+  fi
+}

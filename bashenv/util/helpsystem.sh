@@ -25,7 +25,7 @@ kd_findkids() {
 kd_print_kidlist_help() {
   local WIDTH=18
   local BASE=$KITWB_BASH_COMMAND_DIR/$1
-  local KIDS=$(ls -1 $BASE/*.sh | xargs -n 1 basename | sed s/\.sh//g | sort)
+  local KIDS=$(ls -1 $BASE/*.sh  2>/dev/null | xargs -n 1 basename | sed s/\.sh//g | sort)
   #SCOPES=$(ls -1 $KITWB_KD_COMMANDS/$1/*/.scope | xargs -n 1 dirname | xargs -n 1 basename | sort)
   local SCOPES=$(ls -1 $BASE/*/.scope 2>/dev/null)
   if [ ! -z "$SCOPES" ]; then
@@ -60,9 +60,24 @@ kd_print_help() {
 printf "`cat << EOF
 ${BLUE}kd <command> [help]${NC}
 
-kd is a bash environment for automating common and complex devops tasks.
-kd runs on OSX and WSL/Ubuntu.  Use ${BLUE}kd [cmd] help${NC} for more
-information.
+kd is a bash environment supporting development of the KIT Workbench.
+
+It mixes 'within-environment' mutations along with pure-side-effect script
+execution.
+
+It uses a "Convention over Configuration" and heavily seeds a bash operating
+environment with functions and variables, supporting multi-tech integration
+projects.
+
+It can be rapidly and ad-hoc adjusted, and it is specific to this repository,
+meaning that all paths should be known and should be relative to the
+KITWB_BASE_DIR directory, which is currently:
+ = $KITWB_BASE_DIR
+
+For more information, check out this file:
+$KITWB_BASE_DIR/docs/bashenv.md
+
+In general use ${BLUE}kd [cmd] help${NC} for more information.
 
 EOF
 `\n\n"

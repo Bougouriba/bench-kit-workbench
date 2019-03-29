@@ -43,10 +43,11 @@ vet_nvm_environment() {
 create_python3_env() {
   if [ -d "$1" ]; then
     echo "Virtual environment has already been set up"
-    exit -1;
+    true
   fi
 
-  $KITWB_VIRTUALENV -p $KITWB_PYTHON3 $1
+  echo "Creating python virtualenv using $KITWB_PYTHON3, loc = $1"
+  $KITWB_VIRTUALENV -p $KITWB_PYTHON3 $1 > /dev/null
 }
 
 vet_python_environment() (
@@ -54,7 +55,7 @@ if [ "$KITWB_PYTHON3" = "" ]; then
         echo "Missing python3"
         exit -1;
 fi
-if [ "$KITWB_PYTHON3" = "" ]; then
+if [ "$KITWB_VIRTUALENV" = "" ]; then
         echo "Missing virtualenv"
         exit -1;
 fi

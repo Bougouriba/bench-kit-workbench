@@ -12,17 +12,17 @@ EOF
 }
 
 function run_kd_activate_kk() {
-	if vet_kisia_kernel_environment; then
+	if vet_python_environment; then
     if activate_kisia_kernel_environment; then
-	     kd kk env
-			activate_devenv kk
+			 activate_devenv kk
+       kd kk env
        true
     else
       echo "Unable to activate environment for tool, try resetting"
       if [ -d "$KK_VENV_PATH" ]; then
-        echo "There is a venv at $KK_VENV_PATH, try kd tool reset"
+        echo "There is a venv at $KK_VENV_PATH, try kd kk reset"
       else
-        echo "No Environment Found At $KK_VENV_PATH, try kd tool setup"
+        echo "No Environment Found At $KK_VENV_PATH, try kd kk setup"
       fi
       false
     fi
