@@ -11,6 +11,7 @@ EOF
 }
 
 run() {
+  require_active_environment
   cd $KWB_BASE_DIR
   $KWB_YARN build
   kd wb kernels
