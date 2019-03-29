@@ -63,7 +63,8 @@ class JupyterServer {
                 JUPYTER_RUNTIME_DIR:process.env.JUPYTER_RUNTIME_DIR,
                 // JUPYTERLAB_SETTINGS_DIR
                 // JUPYTERLAB_DIR
-                JUPYTERLAB_WORKSPACES_DIR:'/tmp/jupyter1/workspaces'
+                JUPYTERLAB_WORKSPACES_DIR:'/tmp/jupyter1/workspaces',
+                KITWB_KERNELSPECS:process.env.KITWB_KERNELSPECS
                 }
 
             log.info("Spawning Notebook Server with execFile ",this._info.environment.path,"env",env,"and process cwd",process.env.KISIA_JUPYTERLAB_CWD)

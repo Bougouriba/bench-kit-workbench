@@ -45,7 +45,7 @@ relink_packages_to_workbench() {
 	local MAX=5
 
 	local COUNT=0
-	echo -n "Yarn $CMD $SCOPE :"
+	echo -n "$SCOPE:relink_packages_to_workbench yarn $CMD, parallel running of :"
 	for x in $ELT_LIST; do
 		echo -n "$x "
 		cd $KT_BASE_DIR && $YARN $CMD $PREFIX$x &

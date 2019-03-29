@@ -1,0 +1,7 @@
+setup.py
+KIT_Workbench_Embedded_Kernel_Adapter.egg-info/PKG-INFO
+KIT_Workbench_Embedded_Kernel_Adapter.egg-info/SOURCES.txt
+KIT_Workbench_Embedded_Kernel_Adapter.egg-info/dependency_links.txt
+KIT_Workbench_Embedded_Kernel_Adapter.egg-info/top_level.txt
+kitwb_adapter/__init__.py
+kitwb_adapter/__main__.py
