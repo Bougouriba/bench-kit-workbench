@@ -3,15 +3,15 @@
 
 print_help() {
 printf "`cat << EOF
-${BLUE}kd wb go${NC}
+${BLUE}kd wb build${NC}
 
-Build and Run
 
 EOF
 `\n"
 }
 
 run() {
-  kd wb build
-  kd wb run
+  cd $KWB_BASE_DIR
+  $KWB_YARN build
+  kd wb kernels
 }

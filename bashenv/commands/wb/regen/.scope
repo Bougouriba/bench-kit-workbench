@@ -10,33 +10,29 @@ EOF
 kd_print_kidlist_help wb/regen
 }
 
-echo "LOADED!"
-
 run_batch_packages_job() {
 	local CMD="$1"
 	local SCOPE="$2"
 	local ELT_LIST="$3"
 	local BASE="$4"
 
-	local YARN=$KWB_YARN
+	local YARN="$KWB_YARN --silent"
 	local MAX=5
 
-	local OUT=
 	local COUNT=0
-	echo -n "Yarn $CMD $SCOPE :"
+	echo -n "$SCOPE:run_batch_packages_job yarn $CMD, parallel running of :"
 	for x in $ELT_LIST; do
 		echo -n "$x "
-		cd $BASE/$x && $YARN $CMD $OUT &
+		cd $BASE/$x && $YARN $CMD &
 		COUNT=$(expr $COUNT + 1 )
 		if [ $(expr $COUNT % $MAX ) == 0 ]; then
-			echo "...."
+			echo
 			wait
-			echo -n "Continuing with yarn $CMD for $SCOPE : "
+			echo -n "Continuing run_batch_packages_job yarn $CMD for $SCOPE : "
 		fi
 	done
 	echo
 	wait
-
 }
 
 relink_packages_to_workbench() {
@@ -45,15 +41,14 @@ relink_packages_to_workbench() {
 	local PREFIX="$3"
 	local ELT_LIST="$4"
 
-	local YARN=$KWB_YARN
+	local YARN="$KWB_YARN --silent"
 	local MAX=5
 
-	local OUT=
 	local COUNT=0
 	echo -n "Yarn $CMD $SCOPE :"
 	for x in $ELT_LIST; do
 		echo -n "$x "
-		cd $KT_BASE_DIR && $YARN $CMD $PREFIX$x $OUT &
+		cd $KT_BASE_DIR && $YARN $CMD $PREFIX$x &
 		COUNT=$(expr $COUNT + 1 )
 		if [ $(expr $COUNT % $MAX ) == 0 ]; then
 			echo "...."
@@ -63,5 +58,4 @@ relink_packages_to_workbench() {
 	done
 	echo
 	wait
-
 }

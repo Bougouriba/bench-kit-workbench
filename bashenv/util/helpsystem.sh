@@ -23,6 +23,7 @@ kd_findkids() {
 # example usage print_kidlist_help kd
 #
 kd_print_kidlist_help() {
+  local WIDTH=18
   local BASE=$KITWB_BASH_COMMAND_DIR/$1
   local KIDS=$(ls -1 $BASE/*.sh | xargs -n 1 basename | sed s/\.sh//g | sort)
   #SCOPES=$(ls -1 $KITWB_KD_COMMANDS/$1/*/.scope | xargs -n 1 dirname | xargs -n 1 basename | sort)
