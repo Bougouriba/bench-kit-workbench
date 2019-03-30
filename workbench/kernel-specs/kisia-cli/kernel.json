@@ -4,6 +4,7 @@
   "python",
   "-m",
   "kitwb_adapter",
+  "kisia-cli",
   "python",
   "-m",
   "kisia_kernel",

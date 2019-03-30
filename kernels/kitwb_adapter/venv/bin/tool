@@ -1,0 +1,12 @@
+#!/home/ewelton/Desktop/kit-workbench/kernels/kisia_kernel/venv/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'KISIA-Python-Toolkit','console_scripts','tool'
+__requires__ = 'KISIA-Python-Toolkit'
+import re
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('KISIA-Python-Toolkit', 'console_scripts', 'tool')()
+    )

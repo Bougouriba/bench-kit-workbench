@@ -195,7 +195,9 @@ class Application extends React.Component<Application.IProps, Application.IState
         this._ignorePlugins.push(...extensions.ignored);
 
         try {
+          console.info("REGISTERING PLUGINS",Object.keys(extensions.jupyterlab))
             this._lab.registerPluginModules(extensions.jupyterlab);
+            console.info("DONE REGISTERING")
         } catch (e) {
             log.error(e);
         }

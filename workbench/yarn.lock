@@ -55,7 +55,7 @@
     is-absolute "^1.0.0"
     is-negated-glob "^1.0.0"
 
-"@jupyterlab/application-extension@file:./jupyterlab/packages/application-extension":
+"@jupyterlab/application-extension@file:../jupyterlab/packages/application-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -64,7 +64,7 @@
     "@phosphor/algorithm" "^1.1.2"
     react "~16.4.2"
 
-"@jupyterlab/application@^1.0.0-alpha.3", "@jupyterlab/application@file:./jupyterlab/packages/application":
+"@jupyterlab/application@^1.0.0-alpha.3", "@jupyterlab/application@file:../jupyterlab/packages/application":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -84,7 +84,7 @@
     "@phosphor/widgets" "^1.6.0"
     font-awesome "~4.7.0"
 
-"@jupyterlab/apputils-extension@file:./jupyterlab/packages/apputils-extension":
+"@jupyterlab/apputils-extension@file:../jupyterlab/packages/apputils-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -121,7 +121,7 @@
     react-dom "~16.4.2"
     sanitize-html "~1.18.2"
 
-"@jupyterlab/apputils@file:./jupyterlab/packages/apputils":
+"@jupyterlab/apputils@file:../jupyterlab/packages/apputils":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/coreutils" "^3.0.0-alpha.3"
@@ -154,7 +154,7 @@
     "@phosphor/disposable" "^1.1.2"
     "@phosphor/signaling" "^1.2.2"
 
-"@jupyterlab/cells@^1.0.0-alpha.3", "@jupyterlab/cells@^1.0.0-alpha.4", "@jupyterlab/cells@file:./jupyterlab/packages/cells":
+"@jupyterlab/cells@^1.0.0-alpha.3", "@jupyterlab/cells@^1.0.0-alpha.4", "@jupyterlab/cells@file:../jupyterlab/packages/cells":
   version "1.0.0-alpha.4"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -188,7 +188,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/codeeditor@file:./jupyterlab/packages/codeeditor":
+"@jupyterlab/codeeditor@file:../jupyterlab/packages/codeeditor":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/coreutils" "^3.0.0-alpha.3"
@@ -200,7 +200,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/codemirror-extension@file:./jupyterlab/packages/codemirror-extension":
+"@jupyterlab/codemirror-extension@file:../jupyterlab/packages/codemirror-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -233,7 +233,7 @@
     codemirror "~5.42.0"
     react "~16.4.2"
 
-"@jupyterlab/codemirror@file:./jupyterlab/packages/codemirror":
+"@jupyterlab/codemirror@file:../jupyterlab/packages/codemirror":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -250,7 +250,7 @@
     codemirror "~5.42.0"
     react "~16.4.2"
 
-"@jupyterlab/completer-extension@file:./jupyterlab/packages/completer-extension":
+"@jupyterlab/completer-extension@file:../jupyterlab/packages/completer-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -262,7 +262,7 @@
     "@phosphor/algorithm" "^1.1.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/completer@^1.0.0-alpha.3", "@jupyterlab/completer@file:./jupyterlab/packages/completer":
+"@jupyterlab/completer@^1.0.0-alpha.3", "@jupyterlab/completer@file:../jupyterlab/packages/completer":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -277,7 +277,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/console-extension@file:./jupyterlab/packages/console-extension":
+"@jupyterlab/console-extension@file:../jupyterlab/packages/console-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -315,7 +315,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/console@file:./jupyterlab/packages/console":
+"@jupyterlab/console@file:../jupyterlab/packages/console":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -348,7 +348,7 @@
     path-posix "~1.0.0"
     url-parse "~1.4.3"
 
-"@jupyterlab/coreutils@file:./jupyterlab/packages/coreutils":
+"@jupyterlab/coreutils@file:../jupyterlab/packages/coreutils":
   version "3.0.0-alpha.3"
   dependencies:
     "@phosphor/coreutils" "^1.3.0"
@@ -361,7 +361,7 @@
     path-posix "~1.0.0"
     url-parse "~1.4.3"
 
-"@jupyterlab/csvviewer-extension@file:./jupyterlab/packages/csvviewer-extension":
+"@jupyterlab/csvviewer-extension@file:../jupyterlab/packages/csvviewer-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -373,7 +373,7 @@
     "@phosphor/datagrid" "^0.1.6"
     "@phosphor/signaling" "^1.2.2"
 
-"@jupyterlab/csvviewer@^1.0.0-alpha.3", "@jupyterlab/csvviewer@file:./jupyterlab/packages/csvviewer":
+"@jupyterlab/csvviewer@^1.0.0-alpha.3", "@jupyterlab/csvviewer@file:../jupyterlab/packages/csvviewer":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -387,7 +387,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/docmanager-extension@file:./jupyterlab/packages/docmanager-extension":
+"@jupyterlab/docmanager-extension@file:../jupyterlab/packages/docmanager-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -421,7 +421,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/docmanager@file:./jupyterlab/packages/docmanager":
+"@jupyterlab/docmanager@file:../jupyterlab/packages/docmanager":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -458,7 +458,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/docregistry@file:./jupyterlab/packages/docregistry":
+"@jupyterlab/docregistry@file:../jupyterlab/packages/docregistry":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -494,7 +494,7 @@
     codemirror "~5.42.0"
     react "~16.4.2"
 
-"@jupyterlab/faq-extension@file:./jupyterlab/packages/faq-extension":
+"@jupyterlab/faq-extension@file:../jupyterlab/packages/faq-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -502,7 +502,7 @@
     "@jupyterlab/rendermime" "^1.0.0-alpha.3"
     "@phosphor/coreutils" "^1.3.0"
 
-"@jupyterlab/filebrowser-extension@file:./jupyterlab/packages/filebrowser-extension":
+"@jupyterlab/filebrowser-extension@file:../jupyterlab/packages/filebrowser-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -539,7 +539,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/filebrowser@file:./jupyterlab/packages/filebrowser":
+"@jupyterlab/filebrowser@file:../jupyterlab/packages/filebrowser":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -558,7 +558,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/fileeditor-extension@file:./jupyterlab/packages/fileeditor-extension":
+"@jupyterlab/fileeditor-extension@file:../jupyterlab/packages/fileeditor-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -589,7 +589,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/fileeditor@file:./jupyterlab/packages/fileeditor":
+"@jupyterlab/fileeditor@file:../jupyterlab/packages/fileeditor":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -601,7 +601,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/help-extension@file:./jupyterlab/packages/help-extension":
+"@jupyterlab/help-extension@file:../jupyterlab/packages/help-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -612,7 +612,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/imageviewer-extension@file:./jupyterlab/packages/imageviewer-extension":
+"@jupyterlab/imageviewer-extension@file:../jupyterlab/packages/imageviewer-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -620,7 +620,7 @@
     "@jupyterlab/docregistry" "^1.0.0-alpha.3"
     "@jupyterlab/imageviewer" "^1.0.0-alpha.3"
 
-"@jupyterlab/imageviewer@^1.0.0-alpha.3", "@jupyterlab/imageviewer@file:./jupyterlab/packages/imageviewer":
+"@jupyterlab/imageviewer@^1.0.0-alpha.3", "@jupyterlab/imageviewer@file:../jupyterlab/packages/imageviewer":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -630,7 +630,7 @@
     "@phosphor/messaging" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/inspector-extension@file:./jupyterlab/packages/inspector-extension":
+"@jupyterlab/inspector-extension@file:../jupyterlab/packages/inspector-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -640,7 +640,7 @@
     "@jupyterlab/launcher" "^1.0.0-alpha.3"
     "@jupyterlab/notebook" "^1.0.0-alpha.4"
 
-"@jupyterlab/inspector@^1.0.0-alpha.3", "@jupyterlab/inspector@file:./jupyterlab/packages/inspector":
+"@jupyterlab/inspector@^1.0.0-alpha.3", "@jupyterlab/inspector@file:../jupyterlab/packages/inspector":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -653,7 +653,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/json-extension@file:./jupyterlab/packages/json-extension":
+"@jupyterlab/json-extension@file:../jupyterlab/packages/json-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/rendermime-interfaces" "^1.3.0-alpha.3"
@@ -666,7 +666,7 @@
     react-highlighter "^0.4.0"
     react-json-tree "^0.11.0"
 
-"@jupyterlab/launcher-extension@file:./jupyterlab/packages/launcher-extension":
+"@jupyterlab/launcher-extension@file:../jupyterlab/packages/launcher-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -690,7 +690,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/launcher@file:./jupyterlab/packages/launcher":
+"@jupyterlab/launcher@file:../jupyterlab/packages/launcher":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -702,7 +702,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/mainmenu-extension@file:./jupyterlab/packages/mainmenu-extension":
+"@jupyterlab/mainmenu-extension@file:../jupyterlab/packages/mainmenu-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -728,7 +728,7 @@
     "@phosphor/disposable" "^1.1.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/mainmenu@file:./jupyterlab/packages/mainmenu":
+"@jupyterlab/mainmenu@file:../jupyterlab/packages/mainmenu":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -739,7 +739,7 @@
     "@phosphor/disposable" "^1.1.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/markdownviewer-extension@file:./jupyterlab/packages/markdownviewer-extension":
+"@jupyterlab/markdownviewer-extension@file:../jupyterlab/packages/markdownviewer-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -761,7 +761,7 @@
     "@phosphor/messaging" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/mathjax2-extension@file:./jupyterlab/packages/mathjax2-extension":
+"@jupyterlab/mathjax2-extension@file:../jupyterlab/packages/mathjax2-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -777,7 +777,7 @@
     "@jupyterlab/rendermime-interfaces" "^1.3.0-alpha.3"
     "@phosphor/coreutils" "^1.3.0"
 
-"@jupyterlab/notebook-extension@file:./jupyterlab/packages/notebook-extension":
+"@jupyterlab/notebook-extension@file:../jupyterlab/packages/notebook-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -825,7 +825,7 @@
     "@phosphor/widgets" "^1.6.0"
     react "~16.4.2"
 
-"@jupyterlab/notebook@file:./jupyterlab/packages/notebook":
+"@jupyterlab/notebook@file:../jupyterlab/packages/notebook":
   version "1.0.0-alpha.4"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -860,7 +860,7 @@
     "@phosphor/messaging" "^1.2.2"
     "@phosphor/signaling" "^1.2.2"
 
-"@jupyterlab/observables@file:./jupyterlab/packages/observables":
+"@jupyterlab/observables@file:../jupyterlab/packages/observables":
   version "2.2.0-alpha.3"
   dependencies:
     "@phosphor/algorithm" "^1.1.2"
@@ -887,7 +887,7 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/outputarea@file:./jupyterlab/packages/outputarea":
+"@jupyterlab/outputarea@file:../jupyterlab/packages/outputarea":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -903,13 +903,13 @@
     "@phosphor/signaling" "^1.2.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/pdf-extension@file:./jupyterlab/packages/pdf-extension":
+"@jupyterlab/pdf-extension@file:../jupyterlab/packages/pdf-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/rendermime-interfaces" "^1.3.0-alpha.3"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/rendermime-extension@file:./jupyterlab/packages/rendermime-extension":
+"@jupyterlab/rendermime-extension@file:../jupyterlab/packages/rendermime-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -924,7 +924,7 @@
     "@phosphor/coreutils" "^1.3.0"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/rendermime-interfaces@file:./jupyterlab/packages/rendermime-interfaces":
+"@jupyterlab/rendermime-interfaces@file:../jupyterlab/packages/rendermime-interfaces":
   version "1.3.0-alpha.3"
   dependencies:
     "@phosphor/coreutils" "^1.3.0"
@@ -949,7 +949,7 @@
     lodash.escape "^4.0.1"
     marked "0.5.1"
 
-"@jupyterlab/rendermime@file:./jupyterlab/packages/rendermime":
+"@jupyterlab/rendermime@file:../jupyterlab/packages/rendermime":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -966,13 +966,13 @@
     lodash.escape "^4.0.1"
     marked "0.5.1"
 
-"@jupyterlab/running-extension@file:./jupyterlab/packages/running-extension":
+"@jupyterlab/running-extension@file:../jupyterlab/packages/running-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
     "@jupyterlab/running" "^1.0.0-alpha.3"
 
-"@jupyterlab/running@^1.0.0-alpha.3", "@jupyterlab/running@file:./jupyterlab/packages/running":
+"@jupyterlab/running@^1.0.0-alpha.3", "@jupyterlab/running@file:../jupyterlab/packages/running":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -996,7 +996,7 @@
     node-fetch "~2.2.0"
     ws "~6.0.0"
 
-"@jupyterlab/services@file:./jupyterlab/packages/services":
+"@jupyterlab/services@file:../jupyterlab/packages/services":
   version "4.0.0-alpha.3"
   dependencies:
     "@jupyterlab/coreutils" "^3.0.0-alpha.3"
@@ -1008,7 +1008,7 @@
     node-fetch "~2.2.0"
     ws "~6.0.0"
 
-"@jupyterlab/settingeditor-extension@file:./jupyterlab/packages/settingeditor-extension":
+"@jupyterlab/settingeditor-extension@file:../jupyterlab/packages/settingeditor-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -1018,7 +1018,7 @@
     "@jupyterlab/rendermime" "^1.0.0-alpha.3"
     "@jupyterlab/settingeditor" "^1.0.0-alpha.3"
 
-"@jupyterlab/settingeditor@^1.0.0-alpha.3", "@jupyterlab/settingeditor@file:./jupyterlab/packages/settingeditor":
+"@jupyterlab/settingeditor@^1.0.0-alpha.3", "@jupyterlab/settingeditor@file:../jupyterlab/packages/settingeditor":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -1034,7 +1034,7 @@
     react "~16.4.2"
     react-dom "~16.4.2"
 
-"@jupyterlab/shortcuts-extension@file:./jupyterlab/packages/shortcuts-extension":
+"@jupyterlab/shortcuts-extension@file:../jupyterlab/packages/shortcuts-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -1042,6 +1042,21 @@
     "@phosphor/commands" "^1.6.1"
     "@phosphor/coreutils" "^1.3.0"
     "@phosphor/disposable" "^1.1.2"
+
+"@jupyterlab/statusbar-extension@file:../jupyterlab/packages/statusbar-extension":
+  version "1.0.0-alpha.3"
+  dependencies:
+    "@jupyterlab/application" "^1.0.0-alpha.3"
+    "@jupyterlab/apputils" "^1.0.0-alpha.3"
+    "@jupyterlab/cells" "^1.0.0-alpha.4"
+    "@jupyterlab/console" "^1.0.0-alpha.3"
+    "@jupyterlab/coreutils" "^3.0.0-alpha.3"
+    "@jupyterlab/docregistry" "^1.0.0-alpha.3"
+    "@jupyterlab/fileeditor" "^1.0.0-alpha.3"
+    "@jupyterlab/mainmenu" "^1.0.0-alpha.3"
+    "@jupyterlab/notebook" "^1.0.0-alpha.4"
+    "@jupyterlab/statusbar" "^1.0.0-alpha.3"
+    "@phosphor/widgets" "^1.6.0"
 
 "@jupyterlab/statusbar@^1.0.0-alpha.3":
   version "1.0.0-alpha.3"
@@ -1061,14 +1076,30 @@
     react "~16.4.2"
     typestyle "^2.0.1"
 
-"@jupyterlab/tabmanager-extension@file:./jupyterlab/packages/tabmanager-extension":
+"@jupyterlab/statusbar@file:../jupyterlab/packages/statusbar":
+  version "1.0.0-alpha.3"
+  dependencies:
+    "@jupyterlab/apputils" "^1.0.0-alpha.3"
+    "@jupyterlab/codeeditor" "^1.0.0-alpha.3"
+    "@jupyterlab/coreutils" "^3.0.0-alpha.3"
+    "@jupyterlab/services" "^4.0.0-alpha.3"
+    "@phosphor/algorithm" "^1.1.2"
+    "@phosphor/coreutils" "^1.3.0"
+    "@phosphor/disposable" "^1.1.2"
+    "@phosphor/messaging" "^1.2.2"
+    "@phosphor/signaling" "^1.2.2"
+    "@phosphor/widgets" "^1.6.0"
+    react "~16.4.2"
+    typestyle "^2.0.1"
+
+"@jupyterlab/tabmanager-extension@file:../jupyterlab/packages/tabmanager-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
     "@phosphor/algorithm" "^1.1.2"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/terminal-extension@file:./jupyterlab/packages/terminal-extension":
+"@jupyterlab/terminal-extension@file:../jupyterlab/packages/terminal-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -1078,7 +1109,7 @@
     "@jupyterlab/mainmenu" "^1.0.0-alpha.3"
     "@jupyterlab/terminal" "^1.0.0-alpha.3"
 
-"@jupyterlab/terminal@^1.0.0-alpha.3", "@jupyterlab/terminal@file:./jupyterlab/packages/terminal":
+"@jupyterlab/terminal@^1.0.0-alpha.3", "@jupyterlab/terminal@file:../jupyterlab/packages/terminal":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -1088,19 +1119,19 @@
     "@phosphor/widgets" "^1.6.0"
     xterm "~3.10.1"
 
-"@jupyterlab/theme-dark-extension@file:./jupyterlab/packages/theme-dark-extension":
+"@jupyterlab/theme-dark-extension@file:../jupyterlab/packages/theme-dark-extension":
   version "1.0.0-alpha.4"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
 
-"@jupyterlab/theme-light-extension@file:./jupyterlab/packages/theme-light-extension":
+"@jupyterlab/theme-light-extension@file:../jupyterlab/packages/theme-light-extension":
   version "1.0.0-alpha.4"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
 
-"@jupyterlab/tooltip-extension@file:./jupyterlab/packages/tooltip-extension":
+"@jupyterlab/tooltip-extension@file:../jupyterlab/packages/tooltip-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/application" "^1.0.0-alpha.3"
@@ -1116,7 +1147,7 @@
     "@phosphor/coreutils" "^1.3.0"
     "@phosphor/widgets" "^1.6.0"
 
-"@jupyterlab/tooltip@^1.0.0-alpha.3", "@jupyterlab/tooltip@file:./jupyterlab/packages/tooltip":
+"@jupyterlab/tooltip@^1.0.0-alpha.3", "@jupyterlab/tooltip@file:../jupyterlab/packages/tooltip":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/apputils" "^1.0.0-alpha.3"
@@ -1137,7 +1168,7 @@
     "@blueprintjs/select" "^3.3.0"
     react "~16.4.2"
 
-"@jupyterlab/vdom-extension@file:./jupyterlab/packages/vdom-extension":
+"@jupyterlab/vdom-extension@file:../jupyterlab/packages/vdom-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/rendermime-interfaces" "^1.3.0-alpha.3"
@@ -1147,7 +1178,7 @@
     react "~16.4.2"
     react-dom "~16.4.2"
 
-"@jupyterlab/vega4-extension@file:./jupyterlab/packages/vega4-extension":
+"@jupyterlab/vega4-extension@file:../jupyterlab/packages/vega4-extension":
   version "1.0.0-alpha.3"
   dependencies:
     "@jupyterlab/rendermime-interfaces" "^1.3.0-alpha.3"
@@ -1282,9 +1313,9 @@
     "@phosphor/virtualdom" "^1.1.2"
 
 "@types/debug@^4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.2.tgz#84824e9259fc583dd9385635738359c9582f7f82"
-  integrity sha512-jkf6UiWUjcOqdQbatbvOm54/YbCdjt3JjiAzT/9KS2XtMmOkYHdKsI5u8fulhbuTUuiqNBfa6J5GSDiwjK+zLA==
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.3.tgz#4965a87531d7c6863f5b097b2c518b825e926cc7"
+  integrity sha512-PQverGatRgqIhRLracrC8k/j5A6QOASVLR0wuURx6ROQZx3OQ9PnTc/5Xrznny/xaO0TwdxSgGyG90NCzk37Rg==
 
 "@types/diff@^4.0.1":
   version "4.0.2"
@@ -4710,7 +4741,7 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
-kisia-its-kernel@./kisia_its_kernel/:
+"kisia-its-kernel@file:../kernels/kisia_its_kernel":
   version "0.3.5"
   dependencies:
     "@types/debug" "^4.1.2"
@@ -6157,9 +6188,9 @@ react-popper@^1.0.0:
     warning "^4.0.2"
 
 react-transition-group@^2.2.1:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.7.0.tgz#60ca3bb2bf83fe71c50816a936e985ce7b8134dc"
-  integrity sha512-CzF22K0x6arjQO4AxkasMaiYcFG/QH0MhPNs45FmNsfWsQmsO9jv52sIZJAalnlryD5RgrrbLtV5CMJSokrrMA==
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.7.1.tgz#1fe6d54e811e8f9dfd329aa836b39d9cd16587cb"
+  integrity sha512-b0VJTzNRnXxRpCuxng6QJbAzmmrhBn1BZJfPPnHbH2PIo8msdkajqwtfdyGm/OypPXZNfAHKEqeN15wjMXrRJQ==
   dependencies:
     dom-helpers "^3.3.1"
     loose-envify "^1.4.0"
@@ -6514,7 +6545,7 @@ rw@1:
   resolved "https://registry.yarnpkg.com/rw/-/rw-1.3.3.tgz#3f862dfa91ab766b14885ef4d01124bfda074fb4"
   integrity sha1-P4Yt+pGrdmsUiF700BEkv9oHT7Q=
 
-rwot-js-kernel@./rwot_js_kernel/:
+"rwot-js-kernel@file:../kernels/rwot_js_kernel":
   version "0.3.5"
   dependencies:
     graphql "^14.2.0"
@@ -6625,9 +6656,9 @@ sequelize@^5.1.0:
     wkx "^0.4.6"
 
 sequelize@^5.2.0:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-5.2.1.tgz#05fbdd66895c7f6d1c485c3af79dd736e89decfc"
-  integrity sha512-D2zuBfDR+98bOfu5o9dYSLt0ZeBzxDrapgnFAoW2TisAh/3LzqYNkW1UmyID2mR7XI6GUOYdNTII18sZvPgPFw==
+  version "5.2.7"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-5.2.7.tgz#48a53f7276e7fbee522f123b3bfa0d89632d13d3"
+  integrity sha512-+GCoERQT9ForzSkr6Dfukw3kbuwLY0KErwvaxpthHorjDUjJi/Ebaye58qcXCuz105UuY5EP66fSChwd3UAl3A==
   dependencies:
     bluebird "^3.5.0"
     cls-bluebird "^2.1.0"

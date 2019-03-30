@@ -286,6 +286,7 @@ const themesPlugin: JupyterFrontEndPlugin<IThemeManager> = {
         //const when = app.started;
         const commands = app.commands;
 
+        console.info("THEME REGISTRY",JupyterLab.defaultPaths.urls.themes,settingRegistry)
         const manager = new ThemeManager({
             key: themesPlugin.id,
             host,
@@ -304,6 +305,7 @@ const themesPlugin: JupyterFrontEndPlugin<IThemeManager> = {
             },
             isToggled: args => args['theme'] === manager.theme,
             execute: args => {
+              console.log("CHANGING THEME")
                 if (args['theme'] === manager.theme) {
                     return;
                 }

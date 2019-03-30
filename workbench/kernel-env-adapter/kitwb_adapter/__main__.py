@@ -10,8 +10,10 @@ with open(OUTPUT,'w+') as outfile:
     print("STARTED",file=outfile)
     print("ENV:%s" % os.environ['KITWB_KERNELSPECS'],file=outfile)
 
-os.environ['PYTHONPATH']=os.environ['KITWB_KERNELSPECS'] + '/venv'
-os.environ['NODE_PATH']=os.environ['KITWB_KERNELSPECS'] + '/node_modules'
-print(sys.argv[1],sys.argv[1:])
+kernelspec=sys.argv[1]
 
-os.execvp(sys.argv[1],sys.argv[1:])
+os.environ['PYTHONPATH']=os.environ['KITWB_KERNELSPECS'] + kernelspec + '/venv'
+os.environ['NODE_PATH']=os.environ['KITWB_KERNELSPECS'] + kernelspec + '/node_modules'
+print(sys.argv[2],sys.argv[2:])
+
+os.execvp(sys.argv[2],sys.argv[2:])
