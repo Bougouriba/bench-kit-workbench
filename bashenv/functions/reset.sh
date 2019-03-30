@@ -9,7 +9,7 @@ function help_kd_reset() {
 printf "`cat << EOF
 ${BLUE}kd reset${NC}
 
-Load and execute $KITWB_BASH_DIR/activate.sh in this shell.
+Load and execute $KXX_BASHENV/activate.sh in this shell.
 
 This will cause the entire kd runtime to be reloaded, so any changes to
 functions or core abilities (e.g. kd-repl, kd-help, activate) will be
@@ -29,7 +29,7 @@ function run_kd_reset() {
     printf "Do not understand arguments '$@'\n"
   else
     export PATH=$ORIGINAL_PATH
-    kd setenv $KITWB_BASE_DIR
+    kd setenv $KXX
   fi
 }
 export -f oneline_help_kd_reset help_kd_reset run_kd_reset

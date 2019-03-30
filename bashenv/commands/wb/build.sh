@@ -1,10 +1,11 @@
 #!/bin/bash
-# rebuild and run local electron app
+# Build a local development app
 
 print_help() {
 printf "`cat << EOF
 ${BLUE}kd wb build${NC}
 
+This should build a program runnable via 'electron .'
 
 EOF
 `\n"

@@ -22,6 +22,18 @@ prepare_for_long_running_kids() {
   trap 'exit $?' EXIT
 }
 
+function report_vars() {
+  local WIDTH=15
+  MESSAGE=$1
+  shift 1
+
+  echo $MESSAGE
+  for x in "$@"; do
+    printf "${GREEN}%-${WIDTH}s${NC} %s\n" " $x" "$(eval "echo \"\$$x\"")"
+  done;
+}
+
+
 prepare_nvm_and_version() {
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -46,8 +58,12 @@ create_python3_env() {
     true
   fi
 
-  echo "Creating python virtualenv using $KITWB_PYTHON3, loc = $1"
+  echo "#--------------------- Creating Python Venv (start)"
+  echo "#"
+  echo "python interpreter = $KITWB_PYTHON3"
+  echo "venv installation @ $1"
   $KITWB_VIRTUALENV -p $KITWB_PYTHON3 $1 > /dev/null
+  echo "#--------------------- Creating Python Venv (end)"
 }
 
 vet_python_environment() (
@@ -161,3 +177,17 @@ find_dot_sh() (
   fi
 )
 export -f find_dot_sh
+
+
+
+#
+# This component supports bash completion
+#
+#
+#
+_kd_completion()
+{
+    # TODO: _split_longopt
+    COMPREPLY=( $( compgen -W '$KITWB_BASH_FUNCTIONS $(kd_findkids kd)' -- "$cur" ) )
+}
+complete -F _kd_completion "kd"

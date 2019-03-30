@@ -1,12 +1,12 @@
 #!/bin/bash
-# DIF - Support Kernels
+# DIF
 print_help() {
 printf "`cat << EOF
 ${BLUE}kd kernel dif <SUBCOMMAND> [OPTIONS]${NC}
 
-Use the Kisia Kernel Development Environment
+DIF kernel support
 
 EOF
 `\n\n"
-kd_print_kidlist_help kk
+kd_print_kidlist_help kernel/dif
 }
