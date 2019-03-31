@@ -59,7 +59,7 @@ setup_environment_workbench() (
     echo "Yarn install failed, trying to fix this"
     false
   fi
-  local DEVPATH = node_modules/electron/dist/Electron.app/Contents/Resources/venv
+  local DEVPATH=$KWB_BASE_DIR/node_modules/electron/dist/Electron.app/Contents/Resources/venv
   rm -rf $DEVPATH
   ln -s $KWB_VENV_DIR $DEVPATH
 
