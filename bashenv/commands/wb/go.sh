@@ -12,6 +12,6 @@ EOF
 }
 
 run() {
-  kd wb build
+  kd build workbench
   kd wb run
 }

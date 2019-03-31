@@ -18,9 +18,9 @@ EOF
 
 function run_kd_cd() {
   if [ -z "$1" ]; then
-    run_kd_home
+    cd $KXX
   else
-    cd $KITWB_BASE_DIR/$1
+    cd $KXX/$1
   fi
 }
 export -f run_kd_cd help_kd_cd oneline_help_kd_cd

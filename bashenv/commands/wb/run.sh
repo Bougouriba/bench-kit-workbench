@@ -14,5 +14,9 @@ EOF
 
 run() {
   cd $KWB_BASE_DIR
-  electron .
+  if [ "workbench" = "$KITWB_ACTIVE_DEVENV" ]; then
+    electron .
+  else
+    echo "Need to activate the workbench development environment"
+  fi
 }

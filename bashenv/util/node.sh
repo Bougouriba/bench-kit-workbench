@@ -1,0 +1,28 @@
+#!/bin/bash
+
+prepare_nvm_and_version() {
+	if type nvm 2&>1 >/dev/null; then
+		echo "Using existing nvm"
+	else
+		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+		[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	fi
+
+	if ! nvm use $1; then
+		nvm install $1
+  	nvm use $1
+	fi
+
+	hash -r
+	if ! command -v yarn; then
+  	npm install -g yarn
+	fi
+}
+
+function check_basic_node_ability() {
+	if [ "$NVM_DIR" = "" ]; then
+		echo "can not find NVM_DIR, please visit https://github.com/creationix/nvm"
+		false
+	fi
+	true
+}

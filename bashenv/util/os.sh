@@ -34,51 +34,6 @@ function report_vars() {
 }
 
 
-prepare_nvm_and_version() {
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-  # if [ "$(nvm ls $1 )" = "$1" ];
-	# TODO - check exit code and verify version
-	nvm install $1
-  nvm use $1
-  npm install -g yarn
-}
-
-vet_nvm_environment() {
-	if [ "$NVM_DIR" = "" ]; then
-		echo "can not find NVM, please visit https://github.com/creationix/nvm"
-		exit -1;
-	fi
-}
-
-create_python3_env() {
-  if [ -d "$1" ]; then
-    echo "Virtual environment has already been set up"
-    true
-  fi
-
-  echo "#--------------------- Creating Python Venv (start)"
-  echo "#"
-  echo "python interpreter = $KITWB_PYTHON3"
-  echo "venv installation @ $1"
-  $KITWB_VIRTUALENV -p $KITWB_PYTHON3 $1 > /dev/null
-  echo "#--------------------- Creating Python Venv (end)"
-}
-
-vet_python_environment() (
-if [ "$KITWB_PYTHON3" = "" ]; then
-        echo "Missing python3"
-        exit -1;
-fi
-if [ "$KITWB_VIRTUALENV" = "" ]; then
-        echo "Missing virtualenv"
-        exit -1;
-fi
-exit 0;
-)
-
-
 is_being_sourced() {
 	echo "${BASH_SOURCE[0]}"
 	echo "${0}"
@@ -137,14 +92,7 @@ error() {
   printf "${RED}%s${NC}\n" "$@"
   exit -1
 }
-visit() {
-  FUNCTION=$1
-  shift 1
-  for ITEM in $@; do
-    $FUNCTION $ITEM
-  done
-}
-export -f pushdir popdir is_osx is_windows contains pathadd pathrm error visit
+export -f pushdir popdir is_osx is_windows contains pathadd pathrm error
 
 
 

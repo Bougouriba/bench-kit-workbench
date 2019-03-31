@@ -19,6 +19,11 @@ __BOOTSTRAP_MY_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 . $__BOOTSTRAP_MY_DIR/util/activation/prompt.sh
 . $__BOOTSTRAP_MY_DIR/util/activation/state.sh
 
+. $__BOOTSTRAP_MY_DIR/util/python.sh
+. $__BOOTSTRAP_MY_DIR/util/node.sh
+. $__BOOTSTRAP_MY_DIR/util/visit.sh
+. $__BOOTSTRAP_MY_DIR/util/components.sh
+
 # this is what makes it behave like an integrated CLI
 . $KXX_BASH_UTIL/cli/helpsystem.sh
 . $KXX_BASH_UTIL/cli/entrypoint.sh
@@ -28,9 +33,8 @@ __BOOTSTRAP_MY_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 #kd require docker
 #kd require git
 
-# pull in our component specific models
-kd require ../components/tool
-kd require ../components/kisia-cli
-kd require ../components/workbench
-kd require ../components/rwot-js
-
+export KXX_COMPONENT_LIST="phosphor jupyterlab itypescript workbench tool"
+export KXX_COMPONENT_LIST="$KXX_COMPONENT_LIST kisia-cli rwot-js kisia-ts"
+for COMPONENT in $KXX_COMPONENT_LIST; do
+  . $KXX_BASH/components/$COMPONENT.sh
+done

@@ -29,7 +29,7 @@ function run_kd_reset() {
     printf "Do not understand arguments '$@'\n"
   else
     export PATH=$ORIGINAL_PATH
-    kd setenv $KXX
+    . $KXX_BASH/activate.sh
   fi
 }
 export -f oneline_help_kd_reset help_kd_reset run_kd_reset
