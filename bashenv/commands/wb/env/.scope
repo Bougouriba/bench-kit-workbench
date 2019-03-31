@@ -7,7 +7,7 @@ ${BLUE}kd wb env COMMAND [OPTIONS]${NC}
 
 EOF
 `\n\n"
-kd_print_kidlist_help wb/env
+kd_print_subcommand_help_summary wb/env
 }
 
 

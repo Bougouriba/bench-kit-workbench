@@ -7,7 +7,7 @@
 # excludes <base>-<subcommand>-<other>, so it returns only the
 # immediate subcommands
 kd_findkids() {
-  pushdir "$KITWB_BASH_COMMAND_DIR"
+  pushdir "$KXX_BASH_COMMAND"
   echo $(ls -1 *.sh )
   local BASE=$1
   local PREFIX="$BASE-"
@@ -24,11 +24,10 @@ kd_findkids() {
 
 # example usage print_kidlist_help kd
 #
-kd_print_kidlist_help() {
+function kd_print_subcommand_help_summary() {
   local WIDTH=18
-  local BASE=$KITWB_BASH_COMMAND_DIR/$1
+  local BASE="$KXX_BASH_COMMAND"/$1
   local KIDS=$(ls -1 $BASE/*.sh  2>/dev/null | xargs -n 1 basename | sed s/\.sh//g | sort)
-  #SCOPES=$(ls -1 $KITWB_KD_COMMANDS/$1/*/.scope | xargs -n 1 dirname | xargs -n 1 basename | sort)
   local SCOPES=$(ls -1 $BASE/*/.scope 2>/dev/null)
   if [ ! -z "$SCOPES" ]; then
     SCOPES=$(ls -1 $BASE/*/.scope | xargs -n 1 dirname | xargs -n 1 basename | sort)
@@ -65,7 +64,7 @@ kd_print_kidlist_help() {
 kd_print_function_help_summary() {
   printf "Functions (modify the current shell)\n"
   local WIDTH=18
-  local FUNCS=$(find_dot_sh $KITWB_BASH_FUNCTION_DIR | sed s/[/]/_/g | sed s/.sh//g | sort )
+  local FUNCS=$(find_dot_sh $KXX_BASH_FUNCTION | sed s/[/]/_/g | sed s/.sh//g | sort )
   for FUNC in $FUNCS; do
     ONELINER="$(oneline_help_kd_$FUNC)"
     printf "${GREEN}%-${WIDTH}s${NC} %s\n" " $FUNC" "$ONELINER"
@@ -89,11 +88,11 @@ projects.
 
 It can be rapidly and ad-hoc adjusted, and it is specific to this repository,
 meaning that all paths should be known and should be relative to the
-KITWB_BASE_DIR directory, which is currently:
- = $KITWB_BASE_DIR
+KXX directory, which is currently:
+ = $KXX
 
 For more information, check out this file:
-$KITWB_BASE_DIR/docs/bashenv.md
+$KXX/docs/bashenv.md
 
 In general use ${BLUE}kd [cmd] help${NC} for more information.
 
@@ -102,7 +101,7 @@ EOF
 kd_print_function_help_summary
 printf "\n"
 
-kd_print_kidlist_help .
+kd_print_subcommand_help_summary .
 printf "\n"
 
 printf "Use ${BLUE}kd [cmd] help${NC} for more information.\n"
@@ -112,4 +111,5 @@ printf "Use ${BLUE}kd [cmd] help${NC} for more information.\n"
 run_kd_help() (
   kd_print_help
 )
-export -f run_kd_help kd_print_help kd_print_kidlist_help kd_findkids
+export -f run_kd_help kd_print_help kd_print_subcommand_help_summary kd_findkids
+

@@ -69,22 +69,16 @@ kd() {
          $FUNC "$@"
        fi
      else
-       kd_locate_subcommand $KITWB_BASH_COMMAND_DIR $TAG $@
+       kd_locate_subcommand $KXX_BASH_COMMAND $TAG $@
      fi
   fi
 }
-export -f kd kd_locate_subcommand kd_execute
-
-# IS THIS STILL NEEDED?
-# this is the default run function which just prints help.  This is
-# mostly used in group parent commands, like kd-bench.
-run() {
-  print_help
-}
+#export -f kd kd_locate_subcommand kd_execute
+export -f kd
 
 # load commands into the core that can manipulate the
 # existing state - this allows us to maintain live state
 # via the CLI.
-for FUNC in $(find $KITWB_BASH_FUNCTION_DIR -name \*.sh); do
+for FUNC in $(find $KXX_BASH_FUNCTION -name \*.sh); do
   . $FUNC
 done

@@ -24,7 +24,7 @@ EOF
 
 function run_kd_id() {
   kd require git
-  set_git_status .
+  # set_git_status $KITWB_BASE_DIR
   printf "$@ $KXX @$BRANCH:$HASH, $STATUS\n"
 }
 export -f oneline_help_kd_id help_kd_id run_kd_id

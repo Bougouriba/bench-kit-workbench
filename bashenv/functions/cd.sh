@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function oneline_help_kd_cd() {
-  echo "cd into $KITWB_BASE_DIR/<repo>."
+  echo "cd into $KXX/<repo>."
 }
 
 function help_kd_cd() {
@@ -9,11 +9,8 @@ printf "`cat << EOF
 ${BLUE}kd cd <repo>${NC}
 
 This is a shell function, which changes the current working
-directory to $KITWB_BASE_DIR/<repo>
+directory to $KXX/<repo>
 and if no <repo> is provided this is equivalent to ${BLUE}kd home${NC}.
-
-Examples:
-kd cd iglu -> cd's into $KITWB_BASE_DIR/iglu
 
 EOF
 `\n\n"

@@ -7,13 +7,13 @@ ${BLUE}kd wb <SUBCOMMAND> [OPTIONS]${NC}
 
 EOF
 `\n\n"
-kd_print_kidlist_help wb
+kd_print_subcommand_help_summary wb
 }
 
 require_active_environment() {
   if [ "workbench" = "$KITWB_ACTIVE_DEVENV" ]; then
     echo "Workbench Build Environment is Active"
   else
-    activate_workbench_environment
+    activate_environment_workbench
   fi
 }

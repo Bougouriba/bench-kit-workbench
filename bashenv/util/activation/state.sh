@@ -2,7 +2,7 @@
 # load all the KITWB global directory pointers
 export               KXX=$(pathof $__BOOTSTRAP_MY_DIR/..)
 
-export          KXX_BASH=$KXX/bash
+export          KXX_BASH=$KXX/bashenv
 export     KXX_BASH_UTIL=$KXX_BASH/util
 export  KXX_BASH_COMMAND=$KXX_BASH/commands
 export KXX_BASH_FUNCTION=$KXX_BASH/functions
@@ -12,7 +12,7 @@ export         KXX_FILES=$KXX_BASH/files
 # devops python
 export    KXX_PYTHON_ENV=$KXX/venv
 function report_python_environmet() {
-  report_vars "Active Node Variables" KXX_PYTHON_ENV PYTHONPATH
+  report_vars "Active Python Variables" KXX_PYTHON_ENV PYTHONPATH
 }
 
 # devops node
@@ -26,19 +26,26 @@ export       KXX_PYTHON3=$(command -v python3)
 export    KXX_VIRTUALENV=$(command -v virtualenv)
 export          KXX_NODE=$(command -v node)
 export          KXX_YARN=$(command -v yarn)
+
 function report_active_execution_environment() {
   report_vars "Active Execution Variables" KXX_PYTHON3 KXX_VIRTUALENV KXX_NODE KXX_YARN
 }
 
 
 function report_environment() {
-  report_active_execution_environment
   report_node_environmet
   report_python_environmet
+  if [ ! -z "$KITWB_ACTIVE_DEVENV" ]; then
+    echo "Active Bash environment:$KITWB_ACTIVE_DEVENV"
+    describe_environment_$KITWB_ACTIVE_DEVENV
+  else
+    echo "No environment activated"
+  fi
 }
 
 # support legacy naming - ne want to replace this with the KXX_<function> model
 # soon.  But this can be done slowly.
+export KITWB_BASH_DIR=$KXX/bashenv
 export KITWB_BASH_UTIL_DIR=$KITWB_BASH_DIR/util
 export KITWB_BASH_COMMAND_DIR=$KITWB_BASH_DIR/commands
 export KITWB_BASH_FUNCTION_DIR=$KITWB_BASH_DIR/functions

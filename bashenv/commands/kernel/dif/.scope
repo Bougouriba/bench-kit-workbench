@@ -8,5 +8,5 @@ DIF kernel support
 
 EOF
 `\n\n"
-kd_print_kidlist_help kernel/dif
+kd_print_subcommand_help_summary kernel/dif
 }

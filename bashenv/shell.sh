@@ -5,8 +5,8 @@
 # applies the system to the current shell.
 
 # where are we?
-KITWB_BASH_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+__WHERE_AM_I=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # now run a shell
-/bin/bash --init-file $KITWB_BASH_DIR/activate.sh "$@"
+/bin/bash --init-file $__WHERE_AM_I/activate.sh "$@"
 

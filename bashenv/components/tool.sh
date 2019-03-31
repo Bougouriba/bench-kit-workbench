@@ -1,31 +1,42 @@
 #!/bin/bash
-function oneline_help_kd_activate_tool() {
-  echo "activate workbench node and python environment"
+
+# KT for now - need to merge in gitworm, other
+
+export KT_BASE_DIR=$KITWB_BASE_DIR/tool
+export KT_PYTHON=$(command -v python3)
+export KT_PIP=$(command -v pip3)
+export KT_VIRTUALENV=$(command -v virtualenv)
+export KT_VENV_PATH=$KT_BASE_DIR/venv
+
+describe_environment_tool() {
+	report_vars KT_BASE_DIR KT_PYTHON KT_PIP KT_VIRTUALENV KT_VIRTUALENV
 }
 
-function help_kd_activate_tool() {
-printf "`cat << EOF
-${BLUE}kd toolenv activate${NC}
-
-EOF
-`\n\n"
+activate_environment_tool() {
+	local ACTIVATOR=$KT_VENV_PATH/bin/activate
+	if [ -f "$ACTIVATOR" ]; then
+		. $ACTIVATOR
+		true
+	else
+		echo "Failed to activate $ACTIVATOR"
+		false
+	fi
 }
 
-function run_kd_activate_tool() {
-	if vet_tool_environment; then
-    if activate_tool_environment; then
-	     kd tool env
-		activate_devenv tool
-       true
-    else
-      echo "Unable to activate environment for tool, try resetting"
-      if [ -d "$KT_VENV_PATH" ]; then
-        echo "There is a venv at $KT_VENV_PATH, try kd tool reset"
-      else
-        echo "No Environment Found At $KT_VENV_PATH, try kd tool setup"
-      fi
-      false
-    fi
-   fi
-}
-export -f run_kd_activate_tool help_kd_activate_tool oneline_help_kd_activate_tool
+
+vet_environment_tool() (
+if [ "$KT_PYTHON" = "" ]; then
+        echo "Missing python3"
+        exit -1;
+fi
+if [ "$KT_PIP" = "" ]; then
+        echo "Missing pip3"
+        exit -1;
+fi
+if [ "$KT_VIRTUALENV" = "" ]; then
+        echo "Missing virtualenv"
+        exit -1;
+fi
+exit 0;
+)
+
