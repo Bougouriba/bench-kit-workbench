@@ -21,7 +21,7 @@ __BOOTSTRAP_MY_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 . $__BOOTSTRAP_MY_DIR/util/python.sh
 . $__BOOTSTRAP_MY_DIR/util/node.sh
-. $__BOOTSTRAP_MY_DIR/util/visit.sh
+. $__BOOTSTRAP_MY_DIR/util/parallel.sh
 . $__BOOTSTRAP_MY_DIR/util/components.sh
 
 # this is what makes it behave like an integrated CLI

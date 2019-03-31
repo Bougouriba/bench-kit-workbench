@@ -1,7 +1,7 @@
 #!/bin/bash
 
 prepare_nvm_and_version() {
-	if type nvm 2&>1 >/dev/null; then
+	if type nvm 2>&1 >/dev/null; then
 		echo "Using existing nvm"
 	else
 		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -14,8 +14,8 @@ prepare_nvm_and_version() {
 	fi
 
 	hash -r
-	if ! command -v yarn; then
-  	npm install -g yarn
+	if ! command -v yarn >/dev/null; then
+  		npm install -g yarn
 	fi
 }
 

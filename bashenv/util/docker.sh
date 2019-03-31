@@ -1,6 +1,6 @@
 #!/bin/bash
-
 shopt -s nocasematch
+
 if [[ "$KITWB_DOCKER_VERBOSE" == "false" ]] || [[ -z "$KITWB_DOCKER_VERBOSE" ]]; then
   export DOCKER_COMPOSE_VERBOSE=
   export KITWB_DOCKER_VERBOSE=false

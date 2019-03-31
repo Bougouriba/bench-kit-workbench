@@ -6,6 +6,13 @@ export PHOSPHOR_PKG_BASE=$PHOSPHOR_BASE/packages
 export PHOSPHOR_PKG_LIST="algorithm application collections commands coreutils datagrid datastore disposable domutils dragdrop keyboard messaging properties signaling virtualdom widgets"
 export PHOSPHOR_NODE_VERSION=v11.6.0
 
+link_phosphor() (
+	cd $1
+	local COMPONENT
+	for COMPONENT in $PHOSPHOR_PKG_LIST; do
+		yarn link @phosphor/$COMPONENT
+	done
+)
 
 clean_environment_phosphor() {
   local LIST="$PHOSPHOR_PKG_LIST"

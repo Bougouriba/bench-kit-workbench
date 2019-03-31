@@ -53,10 +53,16 @@ setup_environment_workbench() (
   prepare_nvm_and_version $KWB_NODE_VERSION
   cd $KWB_BASE_DIR
   npm install -g yarn
+  link_phosphor $KWB_BASE_DIR
+  link_jupyterlab $KWB_BASE_DIR
   if ! yarn install; then
     echo "Yarn install failed, trying to fix this"
     false
   fi
+  local DEVPATH = node_modules/electron/dist/Electron.app/Contents/Resources/venv
+  rm -rf $DEVPATH
+  ln -s $KWB_VENV_DIR $DEVPATH
+
   true
 )
 setup_environment_workbench_help() {

@@ -10,6 +10,14 @@ export JLAB_PKG_LIST="$JLAB_PKG_LIST application-extension apputils-extension co
 export JLAB_NODE_VERSION=v11.6.0
 
 
+link_jupyterlab() (
+   cd $1
+   local COMPONENT
+   for COMPONENT in $JLAB_PKG_LIST; do
+      yarn link @jupyterlab/$COMPONENT
+   done
+)
+
 
 
 clean_environment_jupyterlab() {
@@ -51,6 +59,10 @@ setup_environment_jupyterlab() {
   fi
   prepare_nvm_and_version $JLAB_NODE_VERSION
   yarn --silent global add typescript
+  #for COMPONENT in $LIST; do
+  #  link_phosphor $JLAB_PKG_BASE/$COMPONENT
+  #done
+  run_batch_packages_job "link_phosphor ." "JupyterLab" "$LIST" "$JLAB_PKG_BASE"
   run_batch_packages_job "yarn --silent install" "JupyterLab" "$LIST" "$JLAB_PKG_BASE"
   run_batch_packages_job "yarn --silent build" "JupyterLab" "$LIST" "$JLAB_PKG_BASE"
   run_batch_packages_job "yarn --silent link" "JupyterLab" "$LIST" "$JLAB_PKG_BASE"
