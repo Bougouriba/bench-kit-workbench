@@ -2,41 +2,58 @@
 
 # KT for now - need to merge in gitworm, other
 
-export KT_BASE_DIR=$KITWB_BASE_DIR/tool
-export KT_PYTHON=$(command -v python3)
-export KT_PIP=$(command -v pip3)
-export KT_VIRTUALENV=$(command -v virtualenv)
-export KT_VENV_PATH=$KT_BASE_DIR/venv
+export KISIA_CLI_BASE=$KXX/tool
+export KISIA_CLI_VENV=$KISIA_CLI_BASE/venv
 
-describe_environment_tool() {
-	report_vars KT_BASE_DIR KT_PYTHON KT_PIP KT_VIRTUALENV KT_VIRTUALENV
+
+clean_environment_tool() {
+  rm -rf $KISIA_CLI_VENV
 }
-
-activate_environment_tool() {
-	local ACTIVATOR=$KT_VENV_PATH/bin/activate
-	if [ -f "$ACTIVATOR" ]; then
-		. $ACTIVATOR
-		true
-	else
-		echo "Failed to activate $ACTIVATOR"
-		false
-	fi
+clean_environment_tool_help() {
+  echo rm -rf $KISIA_CLI_VENV
 }
+build_environment_tool() {
+  cd $KISIA_CLI_BASE && yarn tsc
+}
+build_environment_tool_help() {
+printf "`cat << EOF
+${BLUE}kd build tool${NC}
 
-
-vet_environment_tool() (
-if [ "$KT_PYTHON" = "" ]; then
-        echo "Missing python3"
-        exit -1;
-fi
-if [ "$KT_PIP" = "" ]; then
-        echo "Missing pip3"
-        exit -1;
-fi
-if [ "$KT_VIRTUALENV" = "" ]; then
-        echo "Missing virtualenv"
-        exit -1;
-fi
-exit 0;
+EOF
+`\n"
+}
+setup_environment_tool() (
+  if create_python3_env $KISIA_CLI_VENV; then
+    activate_environment_tool
+	 cd $KISIA_CLI_BASE && pip install -r requirements.txt
+  fi	
 )
+setup_environment_tool_help() {
+printf "`cat << EOF
+${BLUE}kd setup tool${NC}
 
+EOF
+`\n"
+}
+describe_environment_tool() {
+  report_vars "KISIA-CLI Build Environment" KISIA_CLI_BASE KISIA_CLI_VENV
+  if [ -d "$KISIA_CLI_VENV" ]; then
+    echo "... venv present"
+  else
+    echo "... venv does not exist"
+  fi
+}
+activate_environment_tool() {
+  . $KISIA_CLI_VENV/bin/activate
+  echo "KISIA-CLI Environment Activated"
+}
+activate_environment_tool_help() {
+printf "`cat << EOF
+${BLUE}kd activate tool${NC}
+
+EOF
+`\n"
+}
+function vet_environment_tool() {
+  check_basic_python_ability
+}
