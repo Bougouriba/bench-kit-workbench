@@ -1,5 +1,5 @@
 #!/bin/bash
-# Try to run stuff in parallel 
+# Try to run stuff in parallel
 
 run_batch_packages_job() {
 	local CMD="$1"
@@ -7,7 +7,7 @@ run_batch_packages_job() {
 	local ELT_LIST="$3"
 	local BASE="$4"
 
-	local MAX=5
+	local MAX=1
 	if [ $MAX = 1 ]; then
 		for x in $ELT_LIST; do
 			echo "$SCOPE:$x -> $CMD"

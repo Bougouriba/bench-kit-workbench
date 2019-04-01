@@ -1,0 +1,12 @@
+#!/bin/bash
+# Erase venv, node_modules, and links
+
+print_help() {
+printf "`cat << EOF
+${BLUE}kd clean <SELECTION> [OPTIONS]${NC}
+
+
+EOF
+`\n\n"
+kd_print_subcommand_help_summary clean
+}

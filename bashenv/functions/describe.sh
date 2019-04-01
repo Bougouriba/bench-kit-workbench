@@ -1,6 +1,6 @@
 #!/bin/bash
 function oneline_help_kd_describe() {
-  echo "manage Tool Environment Variables"
+  echo "MacGyver It! : Troubleshooting information"
 }
 
 function run_kd_describe() {

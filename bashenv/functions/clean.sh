@@ -1,6 +1,6 @@
 #!/bin/bash
 function oneline_help_kd_clean() {
-  echo "manage Tool Environment Variables"
+  echo "Remove as many artifacts for [C] as we know about"
 }
 
 function run_kd_clean() {

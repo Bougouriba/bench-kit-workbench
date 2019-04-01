@@ -93,7 +93,6 @@
       "artifactName": "${productName}-Setup.${ext}",
       "perMachine": true,
       "deleteAppDataOnUninstall": true,
-      "license": "LICENSE",
       "language": "1033",
       "installerSidebar": "installerSidebar.bmp"
     },
@@ -118,7 +117,7 @@
   },
   "homepage": "https://github.com/korsimoro/kisia-toolkit",
   "repository": "github:korsimoro/kisia-app",
-  "license": "TBD",
+  "license": "unlicense",
   "devDependencies": {
     "concurrently": "^4.1.0",
     "cross-env": "^5.0.5",

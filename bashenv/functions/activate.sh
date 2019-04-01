@@ -1,6 +1,17 @@
 #!/bin/bash
 function oneline_help_kd_activate() {
-  echo "Set up current shell to build component"
+  echo "Configure shell to match build for [C]"
+}
+
+function help_kd_activate() {
+  printf "`cat << EOF
+${BLUE}kd activate <COMPONENT>${NC}
+
+  Goal : ${YELLOW}$(oneline_help_kd_activate)${NC}
+
+More Text Here
+EOF
+`\n"
 }
 
 export KITWB_ACTIVE_DEVENV=

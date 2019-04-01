@@ -1,9 +1,9 @@
 #!/bin/bash
-function oneline_help_kd_clean() {
-  echo "manage Tool Environment Variables"
+function oneline_help_kd_link() {
+  echo "manage yarn-package linking"
 }
 
-function run_kd_clean() {
-  run_environment_func clean $@
+function run_kd_link() {
+  run_environment_func link $@
 }
-export -f run_kd_clean oneline_help_kd_clean
+export -f run_kd_link oneline_help_kd_link

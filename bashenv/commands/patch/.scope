@@ -1,0 +1,11 @@
+#!/bin/bash
+# Tasks managing the workbench environment
+print_help() {
+printf "`cat << EOF
+${BLUE}kd patch <SUBCOMMAND> [OPTIONS]${NC}
+
+
+EOF
+`\n\n"
+kd_print_subcommand_help_summary patch
+}

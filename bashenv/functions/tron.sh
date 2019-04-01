@@ -2,7 +2,7 @@
 
 
 function oneline_help_kd_tron() {
-  echo "Trace execution."
+  echo "Start trace execution."
 }
 
 function help_kd_tron() {

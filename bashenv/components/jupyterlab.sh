@@ -2,20 +2,29 @@
 
 export JLAB_BASE=$KXX/jupyterlab
 export JLAB_PKG_BASE=$JLAB_BASE/packages
-#export JLAB_PKG_LIST="application application-extension apputils apputils-extension attachments cells codeeditor codemirror codemirror-extension completer completer-extension console console-extension coreutils csvviewer csvviewer-extension docmanager docmanager-extension docregistry documentsearch documentsearch-extension extensionmanager extensionmanager-extension faq-extension filebrowser filebrowser-extension fileeditor fileeditor-extension help-extension htmlviewer htmlviewer-extension imageviewer imageviewer-extension inspector inspector-extension javascript-extension json-extension launcher launcher-extension mainmenu mainmenu-extension markdownviewer markdownviewer-extension mathjax2 mathjax2-extension metapackage notebook notebook-extension observables outputarea pdf-extension rendermime rendermime-extension rendermime-interfaces running running-extension services settingeditor settingeditor-extension shortcuts-extension statusbar statusbar-extension tabmanager-extension terminal terminal-extension theme-dark-extension theme-light-extension tooltip tooltip-extension ui-components vdom-extension vega4-extension"
+#export JLAB_PKG_LIST="application application-extension apputils apputils-extension attachments cells codeeditor codemirror codemirror-extension completer completer-extension console console-extension coreutils csvviewer csvviewer-extension docmanager docmanager-extension docregistry documentsearch documentsearch-extension extensionmanager extensionmanager-extension faq-extension filebrowser filebrowser-extension fileeditor fileeditor-extension help-extension htmlviewer htmlviewer-extension imageviewer imageviewer-extension inspector inspector-extension javascript-extension json-extension launcher launcher-extension mainmenu mainmenu-extension markdownviewer markdownviewer-extension mathjax2 mathjax2-extension metapackage notebook notebook-extension observables outputarea pdf-extension rendermime rendermime-extension rendermime-interfaces running running-extension services settingeditor settingeditor-extension shortcuts-extension statusbar statusbar-extension tabmanager-extension terminal terminal-extension theme-dark-extension theme-light-extension tooltip tooltip-extension ui-components vdom-extension vega5-extension"
 export JLAB_PKG_LIST="apputils coreutils docregistry rendermime rendermime-interfaces services"
 export JLAB_PKG_LIST="$JLAB_PKG_LIST attachments outputarea fileeditor notebook"
 export JLAB_PKG_LIST="$JLAB_PKG_LIST cells application codeeditor codemirror completer console csvviewer docmanager documentsearch extensionmanager filebrowser htmlviewer imageviewer inspector launcher mainmenu markdownviewer mathjax2 metapackage observables running settingeditor statusbar terminal tooltip"
-export JLAB_PKG_LIST="$JLAB_PKG_LIST application-extension apputils-extension codemirror-extension completer-extension console-extension csvviewer-extension docmanager-extension documentsearch-extension extensionmanager-extension faq-extension filebrowser-extension fileeditor-extension help-extension htmlviewer-extension imageviewer-extension inspector-extension javascript-extension json-extension launcher-extension mainmenu-extension markdownviewer-extension mathjax2-extension notebook-extension pdf-extension rendermime-extension running-extension settingeditor-extension shortcuts-extension statusbar-extension tabmanager-extension terminal-extension theme-dark-extension theme-light-extension tooltip-extension vdom-extension vega4-extension"
+export JLAB_PKG_LIST="$JLAB_PKG_LIST application-extension apputils-extension codemirror-extension completer-extension console-extension csvviewer-extension docmanager-extension documentsearch-extension extensionmanager-extension faq-extension filebrowser-extension fileeditor-extension help-extension htmlviewer-extension imageviewer-extension inspector-extension javascript-extension json-extension launcher-extension mainmenu-extension markdownviewer-extension mathjax2-extension notebook-extension pdf-extension rendermime-extension running-extension settingeditor-extension shortcuts-extension statusbar-extension tabmanager-extension terminal-extension theme-dark-extension theme-light-extension tooltip-extension vdom-extension vega5-extension"
 export JLAB_NODE_VERSION=v11.6.0
 
 
 link_jupyterlab() (
-   cd $1
-   local COMPONENT
-   for COMPONENT in $JLAB_PKG_LIST; do
-      yarn link @jupyterlab/$COMPONENT
-   done
+    cd $1
+    local COMPONENT
+    echo "link_jupyterlab might complain about 'file exists'"
+    if [ ! -d './node_modules' ]; then
+      mkdir ./node_modules
+    fi
+    rm -rf ./node_modules/\@jupyterlab
+    mkdir ./node_modules/\@jupyterlab
+    for COMPONENT in $JLAB_PKG_LIST; do
+ 	   #yarn link @phosphor/$COMPONENT
+    	local LOCAL=./node_modules/\@jupyterlab/$COMPONENT
+    	rm -rf $LOCAL
+    	ln -s $JLAB_BASE/packages/$COMPONENT $LOCAL
+    done
 )
 
 
@@ -41,7 +50,7 @@ build_environment_jupyterlab() {
   if [ ! -z "$@" ]; then
           LIST="$@"
   fi
-  run_batch_packages_job "yarn --silent build" "JupyterLab" "$LIST" "$PHOSPHOR_PKG_BASE"
+  run_batch_packages_job "yarn --silent build" "JupyterLab" "$LIST" "$JLAB_PKG_BASE"
 }
 build_environment_jupyterlab_help() {
 printf "`cat << EOF

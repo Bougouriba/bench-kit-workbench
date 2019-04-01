@@ -14,8 +14,6 @@ function run_environment_func() {
 
   if [ "$COMPONENT" = "all" ]; then
     for COMPONENT in $KXX_COMPONENT_LIST; do
-      echo "RECURSING"run_environment_func $FUNC "$COMPONENT"
-
       run_environment_func $FUNC "$COMPONENT"
     done
   else

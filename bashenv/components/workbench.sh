@@ -39,6 +39,21 @@ EOF
 }
 
 
+copy_python_for_workbench() {
+  if is_windows; then
+    echo "Windows not supported"
+  else
+    if is_osx; then
+      local DEVBASE=$KWB_BASE_DIR/node_modules/electron/dist/Electron.app/Contents/Resources
+    else
+      local DEVBASE=$KWB_BASE_DIR/node_modules/electron/dist/resources
+    fi
+    local DEVPATH=$DEVBASE/venv
+    rm -rf $DEVPATH
+    mkdir -p $DEVBASE
+    ln -s $KWB_VENV_PATH $DEVPATH
+  fi
+}
 setup_environment_workbench() (
 	# abort if venv is already present
 	if ! create_python3_env $KWB_VENV_PATH; then
@@ -59,9 +74,6 @@ setup_environment_workbench() (
     echo "Yarn install failed, trying to fix this"
     false
   fi
-  local DEVPATH=$KWB_BASE_DIR/node_modules/electron/dist/Electron.app/Contents/Resources/venv
-  rm -rf $DEVPATH
-  ln -s $KWB_VENV_DIR $DEVPATH
 
   true
 )

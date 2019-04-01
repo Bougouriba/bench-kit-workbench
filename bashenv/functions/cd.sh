@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function oneline_help_kd_cd() {
-  echo "cd into $KXX/<repo>."
+  echo "cd home, or into $KXX/[C]."
 }
 
 function help_kd_cd() {

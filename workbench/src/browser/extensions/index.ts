@@ -41,7 +41,7 @@ const mimeExtensions: any = {
     '@jupyterlab/json-extension': require('@jupyterlab/json-extension'),
     '@jupyterlab/pdf-extension': require('@jupyterlab/pdf-extension'),
     '@jupyterlab/vdom-extension': require('@jupyterlab/vdom-extension'),
-    '@jupyterlab/vega4-extension': require('@jupyterlab/vega4-extension')
+    '@jupyterlab/vega5-extension': require('@jupyterlab/vega5-extension')
 } as { [key: string]: any };
 
 const disabled = { patterns: [] as string[], matches: [] as string[] };
