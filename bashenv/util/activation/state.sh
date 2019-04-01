@@ -55,4 +55,4 @@ export KITWB_FILES_DIR=$KITWB_BASH_DIR/files
 export KITWB_BASE_DIR=$(pathof $KITWB_BASH_DIR/..)
 export KITWB_PYTHON3=$(command -v python3)
 export KITWB_VIRTUALENV=$(command -v virtualenv)
-export KITWB_BASE_DIR=$__BOOTSTRAP_MY_DIR
+export KITWB_BASE_DIR=$KXX

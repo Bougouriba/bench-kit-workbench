@@ -22,7 +22,10 @@ run() {
 		cp -r $KWB_BASE_DIR/kernel-specs/$KERNEL $KDIR/$KERNEL
 	done
 
-	local KK_VENV=$KITWB_BASE_DIR/kernels/kisia-cli/venv
-	cp -r $KK_VENV $KDIR/kisia-cli/venv
+	local KK_VENV=$KXX/kernels/kisia_cli/venv
+	local TARGET=$KDIR/kisia-cli/venv
+	rm -rf $TARGET
+	echo "Copying Kisia-CLI from $KK_VENV to $TARGET"
+	cp -r $KK_VENV $TARGET
 
 }

@@ -12,8 +12,9 @@ with open(OUTPUT,'w+') as outfile:
 
 kernelspec=sys.argv[1]
 
-os.environ['PYTHONPATH']=os.environ['KITWB_KERNELSPECS'] + kernelspec + '/venv'
-os.environ['NODE_PATH']=os.environ['KITWB_KERNELSPECS'] + kernelspec + '/node_modules'
-print(sys.argv[2],sys.argv[2:])
+os.environ['PYTHONPATH']=os.environ['KITWB_KERNELSPECS'] + "/"+kernelspec + '/venv/lib/python3.6/site-packages'
+os.environ['NODE_PATH']=os.environ['KITWB_KERNELSPECS'] + "/"+kernelspec + '/node_modules'
+#print("PP:",os.environ['PYTHONPATH'])
+#print(sys.argv[2],sys.argv[2:])
 
 os.execvp(sys.argv[2],sys.argv[2:])

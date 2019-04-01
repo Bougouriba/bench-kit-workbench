@@ -1,11 +1,11 @@
 {
  "argv": [
   "/tmp/wrapper",
-  "python",
+  "python3",
   "-m",
   "kitwb_adapter",
   "kisia-cli",
-  "python",
+  "python3",
   "-m",
   "kisia_kernel",
   "-f",
