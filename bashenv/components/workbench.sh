@@ -39,7 +39,7 @@ EOF
 }
 
 
-copy_python_for_workbench() {
+copy_python_for_workbench_dev_install() {
   if is_windows; then
     echo "Windows not supported"
   else
@@ -74,7 +74,7 @@ setup_environment_workbench() (
     echo "Yarn install failed, trying to fix this"
     false
   fi
-
+  copy_python_for_workbench_dev_install
   true
 )
 setup_environment_workbench_help() {
