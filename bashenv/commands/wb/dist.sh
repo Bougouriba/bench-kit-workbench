@@ -36,7 +36,7 @@ run() {
 
 	echo "Relinking Phosphor and Jupyter to use yarn link'd copies"
 	# now relink jupyter and phosphor
-	link_phosphor $KWB_BASE_DIR
-	link_jupyterlab $KWB_BASE_DIR
+	#link_phosphor $KWB_BASE_DIR
+	#link_jupyterlab $KWB_BASE_DIR
 
 }
