@@ -21,8 +21,10 @@ prepare_nvm_and_version() {
 
 function check_basic_node_ability() {
 	if [ "$NVM_DIR" = "" ]; then
-		echo "can not find NVM_DIR, please visit https://github.com/creationix/nvm"
+		echo "can not find NVM_DIR environment variable."
+		echo "please visit https://github.com/creationix/nvm to install and configure NVM"
 		false
+	else
+		true
 	fi
-	true
 }

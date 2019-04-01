@@ -34,7 +34,8 @@ __BOOTSTRAP_MY_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 #kd require git
 
 export KXX_COMPONENT_LIST="phosphor jupyterlab itypescript workbench tool"
-export KXX_COMPONENT_LIST="$KXX_COMPONENT_LIST kisia-cli rwot-js kisia-ts"
+#export KXX_COMPONENT_LIST="$KXX_COMPONENT_LIST kisia-cli rwot-js kisia-ts"
+export KXX_COMPONENT_LIST="$KXX_COMPONENT_LIST kisia-cli"
 for COMPONENT in $KXX_COMPONENT_LIST; do
   . $KXX_BASH/components/$COMPONENT.sh
 done

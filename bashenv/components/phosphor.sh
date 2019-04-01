@@ -10,7 +10,9 @@ export PHOSPHOR_NODE_VERSION=v11.6.0
 link_phosphor() (
     cd $1
     local COMPONENT
-    mkdir ./node_modules
+    if [ ! -d ./node_modules ]; then
+	mkdir ./node_modules
+    fi
     rm -rf ./node_modules/\@phosphor
     mkdir ./node_modules/\@phosphor
     for COMPONENT in $PHOSPHOR_PKG_LIST; do
