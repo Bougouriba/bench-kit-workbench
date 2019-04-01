@@ -268,7 +268,7 @@ export class Registry implements IRegistry {
         if (process.platform === 'win32') {
             pythonExecutableName = 'python.exe';
         } else {
-            pythonExecutableName = 'python';
+            pythonExecutableName = 'python3';
         }
 
         let pythonInstances = [this._getExecutableInstances(pythonExecutableName, process.env.PATH)];

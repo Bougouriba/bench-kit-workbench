@@ -60,6 +60,13 @@
         ]
       },
       {
+        "from": "venv/lib/python3.6",
+        "to": "venv/lib/python3.6",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
         "from": "venv/share/jupyter",
         "to": "venv/share/jupyter",
         "filter": [
@@ -70,7 +77,6 @@
     "linux": {
       "category": "Development",
       "target": [
-        "deb",
         "tar.gz"
       ],
       "desktop": {
@@ -204,7 +210,7 @@
     "@jupyterlab/tooltip": "file:../jupyterlab/packages/tooltip",
     "@jupyterlab/tooltip-extension": "file:../jupyterlab/packages/tooltip-extension",
     "@jupyterlab/vdom-extension": "file:../jupyterlab/packages/vdom-extension",
-    "@jupyterlab/vega4-extension": "file:../jupyterlab/packages/vega4-extension",
+    "@jupyterlab/vega5-extension": "file:../jupyterlab/packages/vega5-extension",
     "@types/node": "^11.11.3",
     "@types/react": "^16.4.13",
     "@types/react-dom": "^16.0.7",
