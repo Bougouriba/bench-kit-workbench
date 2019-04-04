@@ -10,3 +10,6 @@
 [submodule "nteract"]
 	path = nteract
 	url = git@github.com:korsimoro/nteract
+[submodule "nteract-docs"]
+	path = nteract-docs
+	url = git@github.com:korsimoro/nteract
