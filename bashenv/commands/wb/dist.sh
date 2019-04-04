@@ -20,10 +20,30 @@ run() {
 	cd $KWB_BASE_DIR
 
 	echo ""
-	rm -rf node_modules/\@jupyterlab
-	rm -rf node_modules/\@phosphor
-	yarn install
+	#rm -rf node_modules
+	#for P in $PHOSPHOR_PKG_LIST; do
+	#	yarn install \@phosphor/$P
+	#done
+	#for J in $JLAB_PKG_LIST; do
+	#	yarn install \@jupyterlab/$J
+	#done
+	#rm -rf node_modules
 
+
+	rm -rf node_modules/\@phosphor
+	for P in $PHOSPHOR_PKG_LIST; do
+		yarn unlink \@phosphor/$P
+	done
+	yarn install --force
+
+
+	for J in $JLAB_PKG_LIST; do
+		yarn unlink \@jupyterlab/$J
+	done
+	rm -rf node_modules/\@jupyterlab
+	yarn install --force
+
+	exit 0
 	if is_windows; then
 		echo "Windows not suppported"
 	else
@@ -36,7 +56,7 @@ run() {
 
 	echo "Relinking Phosphor and Jupyter to use yarn link'd copies"
 	# now relink jupyter and phosphor
-	#link_phosphor $KWB_BASE_DIR
-	#link_jupyterlab $KWB_BASE_DIR
+	link_phosphor $KWB_BASE_DIR
+	link_jupyterlab $KWB_BASE_DIR
 
 }
