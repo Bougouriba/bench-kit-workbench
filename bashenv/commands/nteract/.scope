@@ -1,0 +1,12 @@
+#!/bin/bash
+# The KIT Workbench Kernel development environment
+print_help() {
+printf "`cat << EOF
+${BLUE}kd kernel <SUBCOMMAND> [OPTIONS]${NC}
+
+Use the KIT Workbench Kernel Development Environment
+
+EOF
+`\n\n"
+kd_print_subcommand_help_summary kernel
+}

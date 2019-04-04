@@ -1,6 +1,5 @@
 #!/bin/bash
 # Execute a script of kd commands
-ensure_valid_checkout
 
 print_help() {
 printf "`cat << EOF
@@ -13,7 +12,6 @@ Run a set of KD commands
 EOF
 `\n\n"
 
-print_kidlist_help kd-script
 }
 
 ECHO=false

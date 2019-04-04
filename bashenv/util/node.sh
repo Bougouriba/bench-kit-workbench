@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -d "$HOME/.nvm" ]; then
+	export NVM_DIR="$HOME/.nvm"
+fi
+
 prepare_nvm_and_version() {
 	if type nvm 2>&1 >/dev/null; then
 		echo "Using existing nvm"
