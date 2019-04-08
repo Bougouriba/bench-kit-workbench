@@ -186,9 +186,12 @@ app.on('ready', () => {
 function handOverArguments(): Promise<void> {
     let promise = new Promise<void>( (resolve, reject) => {
           // Skip JupyterLab Executable
+          /*
           for (let i = 1; i < process.argv.length; i ++) {
               app.emit('open-file', null, argv[i]);
           }
+          */
+          app.emit('open-file', null,"Welcome.ipynb");
         resolve();
     });
     return promise;

@@ -29,6 +29,8 @@ EOF
 
 build_environment_workbench() (
   cd $KWB_BASE_DIR && yarn build
+  kd wb kernels
+  copy_python_for_workbench_dev_install
 )
 build_environment_workbench_help() {
 printf "`cat << EOF

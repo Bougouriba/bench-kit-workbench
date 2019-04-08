@@ -1,6 +1,5 @@
 {
  "argv": [
-  "/tmp/wrapper",
   "python3",
   "-m",
   "kitwb_adapter",
