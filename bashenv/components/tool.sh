@@ -13,7 +13,7 @@ clean_environment_tool_help() {
   echo rm -rf $KISIA_CLI_VENV
 }
 build_environment_tool() {
-  cd $KISIA_CLI_BASE && yarn tsc
+  echo "build environment tool"
 }
 build_environment_tool_help() {
 printf "`cat << EOF

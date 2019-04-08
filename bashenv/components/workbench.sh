@@ -63,20 +63,23 @@ setup_environment_workbench() (
 	fi
 	echo "Activating Python3 Environments"
 	. $KWB_VENV_PATH/bin/activate
-  cd $KWB_BASE_DIR
+   cd $KWB_BASE_DIR
 	pip install -r $KWB_BASE_DIR/requirements.txt > /dev/null
 	kd wb kernels
+   copy_python_for_workbench_dev_install
+	setup_workbench_node_modules
+)
 
+setup_workbench_node_modules() (
   prepare_nvm_and_version $KWB_NODE_VERSION
   cd $KWB_BASE_DIR
   npm install -g yarn
-  link_phosphor $KWB_BASE_DIR
-  link_jupyterlab $KWB_BASE_DIR
   if ! yarn install; then
     echo "Yarn install failed, trying to fix this"
     false
   fi
-  copy_python_for_workbench_dev_install
+  link_phosphor $KWB_BASE_DIR
+  link_jupyterlab $KWB_BASE_DIR
   true
 )
 setup_environment_workbench_help() {

@@ -1,0 +1,12 @@
+#!/bin/bash
+# Hyperledger - Support Kernels
+print_help() {
+printf "`cat << EOF
+${BLUE}kd kk <SUBCOMMAND> [OPTIONS]${NC}
+
+Use the Kisia Kernel Development Environment
+
+EOF
+`\n\n"
+kd_print_subcommand_help_summary kernel/dif
+}

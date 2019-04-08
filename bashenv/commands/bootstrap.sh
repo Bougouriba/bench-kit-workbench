@@ -11,9 +11,16 @@ EOF
 }
 
 run() {
-  git pull origin init
-  kd clean
-  echo " CLEANED"
-  kd setup
-  kd build
+  if check_basic_node_ability; then
+    if check_basic_python_ability; then
+  	kd update
+  	kd clean
+  	kd setup
+  	kd build
+    else
+    	echo "python3 missing - aborting bootstrap"
+    fi
+  else
+    echo "nvm missing - aborting bootstrap"
+  fi
 }

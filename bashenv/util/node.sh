@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -d "$HOME/.nvm" ]; then
+	export NVM_DIR="$HOME/.nvm"
+fi
+
 prepare_nvm_and_version() {
 	if type nvm 2>&1 >/dev/null; then
 		echo "Using existing nvm"
@@ -21,8 +25,10 @@ prepare_nvm_and_version() {
 
 function check_basic_node_ability() {
 	if [ "$NVM_DIR" = "" ]; then
-		echo "can not find NVM_DIR, please visit https://github.com/creationix/nvm"
+		echo "can not find NVM_DIR environment variable."
+		echo "please visit https://github.com/creationix/nvm to install and configure NVM"
 		false
+	else
+		true
 	fi
-	true
 }
