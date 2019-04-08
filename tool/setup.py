@@ -81,17 +81,25 @@ setup(
 		'cli/help'
 		],
     install_requires=[
-        'google-api-python-client==1.7.8',
-        'google-auth-oauthlib==0.2.0',
+        'google-api-python-client',
+        'google-auth-oauthlib',
         'gspread',
         'python-slugify',
         'click',
+        'six',
         'beautifulsoup4==4.7.1',
         'prettytable',
-        'PyGitHub',
         'gitpython',
-        'json-spec'
+        'json-spec',
+        'sqlitebiter'
     ],
+    extras_require={
+        'dev': [
+            'PyGitHub',
+            'gql',
+            'sphinx'
+             ]
+    },
     entry_points = {
         'console_scripts': ['tool=cli.tool:cli'],
     }

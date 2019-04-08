@@ -6,6 +6,7 @@ __pycache__
 _build
 .ipynb_checkpoints
 *.ipynb
+.kd-setup
 
 # sensitive files
 apis/google/secrets.json

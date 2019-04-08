@@ -3,6 +3,7 @@
 create_python3_env() {
   if [ -d "$1" ]; then
     echo "Virtual environment has already been set up"
+    echo "Location: $1"
     true
   fi
 
