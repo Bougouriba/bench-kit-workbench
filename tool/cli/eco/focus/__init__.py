@@ -1,14 +1,25 @@
-import os
-import sys
 import click
-from cli import SubCommand,pass_application
+import cli
+from .. import pass_util as pass_ecosystem_util
 
-class EcosystemFocusCLI(SubCommand):
-    cmd_context = "eco.focus"
+class FocusUtilities(object):
+    """
+    A Focus is a view of an ecosystem with a set of filtration constraints
 
-@click.command(cls=EcosystemFocusCLI)
-@pass_application
-def cli(ctx):
+    self.eco   The global ecosystem over which we are operating
+
+    """
+    def __init__(self,eco):
+        self.eco = eco
+
+pass_util = click.make_pass_decorator(FocusUtilities)
+class SubCommand(cli.BaseCommand):
+    pass
+@click.command(cls=SubCommand)
+@pass_ecosystem_util
+@cli.pass_application
+@click.pass_context
+def cli(ctx,app,util):
     """
     Perform focused ecosystem level tasks.  Focused tasks manpipulate
     the KISIA model through filters that help maintain the integraty
@@ -29,4 +40,4 @@ def cli(ctx):
       - manage information about a standard
       - manage information about a signficant repository
     """
-    pass
+    ctx.obj = FocusUtilities(util)

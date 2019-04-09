@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'KISIA Toolkit'
+project = 'KIT Workbench'
 copyright = '2019, Korsimoro'
 author = 'Korsimoro'
 

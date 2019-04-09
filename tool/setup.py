@@ -84,6 +84,8 @@ setup(
         'google-api-python-client',
         'google-auth-oauthlib',
         'gspread',
+        'datetime',
+        'python-dateutil',
         'python-slugify',
         'click',
         'six',
@@ -95,6 +97,7 @@ setup(
     ],
     extras_require={
         'dev': [
+            'pd',
             'PyGitHub',
             'gql',
             'sphinx'
