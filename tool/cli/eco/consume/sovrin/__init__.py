@@ -1,14 +1,23 @@
-import os
-import sys
 import click
-from cli import Context,SubCommand,pass_context,CONTEXT_SETTINGS
+import cli
+from .. import pass_util as pass_consume_util
 
-class EcosystemInteractConsumeSovrinCLI(SubCommand):
-    cmd_context = "eco.interact.consume.Sovrin"
+class SovrinUtilities(object):
+    """
+    Load information into the KISIA model
+    """
+    def __init__(self,consume):
+        self.consume = consume
 
-@click.command(cls=EcosystemInteractConsumeSovrinCLI, context_settings=CONTEXT_SETTINGS)
-@pass_context
-def cli(ctx, path):
+pass_util = click.make_pass_decorator(SovrinUtilities)
+class SubCommand(cli.BaseCommand):
+    pass
+@click.command(cls=SubCommand)
+@pass_consume_util
+@cli.pass_application
+@click.pass_context
+def cli(ctx,app,util):
     """
-    Sovrin
+    Personal Data
     """
+    ctx.obj = SovrinUtilities(util)

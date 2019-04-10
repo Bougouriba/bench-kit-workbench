@@ -1,12 +1,11 @@
 #!/bin/bash
-# copy kernels
+# build local dev version
 
 print_help() {
 printf "`cat << EOF
-${BLUE}kd wb dist${NC}
+${BLUE}kd wb local${NC}
 
-Run yarn install and yarn tsc in the itypescript
-repository, then unlink, then link
+build local dev version and run it with ```electron .```
 
 EOF
 `\n"
@@ -21,5 +20,6 @@ run() {
 	rm -rf node_modules/\@jupyterlab
 	link_phosphor $KWB_BASE_DIR
 	link_jupyterlab $KWB_BASE_DIR
-
+	copy_python_for_workbench_dev_install
+	yarn build
 }

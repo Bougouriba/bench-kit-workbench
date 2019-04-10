@@ -3,7 +3,7 @@ Support for ipython based development.
 """
 
 
-from apis.config import KISIA_Config
+from services.config import KISIA_Config
 from apis.google import authorize_to_gapi
 from apis.google.sheets import GoogleSheets
 from apis.google.drive import GoogleDrive

@@ -1,0 +1,3 @@
+[console_scripts]
+tool = tool:cli
+

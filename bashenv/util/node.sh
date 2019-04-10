@@ -5,7 +5,7 @@ if [ -d "$HOME/.nvm" ]; then
 fi
 
 prepare_nvm_and_version() {
-	if type nvm 2>&1 >/dev/null; then
+	if type nvm >/dev/null 2>&1; then
 		echo "Using existing nvm"
 	else
 		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

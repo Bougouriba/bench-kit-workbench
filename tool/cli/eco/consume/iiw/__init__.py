@@ -1,14 +1,23 @@
-import os
-import sys
 import click
-from cli import Context,SubCommand,pass_context,CONTEXT_SETTINGS
+import cli
+from .. import pass_util as pass_consume_util
 
-class EcosystemInteractConsumeIIWCLI(SubCommand):
-    cmd_context = "eco.interact.consume.IIW"
+class IIWUtilities(object):
+    """
+    Load information into the KISIA model
+    """
+    def __init__(self,consume):
+        self.consume = consume
 
-@click.command(cls=EcosystemInteractConsumeIIWCLI, context_settings=CONTEXT_SETTINGS)
-@pass_context
-def cli(ctx, path):
+pass_util = click.make_pass_decorator(IIWUtilities)
+class SubCommand(cli.BaseCommand):
+    pass
+@click.command(cls=SubCommand)
+@pass_consume_util
+@cli.pass_application
+@click.pass_context
+def cli(ctx,app,util):
     """
-    Internet Identity Workshop
+    Personal Data
     """
+    ctx.obj = IIWUtilities(util)
