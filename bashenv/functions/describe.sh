@@ -3,7 +3,10 @@ function oneline_help_kd_describe() {
   echo "MacGyver It! : Troubleshooting information"
 }
 
-function run_kd_describe() {
-  run_environment_func describe $@
+function help_kd_describe() {
+  print_component_help describe
 }
-export -f run_kd_describe oneline_help_kd_describe
+
+function run_kd_describe() {
+  run_component_func describe $@
+}

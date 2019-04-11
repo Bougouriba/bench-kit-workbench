@@ -27,7 +27,7 @@ kd_findkids() {
 function kd_print_subcommand_help_summary() {
   local WIDTH=18
   local BASE="$KXX_BASH_COMMAND"/$1
-  local KIDS=$(ls -1 $BASE/*.sh  2>/dev/null | xargs -n 1 basename | sed s/\.sh//g | sort)
+  local KIDS=$(ls -1 $BASE/*.sh  2>/dev/null | xargs -n 1 basename | sed s/.sh$//g | sort)
   local SCOPES=$(ls -1 $BASE/*/.scope 2>/dev/null)
   if [ ! -z "$SCOPES" ]; then
     SCOPES=$(ls -1 $BASE/*/.scope | xargs -n 1 dirname | xargs -n 1 basename | sort)
@@ -134,4 +134,4 @@ printf "Use ${BLUE}kd [cmd] help${NC} for more information.\n"
 run_kd_help() (
   kd_print_help
 )
-export -f run_kd_help kd_print_help kd_print_subcommand_help_summary kd_findkids
+export -f run_kd_help kd_print_help kd_print_subcommand_help_summary

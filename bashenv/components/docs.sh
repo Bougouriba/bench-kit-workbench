@@ -22,7 +22,7 @@ build_environment_docs() {
   cd $DOC_VIEWER_BASE
   yarn clean
   yarn install
-  npn run build
+  yarn dist
 }
 build_environment_docs_help() {
 printf "`cat << EOF

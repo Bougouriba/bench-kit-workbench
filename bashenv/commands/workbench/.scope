@@ -1,0 +1,69 @@
+#!/bin/bash
+# Tasks managing the workbench environment
+print_help() {
+printf "`cat << EOF
+${BLUE}kd workbench <SUBCOMMAND> [OPTIONS]${NC}
+
+
+EOF
+`\n\n"
+kd_print_subcommand_help_summary workbench
+}
+
+require_active_environment() {
+  if [ "workbench" = "$KITWB_ACTIVE_DEVENV" ]; then
+    echo "Workbench Build Environment is Active"
+  else
+    activate_environment_workbench
+  fi
+}
+
+run_batch_packages_job() {
+	local CMD="$1"
+	local SCOPE="$2"
+	local ELT_LIST="$3"
+	local BASE="$4"
+
+	local MAX=5
+
+	local COUNT=0
+	echo -n "$SCOPE:run_batch_packages_job $CMD, parallel running of :"
+	for x in $ELT_LIST; do
+		echo -n "$x "
+		echo cd $BASE/$x && $CMD
+		cd $BASE/$x && $CMD &
+		COUNT=$(expr $COUNT + 1 )
+		if [ $(expr $COUNT % $MAX ) == 0 ]; then
+			echo
+			wait
+			echo -n "Continuing run_batch_packages_job $CMD for $SCOPE : "
+		fi
+	done
+	echo
+	wait
+}
+
+relink_packages_to_workbench() {
+	local CMD="$1"
+	local SCOPE="$2"
+	local PREFIX="$3"
+	local ELT_LIST="$4"
+
+	local YARN="yarn --silent"
+	local MAX=5
+
+	local COUNT=0
+	echo -n "$SCOPE:relink_packages_to_workbench yarn $CMD, parallel running of :"
+	for x in $ELT_LIST; do
+		echo -n "$x "
+		cd $KWB_BASE_DIR && $YARN $CMD $PREFIX$x &
+		COUNT=$(expr $COUNT + 1 )
+		if [ $(expr $COUNT % $MAX ) == 0 ]; then
+			echo "...."
+			wait
+			echo -n "Continuing with yarn $CMD for $SCOPE : "
+		fi
+	done
+	echo
+	wait
+}

@@ -1,4 +1,8 @@
 #!/bin/bash
-# Sets up promp
+# Sets up prompt
 
-export PS1="KD[$KITWB_ACTIVATION_COUNT]:\W> "
+#called by 'activate' to keep the prompt active
+reprompt() {
+  export PS1="KD[$KITWB_ACTIVE_DEVENV/$KITWB_ACTIVATION_COUNT]:\W> "
+}
+reprompt

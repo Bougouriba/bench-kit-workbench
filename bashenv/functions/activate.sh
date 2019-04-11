@@ -4,20 +4,27 @@ function oneline_help_kd_activate() {
 }
 
 function help_kd_activate() {
-  printf "`cat << EOF
-${BLUE}kd activate <COMPONENT>${NC}
-
-  Goal : ${YELLOW}$(oneline_help_kd_activate)${NC}
-
-More Text Here
-EOF
-`\n"
+  print_component_help activate
 }
-
-export KITWB_ACTIVE_DEVENV=
 
 function run_kd_activate() {
-  run_environment_func activate $@
-  export KITWB_ACTIVE_DEVENV=$(slugify $1)
+  local ENV=$(slugify $1)
+
+  if help_on_empty_or_help activate "$ENV"; then
+    clear
+
+    if run_component_func activate $@; then
+
+      echo "Activating $ENV"
+      echo "   - ran activate_environment_$ENV"
+      echo "   - setting KITWB_ACTIVE_DEVENV"
+      export KITWB_ACTIVE_DEVENV=$ENV
+      echo "   - adjusting prompt"
+      reprompt
+      echo "   - cd into environment home"
+      kd cd $ENV
+      echo "   - $PWD"
+    fi
+  fi
+
 }
-export -f run_kd_activate oneline_help_kd_activate

@@ -39,17 +39,20 @@ function extractNode(data) {
   }
 
   // Handle themes.
-  var themeDir = jlab['themeDir'];
+  var themeDir = jlab['themePath'];
   if (themeDir) {
     var themeName = data.package.name;
-    var from = path.join(data.realpath, themeDir);
+    var from = path.join(data.realpath, 'style');
     var to = path.join(themesDest, themeName);
-    fs.copySync(from, to);
+    console.log("Copy Theme",from,"to",to)
+    fs.removeSync(to)
+    fs.ensureDirSync(to)
+    fs.copySync(from, to, { dereference: true });
 
     /**
      * Change relative paths. This is done at runtime by jupyterlab_launcher.
      * A similar solution needs to be used when themes are dynamically loaded.
-     * 
+     *
      * See https://github.com/jupyterlab/jupyterlab_launcher/blob/v0.10.3/jupyterlab_launcher/themes_handler.py
      */
     glob.sync(path.join(to, '**/*.css')).forEach(file => {
@@ -63,7 +66,7 @@ function extractNode(data) {
            if (err) return console.log(err);
         });
       });
-      
+
     })
   }
 }

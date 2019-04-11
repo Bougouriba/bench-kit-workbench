@@ -1,5 +1,5 @@
 jupyter
-jupyterlab
+-e ../jupyterlab
+-e ./kernel-env-adapter
 pandas
 json-spec
--e ./kernel-env-adapter

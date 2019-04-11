@@ -58,17 +58,23 @@ EOF
 }
 
 
-setup_environment_phosphor() {
+setup_environment_phosphor() (
   local LIST="$PHOSPHOR_PKG_LIST"
   if [ ! -z "$@" ]; then
           LIST="$@"
   fi
   prepare_nvm_and_version $PHOSPHOR_NODE_VERSION
-  yarn --silent global add typescript
-  run_batch_packages_job "yarn --silent install" "PhosphorJS" "$LIST" "$PHOSPHOR_PKG_BASE"
-  run_batch_packages_job "yarn --silent build" "PhosphorJS" "$LIST" "$PHOSPHOR_PKG_BASE"
+  if [ -z "$(command -v tsc)" ]; then
+    yarn --silent global add typescript
+  fi
+
+  cd $PHOSPHOR_BASE
+  yarn install
+  yarn build
+  #run_batch_packages_job "yarn --silent install" "PhosphorJS" "$LIST" "$PHOSPHOR_PKG_BASE"
+  #run_batch_packages_job "yarn --silent build" "PhosphorJS" "$LIST" "$PHOSPHOR_PKG_BASE"
   run_batch_packages_job "yarn --silent link" "PhosphorJS" "$LIST" "$PHOSPHOR_PKG_BASE"
-}
+)
 setup_environment_phosphor_help() {
 printf "`cat << EOF
 ${BLUE}kd setup phosphor${NC}
