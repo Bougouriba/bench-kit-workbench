@@ -5,8 +5,8 @@ print_help() {
 printf "`cat << EOF
 ${BLUE}kd wb dist${NC}
 
-Run yarn install and yarn tsc in the itypescript
-repository, then unlink, then link
+Install tarballs of dependencies to make sure that electron-builder
+can follow the links
 
 EOF
 `\n"
@@ -20,30 +20,29 @@ run() {
 	cd $KWB_BASE_DIR
 
 	echo ""
-	#rm -rf node_modules
+
 	#for P in $PHOSPHOR_PKG_LIST; do
 	#	yarn install \@phosphor/$P
 	#done
 	#for J in $JLAB_PKG_LIST; do
 	#	yarn install \@jupyterlab/$J
 	#done
-	#rm -rf node_modules
+
+	#rm -rf node_modules/\@phosphor
+	#for P in $PHOSPHOR_PKG_LIST; do
+	#	yarn unlink \@phosphor/$P
+	#done
+	#yarn install --force
 
 
-	rm -rf node_modules/\@phosphor
-	for P in $PHOSPHOR_PKG_LIST; do
-		yarn unlink \@phosphor/$P
-	done
-	yarn install --force
+	#for J in $JLAB_PKG_LIST; do
+	#	yarn unlink \@jupyterlab/$J
+	#done
+	#rm -rf node_modules/\@jupyterlab
+	#yarn install --force
 
-
-	for J in $JLAB_PKG_LIST; do
-		yarn unlink \@jupyterlab/$J
-	done
-	rm -rf node_modules/\@jupyterlab
-	yarn install --force
-
-	exit 0
+	rm -rf node_modules
+	yarn install
 	if is_windows; then
 		echo "Windows not suppported"
 	else

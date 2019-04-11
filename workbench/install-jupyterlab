@@ -62,10 +62,10 @@ npm install --save @jupyterlab/statusbar-extension
 npm install --save @jupyterlab/tabmanager-extension
 npm install --save @jupyterlab/terminal
 npm install --save @jupyterlab/terminal-extension
-npm install --save @jupyterlab/theme-dark-extension-1.0.0-alpha.4.tgz
-npm install --save @jupyterlab/theme-light-extension-1.0.0-alpha.4.tgz
-npm install --save @jupyterlab/tooltip-1.0.0-alpha.3.tgz
-npm install --save @jupyterlab/tooltip-extension-1.0.0-alpha.3.tgz
-npm install --save @jupyterlab/ui-components-1.0.0-alpha.3.tgz
-npm install --save @jupyterlab/vdom-extension-1.0.0-alpha.3.tgz
-npm install --save @jupyterlab/vega5-extension-1.0.0-alpha.3.tgz
+npm install --save @jupyterlab/theme-dark-extension
+npm install --save @jupyterlab/theme-light-extension
+npm install --save @jupyterlab/tooltip
+npm install --save @jupyterlab/tooltip-extension
+npm install --save @jupyterlab/ui-components
+npm install --save @jupyterlab/vdom-extension
+npm install --save @jupyterlab/vega5-extension

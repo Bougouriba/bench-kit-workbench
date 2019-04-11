@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 TOOLKIT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd $TOOLKIT_DIR
 gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -11,8 +12,14 @@ echo "Activate with : . $rvm_path/scripts/rvm"
 
 echo "Activating"
 . $rvm_path/scripts/rvm
-echo "installing ruby-head"
-rvm install ruby-head
+if [ -z "$(command -v ruby )" ]; then
+	echo "installing ruby-head"
+	rvm install ruby-head
+	rvm use ruby-head
+else
+	rvm use system
+fi
 echo "running bundle install to load all the Gemfile bits"
+gem install bundle
 bundle install
 
