@@ -7,6 +7,9 @@
 # where are we?
 __WHERE_AM_I=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
+# enter the checkout direcory
+cd $__WHERE_AM_I/..
+
 # now run a shell
 /bin/bash --init-file $__WHERE_AM_I/activate.sh "$@"
 

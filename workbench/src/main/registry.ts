@@ -60,13 +60,14 @@ export class Registry implements IRegistry {
                 moduleName: 'jupyter',
                 commands: ['notebook', '--version'],
                 versionRange: new Range('>=5.0.0')
-            },
-            {
+            }//,
+            /*{
                 name: 'python',
-                moduleName: '',
+                moduleName: undefined,
                 commands: ['--version'],
                 versionRange: new Range('>=3.6.0')
             }
+            */
         ];
 
         let pathEnvironments = this._loadPATHEnvironments();
@@ -282,7 +283,7 @@ export class Registry implements IRegistry {
 
         return flattenedPythonPaths.then((pythons: string[]) => {
             return pythons.map((pythonPath, index) => {
-              log.info("FOUND PYTHON AT",index,pythonPath);
+              log.info("registry.ts - located python, index=",index,"path=",pythonPath);
                 let newPythonEnvironment: Registry.IPythonEnvironment = {
                     name: `${basename(pythonPath)}-${index}`,
                     path: pythonPath,
@@ -587,6 +588,9 @@ export class Registry implements IRegistry {
 
     private _runPythonModuleCommand(pythonPath: string, moduleName: string, commands: string[]): Promise<string> {
         let totalCommands = ['-m', moduleName].concat(commands);
+        if ( ! moduleName ) {
+          totalCommands = commands;
+        }
         return new Promise<string>((resolve, reject) => {
             this._runCommand(pythonPath, totalCommands).then(output => {
                 let missingModuleReg = new RegExp(`No module named ${moduleName}$`);
@@ -645,9 +649,11 @@ export class Registry implements IRegistry {
                     if (stderrOutput.length === 0) {
                         reject(new Error(`"${executablePath} ${commands.join(' ')}" produced no output to stdout or stderr!`));
                     } else {
+                        log.info("registry.ts - Checked:",executablePath,commands,"stdout=",stderrOutput)
                         resolve(stderrOutput);
                     }
                 } else {
+                    log.info("registry.ts - Checked:",executablePath,commands,"stdout=",stdoutOutput)
                     resolve(stdoutOutput);
                 }
             });

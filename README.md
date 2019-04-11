@@ -4,7 +4,12 @@
 
 ```
 git clone git@github.com:korsimoro/kit-workbench --recursive
-. kit-workbench/bashenv/activate.sh
+kit-workbench/bashenv/shell.sh
 kd
 ```
 
+## Build Electron App For Local Development
+
+```
+kd setup
+```

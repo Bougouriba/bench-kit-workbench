@@ -1,26 +1,61 @@
-# Jupyterlab App
+# Workbench
 
-[![Build Status](https://travis-ci.org/jupyterlab/jupyterlab_app.svg?branch=master)](https://travis-ci.org/jupyterlab/jupyterlab_app)
+This is a Jupyterlab_app based electron application, which includes
+specific notebooks and custom kernels.
+
+It will integrate with a surrounding Jupyter environment, but it also
+contains a complete set of Kernels suitable for local use.  This allows
+the kernels and the introductory notebooks to be distributed as part
+of the electron auto update.
 
 
-A native app for [JupyterLab](https://github.com/jupyterlab/jupyterlab), based on [Electron](https://electron.atom.io/).
+## Jupyterlab App based
 
-### Build dependencies
+This is based off of Jupyterlab App - and ultimately I'd like to grow it
+back into that codebase, as a fork, but to get started I had to do too many
+strange hacks and wasn't familiar enough yet with the jupyter ecosystem to
+do so sensibly.  I welcome any assistance in formally connecting w/ jupyterlab_app
+as a fork.
 
-#### Linux
+In the meantime the licenses are likely incorrect.
 
-You will need the development packages of libcairo, libjpeg, and libgif.  In Debian-based distributions, these are provided by the `libcairo2-dev`, `libjpeg8-dev`, and `libgif-dev` packages.
+## File Layout
 
-### Getting started
+- ```dist-resources```
 
-1. run `git clone git@github.com:jupyterlab/jupyterlab_app.git`
-2. run `yarn install` or `npm install`
-3. run `yarn build:all` or `npm run build:all`
+  The resources used in packaging, like the icons that show up for the app, etc.
 
-### Building for distribution
+- ```kernel-env-adapter```
 
-To test building for distribution you can install [Docker](https://docs.docker.com/engine/installation/) and run `yarn dockerdist:platform` where "platform" is either "linux" or "win". To build for macOS a macOS computer is required.
+  This sets environment variables based on the KISIA_WORKBENCH_DIR and launches
+  the kernel.  It is designed to transparently adapt kernels shipped with
+  the executable.
 
-If you don't want to user Docker but instead want to build locally, there are a few [dependencies](https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build) you're required to install.
+- ```kernel-specs```
 
-Regarding releasing please check out [release](release.md)
+  These contain kernels distributed with the application.
+
+- ```initial-workspace```
+
+  These are the starter tutorial notebooks
+
+## Kernels
+
+### debug-wrapper
+
+### kisia-cli
+
+### kisia-ts
+
+### rj2
+
+### rwot-js
+
+### sovrin
+
+### vc-test-suite
+
+### veres.one
+
+
+### identity.com

@@ -41,7 +41,7 @@ kd_locate_subcommand() {
       if [ -d "$DIR" ]; then
         kd_locate_subcommand $DIR $@
       else
-        echo "Command not found"
+        echo "Command not found : $@"
         echo "   COMMAND = "$COMMAND
         echo "   FUNC = run_kd_"$(slugify $COMMAND)
         echo "   BASE_DIR = "$BASE_DIR
@@ -76,7 +76,7 @@ kd() {
 #export -f kd kd_locate_subcommand kd_execute
 export -f kd
 
-# load commands into the core that can manipulate the
+# load functions into the core that can manipulate the
 # existing state - this allows us to maintain live state
 # via the CLI.
 for FUNC in $(find $KXX_BASH_FUNCTION -name \*.sh); do

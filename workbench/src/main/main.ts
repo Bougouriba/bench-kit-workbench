@@ -6,6 +6,7 @@ import * as Bottle from 'bottlejs';
 import log from 'electron-log';
 import * as yargs from 'yargs';
 import * as fs from 'fs';
+var path = require('path')
 
 export const isDevMode = process.mainModule.filename.indexOf( 'app.asar' ) === -1;
 
@@ -133,20 +134,48 @@ app.on('ready', () => {
         }
         process.chdir(workspaceDir)
 
-        process.env.PYTHONPATH=process.resourcesPath + "/venv/lib/python3.7/site-packages:" +
-                               process.resourcesPath + "/venv/lib/python3.6/site-packages";
-        process.env.PATH=process.resourcesPath + "/venv/bin:"+process.env.PATH;
-        process.env.JUPYTER_CONFIG_DIR=workspaceDir+"/config";
-        process.env.JUPYTER_DATA_DIR=workspaceDir+"/data";
-        process.env.JUPYTER_RUNTIME_DIR=workspaceDir+"/runtime";
-        process.env.JUPYTERLAB_WORKSPACES_DIR=workspaceDir+"/workspaces";
+
+        const path37=path.join(process.resourcesPath,"venv","lib","python3.7","site-packages")
+        const path36=path.join(process.resourcesPath,"venv","lib","python3.6","site-packages")
+
+        const path37exists = fs.existsSync(path37)
+        const path36exists = fs.existsSync(path36)
+
+        if (path37exists && path36exists) {
+          process.env.PYTHONPATH=path37 + ":" + path36;
+        }
+        else {
+          if (path37exists) {
+            process.env.PYTHONPATH=path37
+          }
+          else {
+            if (path36exists) {
+              process.env.PYTHONPATH=path36
+            }
+            else {
+              throw new Error("Can not find python path, looked at "+path37+" and "+path36)
+            }
+          }
+        }
+
+        process.env.PATH=
+          path.join(process.resourcesPath,"venv","bin")
+          + ":" +
+          process.env.PATH;
+
+        process.env.KITWB_KERNELSPECS=path.join(process.resourcesPath,"venv","share","jupyter","kernels");
+
+
+        process.env.JUPYTER_CONFIG_DIR=path.join(workspaceDir,"config");
+        process.env.JUPYTER_DATA_DIR=path.join(workspaceDir,"data");
+        process.env.JUPYTER_RUNTIME_DIR=path.join(workspaceDir,"runtime");
+        process.env.JUPYTERLAB_WORKSPACES_DIR=path.join(workspaceDir,"workspaces");
         if (!fs.existsSync(process.env.JUPYTERLAB_WORKSPACES_DIR)) {
             fs.mkdirSync(process.env.JUPYTERLAB_WORKSPACES_DIR, parseInt('0744',8));
         }
 
-        process.env.KITWB_KERNELSPECS=process.resourcesPath + "/venv/share/jupyter/kernels";
 
-        const operatingDir = workspaceDir + '/jupyterlab-cwd';
+        const operatingDir = path.join(workspaceDir,'jupyterlab-cwd');
         if (!fs.existsSync(operatingDir)) {
             fs.mkdirSync(operatingDir, parseInt('0744',8));
         }

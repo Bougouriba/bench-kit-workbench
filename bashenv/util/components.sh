@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function run_environment_func() {
+function run_component_func() {
   FUNC=$1
   local COMPONENT=""
   local CMD=""
@@ -14,7 +14,7 @@ function run_environment_func() {
 
   if [ "$COMPONENT" = "all" ]; then
     for COMPONENT in $KXX_COMPONENT_LIST; do
-      run_environment_func $FUNC "$COMPONENT"
+      run_component_func $FUNC "$COMPONENT"
     done
   else
     CMD=$FUNC"_environment_"$COMPONENT
@@ -40,17 +40,38 @@ function run_environment_func() {
   fi
 }
 
-function print_environment_help() {
+function print_component_help() {
   FUNC=$1
   shift 1
   printf "`cat << EOF
-${BLUE}kd $FUNC [SUBCOMMAND] ...${NC}
+${BLUE}kd $FUNC [COMPONENT] [SUBCOMMAND] ...${NC}
 
-$FUNC one or all of the component environments
+  Goal : ${YELLOW}$(oneline_help_kd_$FUNC)${NC}
+
+  Available Environments:
 EOF
 `\n\n"
-  echo $FUNC all
+  #echo $FUNC all
   for COMPONENT in $KXX_COMPONENT_LIST; do
-    echo $FUNC "$COMPONENT"
+    echo "   $FUNC $COMPONENT"
   done
+}
+
+function help_on_empty_or_help() {
+  local ENV=$1
+
+  if [ -z "$ENV" ]; then
+    print_component_help
+  else
+    if [ "$ENV" = "help"]; then
+      print_component_help
+    else
+      if [ "$ENV" = "--help"]; then
+        print_component_help
+      else
+        true
+      fi
+    fi
+  fi
+  false
 }

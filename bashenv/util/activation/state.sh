@@ -9,32 +9,13 @@ export KXX_BASH_FUNCTION=$KXX_BASH/functions
 export       KXX_SCRIPTS=$KXX_BASH/scripts
 export         KXX_FILES=$KXX_BASH/files
 
-# devops python
-export    KXX_PYTHON_ENV=$KXX/venv
-function report_python_environmet() {
-  report_vars "Active Python Variables" KXX_PYTHON_ENV PYTHONPATH
-}
 
-# devops node
-export      KXX_NODE_ENV=$KXX/node_modules
-function report_node_environmet() {
-  report_vars "Active Node Variables" KXX_NODE_ENV NVM_DIR NODE_PATH
-}
 
-# key devops executables
-export       KXX_PYTHON3=$(command -v python3)
-export    KXX_VIRTUALENV=$(command -v virtualenv)
-export          KXX_NODE=$(command -v node)
-export          KXX_YARN=$(command -v yarn)
-
-function report_active_execution_environment() {
-  report_vars "Active Execution Variables" KXX_PYTHON3 KXX_VIRTUALENV KXX_NODE KXX_YARN
-}
-
+export KITWB_ACTIVE_DEVENV=
 
 function report_environment() {
   report_node_environmet
-  report_python_environmet
+  report_python_environment
   if [ ! -z "$KITWB_ACTIVE_DEVENV" ]; then
     echo "Active Bash environment:$KITWB_ACTIVE_DEVENV"
     describe_environment_$KITWB_ACTIVE_DEVENV

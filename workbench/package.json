@@ -33,7 +33,7 @@
     "productName": "KISIA Workbench",
     "artifactName": "${productName}.${ext}",
     "directories": {
-      "buildResources": "resources"
+      "buildResources": "dist-resources"
     },
     "fileAssociations": {
       "ext": [

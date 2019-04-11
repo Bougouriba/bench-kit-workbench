@@ -10,17 +10,10 @@ var watch = require('node-watch');
  * src/browser/<something>/style/
  * src/browser/<something>/img/ will go to build/out/browser/something/<X>
  */
-function copyAssests() {
+function copyAssets() {
     process.stdout.write('Copying assets to build from directory...'+srcDir+'\n');
     if (!fs.existsSync(srcDir)) {
         console.error('jupyterlab_app build: could not find source directory.');
-        process.exit();
-    }
-
-    var themesDest = path.resolve(path.join(buildDir, 'themes'));
-    process.stdout.write('Themes directory...'+themesDest+'\n');
-    if (!fs.existsSync(themesDest)) {
-        console.error('jupyterlab_app build: could not find target directory.');
         process.exit();
     }
 
@@ -31,31 +24,16 @@ function copyAssests() {
         process.exit();
     }
 
-    
+
     // Copy style and img directories into build directory
     file.walkSync(srcDir, (srcPath) => {
         var destPath = srcPath.replace(srcDir, buildOutDir);
-        
+
         if (srcPath.slice(srcPath.length - 'style'.length) == 'style' ||
             srcPath.slice(srcPath.length - 'img'.length) == 'img') {
             fs.copySync(srcPath, destPath);
         }
     });
-
-    // Copy style and img directories into build directory
-    var themeBase= path.resolve('./node_modules');
-    var themes=['theme-light-extension','theme-dark-extension']
-    for(t of themes) {
-	var a = themeBase + '/@jupyterlab/'+t+'/style';
-	var b = themesDest + '/@jupyterlab/'+t;
-	//console.log("A:",a)
-	//console.log("B:",b)
-    	file.walkSync(a, (srcPath) => {
-		var destPath = srcPath.replace(a, b)
-		console.log(srcPath,destPath)
-		fs.copySync(srcPath,destPath)
-    	});
-	}
 
 
     // Copy html into build directory
@@ -63,23 +41,25 @@ function copyAssests() {
     fs.copySync(path.join(srcDir, htmlPath), path.join(buildOutDir, htmlPath));
     process.stdout.write('Copied bootstrap index.html file from...'+srcDir+' to '+htmlPath+'\n');
 
+    const length = buildDir.length + 1
     // Copy theme-light into build/out/browser/<icons,images,etc>
     let defaultThemePath = path.join(buildDir,'themes','@jupyterlab','theme-light-extension');
     let browserOutDir = path.join(buildOutDir,'browser');
+    console.log("Default Theme Path",defaultThemePath)
     file.walkSync(defaultThemePath, (srcPath) => {
-	var destPath = srcPath.replace(defaultThemePath, browserOutDir)
-	console.log(srcPath,destPath)
-	fs.copySync(srcPath,destPath)
+	     var destPath = srcPath.replace(defaultThemePath, browserOutDir)
+	      console.log(srcPath.substring(length),"->",destPath.substring(length))
+	       fs.copySync(srcPath,destPath)
     });
     console.log('done');
 }
-copyAssests();
+copyAssets();
 
 if (process.argv.length > 2 && process.argv[2] == 'watch') {
     watch(srcDir, {recursive: true}, function(evt, name) {
         if (/(\.css$)|(\.html$)/.test(name)) {
             console.log('Asset chage detected.');
-            copyAssests();
+            copyAssets();
         }
     });
 }
