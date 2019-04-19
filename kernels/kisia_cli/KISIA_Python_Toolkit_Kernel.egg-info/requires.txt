@@ -1,3 +1,0 @@
-ipykernel
-KISIA-Python-Toolkit
-jupyter_kernel_test

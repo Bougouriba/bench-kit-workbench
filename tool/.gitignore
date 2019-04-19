@@ -7,6 +7,7 @@ _build
 .ipynb_checkpoints
 *.ipynb
 .kd-setup
+setup-logs
 
 # sensitive files
 apis/google/secrets.json

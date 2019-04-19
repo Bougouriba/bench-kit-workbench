@@ -1,0 +1,16 @@
+{
+ "argv": [
+  "INSTALLATION_BASE/wrapper.sh",
+  "tool_kernel",
+  "python3",
+  "-m",
+  "kisia_kernel",
+  "-f",
+  "{connection_file}"
+ ],
+ "env":{
+   "PYTHONPATH":"INSTALLATION_PYTHON_PATH"
+ },
+ "display_name": "KISIA Shell",
+ "language": "custom"
+}

@@ -1,5 +1,0 @@
-ipykernel
-jupyter_kernel_test
-../../gitworm/python
-../../tool
-.

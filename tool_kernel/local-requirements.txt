@@ -1,0 +1,2 @@
+-e ../gitworm/python
+-e ../tool
