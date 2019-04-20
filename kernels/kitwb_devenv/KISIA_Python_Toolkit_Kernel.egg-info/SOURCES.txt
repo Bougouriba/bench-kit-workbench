@@ -1,9 +1,0 @@
-setup.py
-KISIA_Python_Toolkit_Kernel.egg-info/PKG-INFO
-KISIA_Python_Toolkit_Kernel.egg-info/SOURCES.txt
-KISIA_Python_Toolkit_Kernel.egg-info/dependency_links.txt
-KISIA_Python_Toolkit_Kernel.egg-info/requires.txt
-KISIA_Python_Toolkit_Kernel.egg-info/top_level.txt
-kisia_kernel/__init__.py
-kisia_kernel/__main__.py
-kisia_kernel/kernel.py

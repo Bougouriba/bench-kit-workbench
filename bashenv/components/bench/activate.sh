@@ -9,6 +9,6 @@ EOF
 export -f activate_environment_kd_bench_help
 
 activate_environment_kd_bench() {
-  echo "Component[bench]:activate"
+  activate_python_env $BENCH_VENV
 }
 export -f activate_environment_kd_bench

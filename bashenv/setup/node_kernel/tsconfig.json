@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "sourceMap": false,
+    "types": [
+      "node"
+      /* should be deleted */
+    ]
+  },
+  "files": [
+    "test/startup.ts",
+    "bin/test.ts"
+  ]
+}

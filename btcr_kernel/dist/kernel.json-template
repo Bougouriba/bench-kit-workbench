@@ -1,0 +1,18 @@
+{
+ "argv": [
+  "INSTALLATION_BASE/wrapper.sh",
+  "credcom_kernel",
+  "INSTALLATION_NODE_PATH/.bin/itskernel",
+  "--debug",
+  "--hide-undefined",
+  "--protocol=5.1",
+  "--working-dir=INSTALLATION_BASE/working-dir",
+  "--startup-script=INSTALLATION_BASE/startup.js",
+  "{connection_file}"
+ ],
+ "env":{
+   "NODE_PATH":"INSTALLATION_NODE_PATH"
+ },
+ "display_name": "Credential Commons Shell",
+ "language": "typescript"
+}

@@ -13,3 +13,18 @@
 [submodule "nteract-docs"]
 	path = nteract-docs
 	url = git@github.com:korsimoro/nteract
+[submodule "cert-issuer"]
+	path = cert_issuer
+	url = git@github.com:blockchain-certificates/cert-issuer
+[submodule "cert-verifier-js"]
+	path = cert_verifier_js
+	url = git@github.com:blockchain-certificates/cert-verifier-js
+[submodule "blockcerts-verifier"]
+	path = blockcerts_verifier
+	url = git@github.com:blockchain-certificates/blockcerts-verifier
+[submodule "cert-verifier"]
+	path = cert_verifier
+	url = git@github.com:blockchain-certificates/cert-verifier
+[submodule "cert-core"]
+	path = cert_core
+	url = git@github.com:blockchain-certificates/cert-core

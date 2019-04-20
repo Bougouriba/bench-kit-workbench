@@ -1,0 +1,32 @@
+{
+  "name": "credcom_kernel",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://",
+  "bugs": {
+    "url": "https://github.com/korismoro/contractors/issues"
+  },
+  "license": "TBD",
+  "author": {
+    "name": "Eric Welton"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/korsimoro/contractors.git"
+  },
+  "bin": {},
+  "dependencies": {
+    "@identity.com/credential-commons": "^1.0.10",
+    "itypescript": "^0.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.3",
+    "debug": "latest",
+    "tslint": "latest"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/tslint bin/*.ts test/*.ts",
+    "tsc": "npm run lint; ./node_modules/.bin/tsc"
+  }
+}

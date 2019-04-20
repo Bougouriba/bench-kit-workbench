@@ -10,5 +10,6 @@ export -f clean_environment_kd_bench_help
 
 clean_environment_kd_bench() {
   echo "Component[bench]:clean"
+  rm -rf $BENCH_VENV
 }
 export -f clean_environment_kd_bench

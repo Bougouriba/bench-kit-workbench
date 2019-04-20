@@ -27,7 +27,7 @@ describe_environment_kd_tool() {
 
   report_python_env $KISIA_CLI_VENV
 
-  report_heading "KISIA-CLI Environment"
+  report_heading "KISIA-CLI Runtime Environment"
   echo "  TOOL (optional) = $(command -v tool)"
   true
 }
