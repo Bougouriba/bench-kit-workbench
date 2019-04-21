@@ -1,20 +1,31 @@
 import os
 import sys
 import click
-from cli import SubCommand
+import cli
 from apis.github import GitHub
 
-class GitHubCLI(SubCommand):
-    cmd_context = "github"
-
-class GitHubCLIContext(object):
+class GitHubUtilities(object):
+    """
+    This is available within all github commands
+    """
     def __init__(self,config):
         self.credentials = None
         self.config = config
         self.github = GitHub(config.getGitHubAccessToken())
 
-@click.command(cls=GitHubCLI)
+
+pass_util = click.make_pass_decorator(GitHubUtilities)
+class SubCommand(cli.BaseCommand):
+    pass
+@click.command(cls=SubCommand)
+@cli.pass_application
 @click.pass_context
-def cli(ctx):
-    """Pull information from GitHub API."""
-    ctx.obj = GitHubCLIContext(ctx.parent.obj.config)
+def cli(ctx,app):
+    """
+    Manage GitHubs, which describe a document which can be referenced
+    using a short-form document name, and is either out there, on the
+    internet (e.g. a google spreadsheet) or is local.  Docptrs maintain
+    information about how to access each type of file.
+
+    """
+    ctx.obj = GitHubUtilities(app.config)

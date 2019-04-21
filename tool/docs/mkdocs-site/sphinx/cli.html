@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to KISIA Toolkit CLI’s documentation! &#8212; KIT Workbench  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-kisia-toolkit-cli-s-documentation">
+<h1>Welcome to KISIA Toolkit CLI’s documentation!<a class="headerlink" href="#welcome-to-kisia-toolkit-cli-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-cli.config"></span><dl class="class">
+<dt id="cli.config.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.config.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/config.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.config.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.web"></span><dl class="class">
+<dt id="cli.web.FetchCLI">
+<em class="property">class </em><code class="descclassname">cli.web.</code><code class="descname">FetchCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/web.html#FetchCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.web.FetchCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.google"></span><dl class="class">
+<dt id="cli.google.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.google.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/google.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.google.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.workspace"></span><dl class="class">
+<dt id="cli.workspace.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.workspace.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/workspace.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.workspace.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cli.workspace.WorkspaceUtilities">
+<em class="property">class </em><code class="descclassname">cli.workspace.</code><code class="descname">WorkspaceUtilities</code><span class="sig-paren">(</span><em>workspace</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/workspace.html#WorkspaceUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.workspace.WorkspaceUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all Workspace commands</p>
+</dd></dl>
+
+<span class="target" id="module-cli"></span><p>This is the main entry point for the application.</p>
+<p>It defines a Parent Context object which defines the workspace, as well as
+utility functions.</p>
+<span class="target" id="module-cli.docptr"></span><dl class="class">
+<dt id="cli.docptr.DocPtrUtilities">
+<em class="property">class </em><code class="descclassname">cli.docptr.</code><code class="descname">DocPtrUtilities</code><span class="sig-paren">(</span><em>dpm</em>, <em>name_</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/docptr.html#DocPtrUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.docptr.DocPtrUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all docptr commands</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.docptr.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.docptr.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/docptr.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.docptr.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.docptr.add"></span><dl class="class">
+<dt id="cli.docptr.add.DocPtrAddUtilities">
+<em class="property">class </em><code class="descclassname">cli.docptr.add.</code><code class="descname">DocPtrAddUtilities</code><span class="sig-paren">(</span><em>util</em>, <em>update</em>, <em>tags</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/docptr/add.html#DocPtrAddUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.docptr.add.DocPtrAddUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all docptr commands</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.docptr.add.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.docptr.add.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/docptr/add.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.docptr.add.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.docptr.tag"></span><dl class="class">
+<dt id="cli.docptr.tag.DocPtrTagUtilities">
+<em class="property">class </em><code class="descclassname">cli.docptr.tag.</code><code class="descname">DocPtrTagUtilities</code><span class="sig-paren">(</span><em>util</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/docptr/tag.html#DocPtrTagUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.docptr.tag.DocPtrTagUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all docptr commands</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.docptr.tag.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.docptr.tag.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/docptr/tag.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.docptr.tag.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco"></span><dl class="class">
+<dt id="cli.eco.Ecosystem">
+<em class="property">class </em><code class="descclassname">cli.eco.</code><code class="descname">Ecosystem</code><a class="reference internal" href="_modules/cli/eco.html#Ecosystem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.Ecosystem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ecosystems represent</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.EcosystemUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.</code><code class="descname">EcosystemUtilities</code><a class="reference internal" href="_modules/cli/eco.html#EcosystemUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.EcosystemUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides support for Ecosystems</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.focus.business"></span><dl class="class">
+<dt id="cli.eco.focus.business.BusinessUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.business.</code><code class="descname">BusinessUtilities</code><span class="sig-paren">(</span><em>focus_util</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus/business.html#BusinessUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.business.BusinessUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>These actions represent the business perspective.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.focus.business.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.business.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus/business.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.business.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.focus"></span><dl class="class">
+<dt id="cli.eco.focus.FocusUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.</code><code class="descname">FocusUtilities</code><span class="sig-paren">(</span><em>eco</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus.html#FocusUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.FocusUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Focus is a view of an ecosystem with a set of filtration constraints</p>
+<p>self.eco   The global ecosystem over which we are operating</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.focus.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.focus.legal"></span><dl class="class">
+<dt id="cli.eco.focus.legal.LegalUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.legal.</code><code class="descname">LegalUtilities</code><span class="sig-paren">(</span><em>focus_util</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus/legal.html#LegalUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.legal.LegalUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>These actions represent the Legal perspective.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.focus.legal.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.legal.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus/legal.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.legal.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.focus.technical"></span><dl class="class">
+<dt id="cli.eco.focus.technical.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.technical.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus/technical.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.technical.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.focus.technical.TechnicalUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.focus.technical.</code><code class="descname">TechnicalUtilities</code><span class="sig-paren">(</span><em>focus_util</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/focus/technical.html#TechnicalUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.focus.technical.TechnicalUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>These actions represent the Technical perspective.</p>
+<dl class="simple">
+<dt>Specific Technical Events</dt><dd><p>report-event
+anticipate-event
+announce-event
+announce-capability</p>
+</dd>
+<dt>Ontology Core</dt><dd><p>assert-use-case-info
+assert-release-info
+assert-project-info
+assert-repository-info
+assert-feature-info</p>
+</dd>
+<dt>Cross focus linking is managed in this way</dt><dd><p>legal-bridge
+tech-bridge</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-cli.eco.model.organizations"></span><dl class="class">
+<dt id="cli.eco.model.organizations.EcosystemModelOrganizationsCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.organizations.</code><code class="descname">EcosystemModelOrganizationsCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/organizations.html#EcosystemModelOrganizationsCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.organizations.EcosystemModelOrganizationsCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.capability"></span><dl class="class">
+<dt id="cli.eco.model.capability.EcosystemModelCapabilityCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.capability.</code><code class="descname">EcosystemModelCapabilityCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/capability.html#EcosystemModelCapabilityCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.capability.EcosystemModelCapabilityCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model"></span><dl class="class">
+<dt id="cli.eco.model.EcosystemModelCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.</code><code class="descname">EcosystemModelCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model.html#EcosystemModelCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.EcosystemModelCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.repositories"></span><dl class="class">
+<dt id="cli.eco.model.repositories.EcosystemModelStandardsCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.repositories.</code><code class="descname">EcosystemModelStandardsCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/repositories.html#EcosystemModelStandardsCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.repositories.EcosystemModelStandardsCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.requirements"></span><dl class="class">
+<dt id="cli.eco.model.requirements.EcosystemModelRequirementsCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.requirements.</code><code class="descname">EcosystemModelRequirementsCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/requirements.html#EcosystemModelRequirementsCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.requirements.EcosystemModelRequirementsCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.use_cases"></span><dl class="class">
+<dt id="cli.eco.model.use_cases.EcosystemModelUseCasesCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.use_cases.</code><code class="descname">EcosystemModelUseCasesCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/use_cases.html#EcosystemModelUseCasesCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.use_cases.EcosystemModelUseCasesCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.people"></span><dl class="class">
+<dt id="cli.eco.model.people.EcosystemModelPeoplesCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.people.</code><code class="descname">EcosystemModelPeoplesCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/people.html#EcosystemModelPeoplesCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.people.EcosystemModelPeoplesCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.documents"></span><dl class="class">
+<dt id="cli.eco.model.documents.EcosystemModelDocumentsCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.documents.</code><code class="descname">EcosystemModelDocumentsCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/documents.html#EcosystemModelDocumentsCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.documents.EcosystemModelDocumentsCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.events"></span><dl class="class">
+<dt id="cli.eco.model.events.EcosystemModelEventsCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.events.</code><code class="descname">EcosystemModelEventsCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/events.html#EcosystemModelEventsCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.events.EcosystemModelEventsCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.authority"></span><dl class="class">
+<dt id="cli.eco.model.authority.EcosystemModelAuthorityCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.authority.</code><code class="descname">EcosystemModelAuthorityCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/authority.html#EcosystemModelAuthorityCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.authority.EcosystemModelAuthorityCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.legal"></span><dl class="class">
+<dt id="cli.eco.model.legal.EcosystemModelLegalCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.legal.</code><code class="descname">EcosystemModelLegalCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/legal.html#EcosystemModelLegalCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.legal.EcosystemModelLegalCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.geography"></span><dl class="class">
+<dt id="cli.eco.model.geography.EcosystemModelGeographyCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.geography.</code><code class="descname">EcosystemModelGeographyCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/geography.html#EcosystemModelGeographyCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.geography.EcosystemModelGeographyCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.model.standards"></span><dl class="class">
+<dt id="cli.eco.model.standards.EcosystemModelStandardsCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.model.standards.</code><code class="descname">EcosystemModelStandardsCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/model/standards.html#EcosystemModelStandardsCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.model.standards.EcosystemModelStandardsCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume"></span><dl class="class">
+<dt id="cli.eco.consume.ConsumeUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.</code><code class="descname">ConsumeUtilities</code><span class="sig-paren">(</span><em>eco</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume.html#ConsumeUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.ConsumeUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.pd"></span><dl class="class">
+<dt id="cli.eco.consume.pd.PdUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.pd.</code><code class="descname">PdUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/pd.html#PdUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.pd.PdUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.pd.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.pd.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/pd.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.pd.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.sovrin"></span><dl class="class">
+<dt id="cli.eco.consume.sovrin.SovrinUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.sovrin.</code><code class="descname">SovrinUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/sovrin.html#SovrinUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.sovrin.SovrinUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.sovrin.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.sovrin.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/sovrin.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.sovrin.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.ssimeetup"></span><dl class="class">
+<dt id="cli.eco.consume.ssimeetup.SSIMeetupUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.ssimeetup.</code><code class="descname">SSIMeetupUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/ssimeetup.html#SSIMeetupUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.ssimeetup.SSIMeetupUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.ssimeetup.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.ssimeetup.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/ssimeetup.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.ssimeetup.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.mydata"></span><dl class="class">
+<dt id="cli.eco.consume.mydata.MyDataUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.mydata.</code><code class="descname">MyDataUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/mydata.html#MyDataUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.mydata.MyDataUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.mydata.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.mydata.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/mydata.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.mydata.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.iiw"></span><dl class="class">
+<dt id="cli.eco.consume.iiw.IIWUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.iiw.</code><code class="descname">IIWUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/iiw.html#IIWUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.iiw.IIWUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.iiw.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.iiw.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/iiw.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.iiw.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.hyperledger"></span><dl class="class">
+<dt id="cli.eco.consume.hyperledger.HyperledgerUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.hyperledger.</code><code class="descname">HyperledgerUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/hyperledger.html#HyperledgerUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.hyperledger.HyperledgerUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.hyperledger.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.hyperledger.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/hyperledger.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.hyperledger.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.rwot"></span><dl class="class">
+<dt id="cli.eco.consume.rwot.RWOTUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.rwot.</code><code class="descname">RWOTUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/rwot.html#RWOTUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.rwot.RWOTUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.rwot.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.rwot.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/rwot.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.rwot.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.dif"></span><dl class="class">
+<dt id="cli.eco.consume.dif.DIFUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.dif.</code><code class="descname">DIFUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/dif.html#DIFUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.dif.DIFUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.dif.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.dif.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/dif.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.dif.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.idcommons"></span><dl class="class">
+<dt id="cli.eco.consume.idcommons.IdCommonsUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.idcommons.</code><code class="descname">IdCommonsUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/idcommons.html#IdCommonsUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.idcommons.IdCommonsUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.idcommons.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.idcommons.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/idcommons.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.idcommons.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.eco.consume.veres_one"></span><dl class="class">
+<dt id="cli.eco.consume.veres_one.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.veres_one.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/veres_one.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.veres_one.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cli.eco.consume.veres_one.VeresOneUtilities">
+<em class="property">class </em><code class="descclassname">cli.eco.consume.veres_one.</code><code class="descname">VeresOneUtilities</code><span class="sig-paren">(</span><em>consume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/consume/veres_one.html#VeresOneUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.consume.veres_one.VeresOneUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load information into the KISIA model</p>
+</dd></dl>
+
+<span class="target" id="module-cli.eco.produce"></span><dl class="class">
+<dt id="cli.eco.produce.ProduceCLI">
+<em class="property">class </em><code class="descclassname">cli.eco.produce.</code><code class="descname">ProduceCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/eco/produce.html#ProduceCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.eco.produce.ProduceCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.local"></span><dl class="class">
+<dt id="cli.local.LocalCLI">
+<em class="property">class </em><code class="descclassname">cli.local.</code><code class="descname">LocalCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/local.html#LocalCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.local.LocalCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cli.local.LocalUtilities">
+<em class="property">class </em><code class="descclassname">cli.local.</code><code class="descname">LocalUtilities</code><a class="reference internal" href="_modules/cli/local.html#LocalUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.local.LocalUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all local commands</p>
+</dd></dl>
+
+<span class="target" id="module-cli.logs"></span><dl class="class">
+<dt id="cli.logs.LogCLI">
+<em class="property">class </em><code class="descclassname">cli.logs.</code><code class="descname">LogCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/logs.html#LogCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.logs.LogCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.github"></span><dl class="class">
+<dt id="cli.github.GitHubUtilities">
+<em class="property">class </em><code class="descclassname">cli.github.</code><code class="descname">GitHubUtilities</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/github.html#GitHubUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.github.GitHubUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all github commands</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cli.github.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.github.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/github.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.github.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.xlate"></span><dl class="class">
+<dt id="cli.xlate.XlateCLI">
+<em class="property">class </em><code class="descclassname">cli.xlate.</code><code class="descname">XlateCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/xlate.html#XlateCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.xlate.XlateCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cli.xlate.XlateUtilities">
+<em class="property">class </em><code class="descclassname">cli.xlate.</code><code class="descname">XlateUtilities</code><a class="reference internal" href="_modules/cli/xlate.html#XlateUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.xlate.XlateUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all xlate commands</p>
+</dd></dl>
+
+<span class="target" id="module-cli.xlate.kumu"></span><dl class="class">
+<dt id="cli.xlate.kumu.XlateKumuCLI">
+<em class="property">class </em><code class="descclassname">cli.xlate.kumu.</code><code class="descname">XlateKumuCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/xlate/kumu.html#XlateKumuCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.xlate.kumu.XlateKumuCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cli.xlate.kumu.XlateKumuUtilities">
+<em class="property">class </em><code class="descclassname">cli.xlate.kumu.</code><code class="descname">XlateKumuUtilities</code><a class="reference internal" href="_modules/cli/xlate/kumu.html#XlateKumuUtilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.xlate.kumu.XlateKumuUtilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is available within all xlate commands</p>
+<dl class="class">
+<dt id="cli.xlate.kumu.XlateKumuUtilities.LocalEncoder">
+<em class="property">class </em><code class="descname">LocalEncoder</code><span class="sig-paren">(</span><em>*</em>, <em>skipkeys=False</em>, <em>ensure_ascii=True</em>, <em>check_circular=True</em>, <em>allow_nan=True</em>, <em>sort_keys=False</em>, <em>indent=None</em>, <em>separators=None</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/xlate/kumu.html#XlateKumuUtilities.LocalEncoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.xlate.kumu.XlateKumuUtilities.LocalEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="cli.xlate.kumu.XlateKumuUtilities.LocalEncoder.default">
+<code class="descname">default</code><span class="sig-paren">(</span><em>o</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/xlate/kumu.html#XlateKumuUtilities.LocalEncoder.default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.xlate.kumu.XlateKumuUtilities.LocalEncoder.default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement this method in a subclass such that it returns
+a serializable object for <code class="docutils literal notranslate"><span class="pre">o</span></code>, or calls the base implementation
+(to raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>).</p>
+<p>For example, to support arbitrary iterators, you could
+implement default like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">iterable</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+    <span class="c1"># Let the base class default method raise the TypeError</span>
+    <span class="k">return</span> <span class="n">JSONEncoder</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-cli.nlp"></span><dl class="class">
+<dt id="cli.nlp.NLPCLI">
+<em class="property">class </em><code class="descclassname">cli.nlp.</code><code class="descname">NLPCLI</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/nlp.html#NLPCLI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.nlp.NLPCLI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.gitworm"></span><dl class="class">
+<dt id="cli.gitworm.SubCommand">
+<em class="property">class </em><code class="descclassname">cli.gitworm.</code><code class="descname">SubCommand</code><span class="sig-paren">(</span><em>name=None</em>, <em>invoke_without_command=False</em>, <em>no_args_is_help=None</em>, <em>subcommand_metavar=None</em>, <em>chain=False</em>, <em>result_callback=None</em>, <em>**attrs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cli/gitworm.html#SubCommand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cli.gitworm.SubCommand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-cli.help"></span></div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">KIT Workbench</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Korsimoro.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/cli.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

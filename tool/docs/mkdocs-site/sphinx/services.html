@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Services &#8212; KIT Workbench  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to KISIA Toolkit CLI’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="services">
+<h1>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<span class="target" id="module-services"></span><span class="target" id="module-services.config"></span><p>Management of the configuration system</p>
+<dl class="class">
+<dt id="services.config.DocPtrConfig">
+<em class="property">class </em><code class="descclassname">services.config.</code><code class="descname">DocPtrConfig</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#DocPtrConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.DocPtrConfig" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="services.config.DocPtrConfig.assertDocPtr">
+<code class="descname">assertDocPtr</code><span class="sig-paren">(</span><em>docptr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#DocPtrConfig.assertDocPtr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.DocPtrConfig.assertDocPtr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert document pointer state.  If a docptr does not exist, add
+it.  If it does exist, then update the relevant information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.DocPtrConfig.retractDocPtr">
+<code class="descname">retractDocPtr</code><span class="sig-paren">(</span><em>docptr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#DocPtrConfig.retractDocPtr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.DocPtrConfig.retractDocPtr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look up a docptr_id and retun the docptr if found.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="services.config.KISIA_Config">
+<em class="property">class </em><code class="descclassname">services.config.</code><code class="descname">KISIA_Config</code><span class="sig-paren">(</span><em>config_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains all of the configuration.</p>
+<p>Note: During the first iteration we will just load/save this all
+at once, upon any change.</p>
+<dl class="method">
+<dt id="services.config.KISIA_Config.config_file_name">
+<code class="descname">config_file_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.config_file_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.config_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the configuration file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.ensureSection">
+<code class="descname">ensureSection</code><span class="sig-paren">(</span><em>section_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.ensureSection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.ensureSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>make sure a section exists</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.getGitHubAccessToken">
+<code class="descname">getGitHubAccessToken</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.getGitHubAccessToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.getGitHubAccessToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return GitHub Access Token</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.getGitHubUsername">
+<code class="descname">getGitHubUsername</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.getGitHubUsername"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.getGitHubUsername" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return GitHub Username</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.getGitWormBase">
+<code class="descname">getGitWormBase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.getGitWormBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.getGitWormBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return GitWorm Base</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.getGoogleSecretsPath">
+<code class="descname">getGoogleSecretsPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.getGoogleSecretsPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.getGoogleSecretsPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return Google Secrets Path</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.getGoogleTokenPath">
+<code class="descname">getGoogleTokenPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.getGoogleTokenPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.getGoogleTokenPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return Google Token Path</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the configuration object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the configuration file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.setGitHubAccessToken">
+<code class="descname">setGitHubAccessToken</code><span class="sig-paren">(</span><em>token</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.setGitHubAccessToken"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.setGitHubAccessToken" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the GitHub Access Token</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.config.KISIA_Config.setGitHubUsername">
+<code class="descname">setGitHubUsername</code><span class="sig-paren">(</span><em>token</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/config.html#KISIA_Config.setGitHubUsername"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.config.KISIA_Config.setGitHubUsername" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the GitHub Username</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-services.docptr"></span><p>Management of the configuration system</p>
+<dl class="class">
+<dt id="services.docptr.DocPtr">
+<em class="property">class </em><code class="descclassname">services.docptr.</code><code class="descname">DocPtr</code><span class="sig-paren">(</span><em>name</em>, <em>tags=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/docptr.html#DocPtr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.docptr.DocPtr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Points to a document, somewhere, with a given type and relevant metadata.</p>
+<p>
+Internals:
+* the id is used in the system audit trail, if an object is being created</p>
+<blockquote>
+<div><p>for the first time, one is assigned randomly.  It must be preserved if
+it is being hydrated.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="services.docptr.PublicWebPointer">
+<em class="property">class </em><code class="descclassname">services.docptr.</code><code class="descname">PublicWebPointer</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/docptr.html#PublicWebPointer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.docptr.PublicWebPointer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="services.docptr.PublicWebPointer.typecode">
+<code class="descname">typecode</code><em class="property"> = 'web'</em><a class="headerlink" href="#services.docptr.PublicWebPointer.typecode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Points to a document on the web, not requiring any authentication</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-services.output"></span><p>Output control</p>
+<span class="target" id="module-services.workspace"></span><dl class="class">
+<dt id="services.workspace.Workspace">
+<em class="property">class </em><code class="descclassname">services.workspace.</code><code class="descname">Workspace</code><span class="sig-paren">(</span><em>config</em>, <em>dpm</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manages a non-git pool of files that are visible in the development
+scripting space.  These are temporary files that are local, their state
+represents work in progress, and are completely discardable.</p>
+<dl class="method">
+<dt id="services.workspace.Workspace.add_file">
+<code class="descname">add_file</code><span class="sig-paren">(</span><em>docptr</em>, <em>path</em>, <em>type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.add_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.add_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path’s must be ‘slug-sequences’</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.workspace.Workspace.change_path">
+<code class="descname">change_path</code><span class="sig-paren">(</span><em>docptr</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.change_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.change_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the docptr path</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.workspace.Workspace.delete_file">
+<code class="descname">delete_file</code><span class="sig-paren">(</span><em>docptr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.delete_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.delete_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a workspace file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.workspace.Workspace.list_files">
+<code class="descname">list_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.list_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.list_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a flat list of workspace files - returns the docptrs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.workspace.Workspace.map_files">
+<code class="descname">map_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.map_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.map_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a path-structured dictionary of of workspace files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.workspace.Workspace.read_file">
+<code class="descname">read_file</code><span class="sig-paren">(</span><em>docptr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.read_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grab the data (in memory, no worries about large-files or streaming)
+from the file as a direct read - probably bytes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.workspace.Workspace.slugify_path">
+<code class="descname">slugify_path</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.slugify_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.slugify_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path’s must be ‘slug-sequences’</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="services.workspace.Workspace.write_file">
+<code class="descname">write_file</code><span class="sig-paren">(</span><em>docptr</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#Workspace.write_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.Workspace.write_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store a file at a path and update metadata in the docptr manager</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="services.workspace.WorkspaceFilePointer">
+<em class="property">class </em><code class="descclassname">services.workspace.</code><code class="descname">WorkspaceFilePointer</code><span class="sig-paren">(</span><em>name</em>, <em>local_path</em>, <em>tags=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/workspace.html#WorkspaceFilePointer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.workspace.WorkspaceFilePointer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="module-services.gitworm"></span><span class="target" id="module-services.jupyter"></span><p>Support for ipython based development.</p>
+<dl class="function">
+<dt id="services.jupyter.initialize_interpreter_state">
+<code class="descclassname">services.jupyter.</code><code class="descname">initialize_interpreter_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/services/jupyter.html#initialize_interpreter_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#services.jupyter.initialize_interpreter_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the application environment and establish global variables
+to support ipython scripting.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">KIT Workbench</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Services</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to KISIA Toolkit CLI’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Korsimoro.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/services.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

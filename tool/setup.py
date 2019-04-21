@@ -80,6 +80,8 @@ setup(
         'prettytable',
         'gitpython',
         'json-spec',
+        'pytablewriter',
+        'pytablereader',
         'sqlitebiter'
     ],
     extras_require={
@@ -87,7 +89,8 @@ setup(
             'pd',
             'PyGitHub',
             'gql',
-            'sphinx'
+            'sphinx',
+            'mkdocs'
              ]
     },
     entry_points = {

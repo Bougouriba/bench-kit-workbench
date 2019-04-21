@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>services.docptr &#8212; KIT Workbench  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for services.docptr</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Management of the configuration system</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">def</span> <span class="nf">get_new_pointer_id</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+<div class="viewcode-block" id="DocPtr"><a class="viewcode-back" href="../../services.html#services.docptr.DocPtr">[docs]</a><span class="k">class</span> <span class="nc">DocPtr</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Points to a document, somewhere, with a given type and relevant metadata.</span>
+
+<span class="sd">    \b</span>
+<span class="sd">    Internals:</span>
+<span class="sd">    * the id is used in the system audit trail, if an object is being created</span>
+<span class="sd">      for the first time, one is assigned randomly.  It must be preserved if</span>
+<span class="sd">      it is being hydrated.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">tags</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span>
+        <span class="c1"># assign a new</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">get_new_pointer_id</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_get_json_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ptr_json</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">typecode</span>
+        <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;tags&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span>
+        <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;ctime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctime</span>
+        <span class="k">return</span> <span class="n">ptr_json</span>
+
+    <span class="k">def</span> <span class="nf">_hydrate_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ptr_json</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">typecode</span> <span class="o">!=</span> <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Attempt to create </span><span class="si">%s</span><span class="s2"> using class </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> \
+                                <span class="p">(</span><span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">],</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">typecode</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;tags&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctime</span>
+
+    <span class="c1">#// ABC implementation</span>
+    <span class="k">def</span> <span class="nf">hydrate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ptr_json</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hydrate_from_dict</span><span class="p">(</span><span class="n">ptr_json</span><span class="p">)</span>
+
+    <span class="c1">#// ABC implementation</span>
+    <span class="k">def</span> <span class="nf">jsonify</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_json_dict</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="PublicWebPointer"><a class="viewcode-back" href="../../services.html#services.docptr.PublicWebPointer">[docs]</a><span class="k">class</span> <span class="nc">PublicWebPointer</span><span class="p">(</span><span class="n">DocPtr</span><span class="p">):</span>
+    <span class="n">typecode</span> <span class="o">=</span> <span class="s1">&#39;web&#39;</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Points to a document on the web, not requiring any authentication</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">url</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_url</span>
+
+    <span class="nd">@url</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">hyrate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ptr_json</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hydrate_from_dict</span><span class="p">(</span><span class="n">ptr_json</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">jsonify</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_json_dict</span><span class="p">()</span>
+        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+
+<span class="kn">from</span> <span class="nn">apis.google.docptr</span> <span class="k">import</span> <span class="n">GoogleDrivePointer</span><span class="p">,</span><span class="n">GoogleFolderPointer</span><span class="p">,</span><span class="n">GoogleDocPointer</span><span class="p">,</span><span class="n">GoogleSpreadsheetPointer</span><span class="p">,</span><span class="n">GoogleWorksheetPointer</span>
+<span class="kn">from</span> <span class="nn">apis.github.docptr</span> <span class="k">import</span> <span class="n">RepositoryFilePointer</span>
+<span class="kn">from</span> <span class="nn">services.gitworm.docptr</span> <span class="k">import</span> <span class="n">GitWormFilePointer</span>
+<span class="kn">import</span> <span class="nn">services.workspace</span>
+
+<span class="k">class</span> <span class="nc">DocPtrManager</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">_initialize_hydration_registry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;create index of docptr type values to JSON</span>
+<span class="sd">        deserialization methods&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hydration_registry</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hydration_registry</span><span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="n">typecode</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">hydrate</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">GoogleDrivePointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">GoogleDocPointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">GoogleSpreadsheetPointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">GoogleWorksheetPointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">GoogleFolderPointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">RepositoryFilePointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">GitWormFilePointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">PublicWebPointer</span><span class="p">)</span>
+        <span class="n">add</span><span class="p">(</span><span class="n">services</span><span class="o">.</span><span class="n">workspace</span><span class="o">.</span><span class="n">WorkspaceFilePointer</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retired</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_hydration_registry</span><span class="p">()</span>
+
+        <span class="c1"># now restore the config web of docptrs</span>
+        <span class="k">for</span> <span class="n">ptr_json</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">active</span><span class="p">:</span>
+            <span class="n">ptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hydrate_docptr</span><span class="p">(</span><span class="n">ptr_json</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">[</span><span class="n">ptr</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptr</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_model</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_reindex_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">models</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c1"># now restore the config web of docptrs</span>
+        <span class="k">for</span> <span class="n">ptr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">ptr</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">tag</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">hydrate_docptr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ptr_json</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;given a docptr JSON description, map it into the correct</span>
+<span class="sd">        internal&quot;&quot;&quot;</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="n">ptr_json</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hydration_registry</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">ctor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hydration_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">ctor</span><span class="p">(</span><span class="n">ptr_json</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;hydrate_docptr(</span><span class="si">%s</span><span class="s2">) did not recognize type&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">)</span>
+
+
+    <span class="c1"># Doc Ptrs</span>
+    <span class="k">def</span> <span class="nf">assertDocPtr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">docptr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Assert document pointer state.  If a docptr does not exist, add</span>
+<span class="sd">        it.  If it does exist, then update the relevant information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">current_ptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolveDocPtr</span><span class="p">(</span><span class="n">docptr</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">current_ptr</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">[</span><span class="n">docptr</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">docptr</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">[</span><span class="n">docptr</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">docptr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assertDocPtr</span><span class="p">(</span><span class="n">docptr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_model</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">retire</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">docptr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Look up a docptr_id and retun the docptr if found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">[</span><span class="n">docptr</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">retractDocPtr</span><span class="p">(</span><span class="n">docptr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reindex_model</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">resolveDocPtr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">docptr_id</span><span class="p">,</span><span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Look up a docptr_id and retun the docptr if found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">docptr_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">:</span>
+            <span class="n">ptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">[</span><span class="n">docptr_id</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">type</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ptr</span><span class="o">.</span><span class="n">typecode</span> <span class="o">!=</span> <span class="nb">type</span> <span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="n">ptr</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+    <span class="k">def</span> <span class="nf">listActiveDocPtrs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get all the active docptrs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">yield</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">resolveUsing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">using</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a set of docptrs identified by using.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">using</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">[</span><span class="n">using</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">KIT Workbench</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Korsimoro.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

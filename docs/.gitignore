@@ -1,2 +1,4 @@
+setup-logs
+*.egg-info
 _site
 .sass-cache

@@ -2,49 +2,26 @@ import os
 import sys
 import click
 import cli
-from .. import pass_docptr_util
+from .. import pass_util as pass_github_util
 
-class DocPtrAddUtilities(object):
+class GitHubOrgUtilities(object):
     """
     This is available within all docptr commands
     """
-    def __init__(self,util,update,tags):
+    def __init__(self,util,orgname):
         self.util = util
-        self.update = update
-        if tags == None:
-            tags = ['all']
-        self.tags = tags
+        self.orgname = orgname
 
-    def handle(self,newptr):
-        newptr.tags = self.tags
-        if self.util.resolved != None:
-            if self.util.update:
-                self.util.dpm.assertDocPtr(newptr)
-            else:
-                click.echo("The docptr %s already exists, and --update was not provided")
-        else:
-            self.util.dpm.assertDocPtr(newptr)
-
-
-pass_docptradd_util = click.make_pass_decorator(DocPtrAddUtilities)
+pass_util = click.make_pass_decorator(GitHubOrgUtilities)
 class SubCommand(cli.BaseCommand):
     pass
 @click.command(cls=SubCommand)
-@click.option('--update',"update_",
-    is_flag=True,
-    default=False,
-    help="update an existing docptr"
+@click.argument("org",
+    required=True
     )
-@click.option('--tag',"tags_",
-    multiple=True,
-    help="Initial tags to provide"
-    )
-@pass_docptr_util
+@pass_github_util
 @cli.pass_application
 @click.pass_context
-def cli(ctx,app,util,update_,tags_):
-    """Add docptrs"""
-    if util.name == None:
-        click.UsageError("--name is required")
-
-    ctx.obj = DocPtrAddUtilities(util,update_,tags_)
+def cli(ctx,app,util,org):
+    """Work with github organizations"""
+    ctx.obj = GitHubOrgUtilities(util,org)

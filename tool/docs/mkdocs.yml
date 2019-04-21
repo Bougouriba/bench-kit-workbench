@@ -1,0 +1,8 @@
+site_name: KISIA CLI
+site_dir: mkdocs-site
+docs_dir: mkdocs-src
+nav:
+  - Home: 'index.md'
+  - CLI: 'manual.md'
+  - Sphinx: 'sphinx/index.html'
+

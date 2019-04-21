@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>services.config &#8212; KIT Workbench  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for services.config</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Management of the configuration system</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="k">import</span> <span class="n">Path</span>
+
+<div class="viewcode-block" id="KISIA_Config"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config">[docs]</a><span class="k">class</span> <span class="nc">KISIA_Config</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Contains all of the configuration.</span>
+
+<span class="sd">    Note: During the first iteration we will just load/save this all</span>
+<span class="sd">    at once, upon any change.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;configuration.json&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config_path</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">config_path</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">config_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()),</span><span class="s2">&quot;.config/kisia&quot;</span><span class="p">);</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">config_path</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">config_path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">E</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">click</span><span class="o">.</span><span class="n">BadParameter</span><span class="p">(</span><span class="s2">&quot;Directory </span><span class="si">%s</span><span class="s2"> is not valid configuration directory:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">config_path</span><span class="p">,</span><span class="n">E</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">config_path</span> <span class="o">=</span> <span class="n">config_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_file_name</span><span class="p">()):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">E</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Failed to load configuration in </span><span class="si">%s</span><span class="s2">, reason=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_file_name</span><span class="p">(),</span><span class="n">E</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">docptr</span> <span class="o">=</span> <span class="n">DocPtrConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">workspace</span> <span class="o">=</span> <span class="n">WorkspaceConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="c1"># this should be private....</span>
+<div class="viewcode-block" id="KISIA_Config.config_file_name"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.config_file_name">[docs]</a>    <span class="k">def</span> <span class="nf">config_file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the configuration file</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_path</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KISIA_Config.load"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load the configuration object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_file_name</span><span class="p">(),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KISIA_Config.save"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the configuration file</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_file_name</span><span class="p">(),</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">json_file</span><span class="p">,</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KISIA_Config.ensureSection"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.ensureSection">[docs]</a>    <span class="k">def</span> <span class="nf">ensureSection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">section_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        make sure a section exists</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">section_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">section_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">section_name</span><span class="p">]</span></div>
+
+
+    <span class="c1"># Google</span>
+<div class="viewcode-block" id="KISIA_Config.getGoogleSecretsPath"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.getGoogleSecretsPath">[docs]</a>    <span class="k">def</span> <span class="nf">getGoogleSecretsPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return Google Secrets Path</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">googledata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;google&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;secrets_file&#39;</span> <span class="ow">in</span> <span class="n">googledata</span><span class="p">:</span>
+            <span class="n">googledata</span><span class="p">[</span><span class="s1">&#39;secrets_file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_path</span><span class="p">,</span><span class="s1">&#39;google-secrets.json&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">googledata</span><span class="p">[</span><span class="s1">&#39;secrets_file&#39;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="KISIA_Config.getGoogleTokenPath"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.getGoogleTokenPath">[docs]</a>    <span class="k">def</span> <span class="nf">getGoogleTokenPath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return Google Token Path</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">googledata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;google&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;token_file&#39;</span> <span class="ow">in</span> <span class="n">googledata</span><span class="p">:</span>
+            <span class="n">googledata</span><span class="p">[</span><span class="s1">&#39;token_file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config_path</span><span class="p">,</span><span class="s1">&#39;google-token.pickle&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">googledata</span><span class="p">[</span><span class="s1">&#39;token_file&#39;</span><span class="p">]</span></div>
+
+    <span class="c1"># GitHub</span>
+<div class="viewcode-block" id="KISIA_Config.getGitHubAccessToken"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.getGitHubAccessToken">[docs]</a>    <span class="k">def</span> <span class="nf">getGitHubAccessToken</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return GitHub Access Token</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">githubdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;github&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;access_token&#39;</span> <span class="ow">in</span> <span class="n">githubdata</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">githubdata</span><span class="p">[</span><span class="s1">&#39;access_token&#39;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="KISIA_Config.setGitHubAccessToken"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.setGitHubAccessToken">[docs]</a>    <span class="k">def</span> <span class="nf">setGitHubAccessToken</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">token</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the GitHub Access Token</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">githubdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;github&#39;</span><span class="p">)</span>
+        <span class="n">githubdata</span><span class="p">[</span><span class="s1">&#39;access_token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="KISIA_Config.getGitHubUsername"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.getGitHubUsername">[docs]</a>    <span class="k">def</span> <span class="nf">getGitHubUsername</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return GitHub Username</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">githubdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;github&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;username&#39;</span> <span class="ow">in</span> <span class="n">githubdata</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">githubdata</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="KISIA_Config.setGitHubUsername"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.setGitHubUsername">[docs]</a>    <span class="k">def</span> <span class="nf">setGitHubUsername</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">token</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the GitHub Username</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">githubdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;github&#39;</span><span class="p">)</span>
+        <span class="n">githubdata</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">token</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+    <span class="c1"># GitWorm</span>
+<div class="viewcode-block" id="KISIA_Config.getGitWormBase"><a class="viewcode-back" href="../../services.html#services.config.KISIA_Config.getGitWormBase">[docs]</a>    <span class="k">def</span> <span class="nf">getGitWormBase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return GitWorm Base</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gitwormdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;gitworm&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;base&#39;</span> <span class="ow">in</span> <span class="n">gitwormdata</span><span class="p">:</span>
+            <span class="n">gitwormdata</span><span class="p">[</span><span class="s1">&#39;base&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/tmp/&#39;</span><span class="p">,</span><span class="s1">&#39;gitworm&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">gitwormdata</span><span class="p">[</span><span class="s1">&#39;base&#39;</span><span class="p">]</span></div></div>
+
+    <span class="c1"># NLP</span>
+
+<span class="k">class</span> <span class="nc">WorkspaceConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+
+        <span class="n">workspace_config</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;workspace&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;path&#39;</span> <span class="ow">in</span> <span class="n">workspace_config</span><span class="p">:</span>
+            <span class="n">workspace_config</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/tmp/kisia-workspace&quot;</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_dir</span> <span class="o">=</span> <span class="n">workspace_config</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">changePath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">new_path</span><span class="p">):</span>
+        <span class="n">workspace_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;workspace&#39;</span><span class="p">)</span>
+        <span class="n">workspace_config</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_dir</span> <span class="o">=</span> <span class="n">workspace_config</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="DocPtrConfig"><a class="viewcode-back" href="../../services.html#services.config.DocPtrConfig">[docs]</a><span class="k">class</span> <span class="nc">DocPtrConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">config</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+
+        <span class="c1"># now restore the config web of docptrs</span>
+        <span class="n">docdata</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">ensureSection</span><span class="p">(</span><span class="s1">&#39;docptr&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;active&#39;</span> <span class="ow">in</span> <span class="n">docdata</span><span class="p">:</span>
+            <span class="n">docdata</span><span class="p">[</span><span class="s1">&#39;active&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="n">docdata</span><span class="p">[</span><span class="s1">&#39;active&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;retired&#39;</span> <span class="ow">in</span> <span class="n">docdata</span><span class="p">:</span>
+            <span class="n">docdata</span><span class="p">[</span><span class="s1">&#39;retired&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retired</span> <span class="o">=</span> <span class="n">docdata</span><span class="p">[</span><span class="s1">&#39;retired&#39;</span><span class="p">]</span>
+
+
+    <span class="c1"># Doc Ptrs</span>
+<div class="viewcode-block" id="DocPtrConfig.assertDocPtr"><a class="viewcode-back" href="../../services.html#services.config.DocPtrConfig.assertDocPtr">[docs]</a>    <span class="k">def</span> <span class="nf">assertDocPtr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">docptr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Assert document pointer state.  If a docptr does not exist, add</span>
+<span class="sd">        it.  If it does exist, then update the relevant information.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">docptr</span><span class="o">.</span><span class="n">jsonify</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retractDocPtr</span><span class="p">(</span><span class="n">docptr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="DocPtrConfig.retractDocPtr"><a class="viewcode-back" href="../../services.html#services.config.DocPtrConfig.retractDocPtr">[docs]</a>    <span class="k">def</span> <span class="nf">retractDocPtr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">docptr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Look up a docptr_id and retun the docptr if found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">docptr</span><span class="o">.</span><span class="n">jsonify</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">j</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">resetList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">docptr_iterator</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">active</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">jsonify</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">docptr_iterator</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">save</span><span class="p">()</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">KIT Workbench</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Korsimoro.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

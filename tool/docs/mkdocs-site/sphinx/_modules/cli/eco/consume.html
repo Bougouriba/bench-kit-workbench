@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>cli.eco.consume &#8212; KIT Workbench  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for cli.eco.consume</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">import</span> <span class="nn">cli</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">pass_util</span> <span class="k">as</span> <span class="n">pass_ecosystem_util</span>
+
+<div class="viewcode-block" id="ConsumeUtilities"><a class="viewcode-back" href="../../../cli.html#cli.eco.consume.ConsumeUtilities">[docs]</a><span class="k">class</span> <span class="nc">ConsumeUtilities</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load information into the KISIA model</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">eco</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eco</span> <span class="o">=</span> <span class="n">eco</span></div>
+
+<span class="n">pass_util</span> <span class="o">=</span> <span class="n">click</span><span class="o">.</span><span class="n">make_pass_decorator</span><span class="p">(</span><span class="n">ConsumeUtilities</span><span class="p">)</span>
+<div class="viewcode-block" id="SubCommand"><a class="viewcode-back" href="../../../cli.html#cli.eco.consume.SubCommand">[docs]</a><span class="k">class</span> <span class="nc">SubCommand</span><span class="p">(</span><span class="n">cli</span><span class="o">.</span><span class="n">BaseCommand</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><span class="n">SubCommand</span><span class="p">)</span>
+<span class="nd">@pass_ecosystem_util</span>
+<span class="nd">@cli</span><span class="o">.</span><span class="n">pass_application</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">pass_context</span>
+<span class="k">def</span> <span class="nf">cli</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span><span class="n">app</span><span class="p">,</span><span class="n">util</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Consume information from ecosystem endpoints.  Endpoint names are</span>
+<span class="sd">    docptrs.....</span>
+<span class="sd">        link to docptrs generic doc</span>
+<span class="sd">        types : DID Service Endpoint, URL, Repo, Etc.....</span>
+
+<span class="sd">    When you state &quot;Consume &lt;X&gt;&quot; you reach out to data source &lt;X&gt;, and engage</span>
+<span class="sd">    an accessor, which uses *your* authority on the named services to</span>
+<span class="sd">    access information.  This provides a real-world, up-to-date, active</span>
+<span class="sd">    api bridge - which can be improved as identity-tech matures.</span>
+
+<span class="sd">    The intent of a &quot;consume&quot; command is always an update to the data record,</span>
+<span class="sd">    which is always attached to a context, and it is always based upon a query</span>
+<span class="sd">    into the environment.</span>
+
+
+
+<span class="sd">    We understand</span>
+<span class="sd">    the query, in this case, to be both named and parametric.  The query</span>
+<span class="sd">    execution then collects and reports the</span>
+
+<span class="sd">    When you execute the consume command, you must provide an explanation</span>
+<span class="sd">    as to why.</span>
+<span class="sd">    which has whatever logic it needs and tries to integrate with</span>
+<span class="sd">    the local authentication</span>
+
+<span class="sd">    The result of a &quot;consume&quot; command is an update to the local</span>
+<span class="sd">    data record, and as such, it requires a statement of &quot;intention&quot;.</span>
+
+<span class="sd">    Thinking in terms of a cheque from days of old, the &quot;intention&quot;</span>
+<span class="sd">    is the specified words, and the attached log-records are the expression</span>
+<span class="sd">    of that intent.  The signature upon the check is applied provided that</span>
+<span class="sd">    the intent-calculation responds w/o error.</span>
+
+<span class="sd">    Running the &quot;tool eco consume&quot; command should be considered like</span>
+<span class="sd">    drawing upon a bank, but instead of currency offering a data-expression.</span>
+<span class="sd">    Don&#39;t be quick to turn this into a &quot;smart contract&quot; - instead, just</span>
+<span class="sd">    watch the ceremony....</span>
+
+<span class="sd">    You first declare an intent to receive-information:</span>
+<span class="sd">        &lt;wrapper provider=X &gt;</span>
+<span class="sd">            you request the information from a &lt;provider&gt; of that information</span>
+<span class="sd">            the provider responds (or errors)</span>
+<span class="sd">        &lt;/wrapper&gt;</span>
+<span class="sd">        where wrapper</span>
+
+<span class="sd">    \b</span>
+<span class="sd">    Business Consume Tasks</span>
+<span class="sd">      - manage information about a business</span>
+<span class="sd">      - record the sponsoring of an event</span>
+<span class="sd">      - manage records of business partnerships</span>
+
+<span class="sd">    \b</span>
+<span class="sd">    Legal Consume Tasks</span>
+<span class="sd">      - manage information about recent legislation</span>
+
+<span class="sd">    \b</span>
+<span class="sd">    Technology Consume Tasks</span>
+<span class="sd">      - manage information about a standard</span>
+<span class="sd">      - manage information about a signficant repository</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">ConsumeUtilities</span><span class="p">(</span><span class="n">util</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">KIT Workbench</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  <li><a href="../eco.html">cli.eco</a><ul>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Korsimoro.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
