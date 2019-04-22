@@ -3,6 +3,8 @@ site_dir: mkdocs-site
 docs_dir: mkdocs-src
 nav:
   - Home: 'index.md'
-  - CLI: 'manual.md'
-  - Sphinx: 'sphinx/index.html'
-
+  - CLI: 'tool-manual.md'
+  - Dev:
+    - KBash: 'kbash-manual.md'
+    - 'How do I': 'how-do-i.md'
+  - API: 'sphinx/index.html'

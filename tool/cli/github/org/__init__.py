@@ -11,6 +11,7 @@ class GitHubOrgUtilities(object):
     def __init__(self,util,orgname):
         self.util = util
         self.orgname = orgname
+        self.api = util.github.api
 
 pass_util = click.make_pass_decorator(GitHubOrgUtilities)
 class SubCommand(cli.BaseCommand):

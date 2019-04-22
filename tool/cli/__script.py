@@ -3,7 +3,7 @@
 
 from click.testing import CliRunner
 import shlex
-from cli.tool import cli as main_cli_function
+from cli.__entrypoint import cli as main_cli_function
 import os
 
 def run_script(str):

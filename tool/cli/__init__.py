@@ -9,3 +9,4 @@ from .__output import *
 from .__subcommand import *
 from .__google_types import *
 from .__script import *
+from .__entrypoint import cli

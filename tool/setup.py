@@ -82,6 +82,7 @@ setup(
         'json-spec',
         'pytablewriter',
         'pytablereader',
+        'xlrd',
         'sqlitebiter'
     ],
     extras_require={
@@ -94,6 +95,6 @@ setup(
              ]
     },
     entry_points = {
-        'console_scripts': ['tool=cli.tool:cli'],
+        'console_scripts': ['tool=cli:cli'],
     }
 )

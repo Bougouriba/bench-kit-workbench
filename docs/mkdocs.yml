@@ -1,6 +1,10 @@
-site_name: MkDocs PoC
+site_name: KIT-Workbench
 site_dir: ./mkdocs
 docs_dir: ./mkdocs-src
 nav:
-  - Details: details.md
-  - Home: index.md
+  - Overview: 'site-notes/overview.md'
+  - Platforms: 'site-notes/platforms.md'
+  - Notebooks: 'site-notes/notebooks.md'
+  - Technical: 'site-notes/technical.md'
+
+

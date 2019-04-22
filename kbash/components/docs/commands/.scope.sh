@@ -12,3 +12,12 @@ ENTRYPOINT docs commands
 EOF
 `\n\n"
 }
+build_global_docs() (
+  activate_environment_kd_docs
+  cd docs
+
+  report_heading "Building MkDocs"
+  mkdocs build
+  report_ok "Docs Built"
+)
+export -f build_tool_docs
