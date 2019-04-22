@@ -1,5 +1,5 @@
 #!/bin/bash
-# install kernel
+# create package in $KKTOOL_BASE/dist
 
 print_help() {
 printf "`cat << EOF

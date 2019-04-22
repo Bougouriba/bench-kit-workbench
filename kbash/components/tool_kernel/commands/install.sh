@@ -1,5 +1,5 @@
 #!/bin/bash
-# install kernel
+# install kernel in $KITWB_INSTALLED_KERNELS
 
 print_help() {
 printf "`cat << EOF

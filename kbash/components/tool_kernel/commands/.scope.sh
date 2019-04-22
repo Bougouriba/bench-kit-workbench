@@ -1,12 +1,14 @@
 #!/bin/bash
-# The KIT Workbench Documentation Environment
-kd_print_scope_help() {
-printf "`cat << EOF
-${BLUE}kd tool_kernel [SUBCOMMAND] [OPTIONS]${NC}
+# Not-used
 
-kd tool_kernel commands
+ENTRYPOINT_scope_usage() {
+  echo "ENTRYPOINT tool_kernel [COMMAND] ...."
+}
+ENTRYPOINT_scope_help() {
+printf "`cat << EOF
+
+Work with the KISIA Tool.
 
 EOF
 `\n\n"
-kd_print_subcommand_help_summary tool_kernel
 }
