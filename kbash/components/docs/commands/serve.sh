@@ -16,5 +16,7 @@ run() (
   activate_environment_kd_docs
   #report_python_env $DOCS_BASE
   cd $DOCS_BASE/mkdocs-src
-  mkdocs serve
+  mkdocs build
+  cd $DOCS_BASE
+  bundle exec jekyll serve
 )

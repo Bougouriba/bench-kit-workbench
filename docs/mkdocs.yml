@@ -1,0 +1,6 @@
+site_name: MkDocs PoC
+site_dir: ./mkdocs
+docs_dir: ./mkdocs-src
+nav:
+  - Details: details.md
+  - Home: index.md

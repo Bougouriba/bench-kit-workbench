@@ -7,6 +7,8 @@ export DOCS_NODE_MODULES=$DOCS_BASE/node_modules
 
 export DOCS_LERNA_PACKAGES=$DOCS_BASE/packages
 
+export DOCS_RUBY_VERSION=ruby-head
+
 export DOCS_PYTHON_VERSION=3.6.2
 export DOCS_VENV=$DOCS_BASE/venv
 
@@ -35,8 +37,11 @@ describe_environment_ENTRYPOINT_docs() {
   echo "Component[docs]:describe"
 
   report_vars "docs Build Environment" \
-      DOCS_BASE\
-      DOCS_NODE_VERSION\
-      DOCS_PYTHON_VERSION
+    DOCS \
+    DOCS_BASE \
+    rvm_path \
+    DOCS_RUBY_VERSION\
+    DOCS_PYTHON_VERSION\
+    DOCS_VENV
 }
 export -f describe_environment_ENTRYPOINT_docs
