@@ -58,6 +58,7 @@ class JupyterServer {
             let env =  {
                 PYTHONPATH:process.env.PYTHONPATH,
                 PATH:process.env.PATH,
+                JUPYTER_PATH:process.env.JUPYTER_PATH,
                 JUPYTER_CONFIG_DIR:process.env.JUPYTER_CONFIG_DIR,
                 JUPYTER_DATA_DIR:process.env.JUPYTER_DATA_DIR,
                 JUPYTER_RUNTIME_DIR:process.env.JUPYTER_RUNTIME_DIR,

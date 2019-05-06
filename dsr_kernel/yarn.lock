@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@identity.com/credential-commons@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@identity.com/credential-commons/-/credential-commons-1.0.10.tgz#aad0f7204bd451d086ee0698100e3c1b366fb5cd"
-  integrity sha512-OrmfbmIz/CJHzLID2ZvAlap71Gkc48omrj/7N2Ojd+DW/+R5tEJoDP22o7MD/ZDUf/YsqXnjAmnpLgVyPnsBOg==
+"@identity.com/credential-commons@^1.0.8":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@identity.com/credential-commons/-/credential-commons-1.0.11.tgz#deb52b295c56d1be0766cbe7ee095bc0c0ae7819"
+  integrity sha512-jujfDXo8SCbEIC47QXdbn/LnWaT2yXWwjeTzsTAVzfRCm9petiUz8M5NvzIlEcLqStkycd7gffiejOrbSZj98Q==
   dependencies:
     "@identity.com/uca" "1.0.3"
     ajv "^6.10.0"
@@ -55,7 +55,24 @@
     valid-url "^1.0.9"
     winston "^3.2.1"
 
-"@identity.com/uca@1.0.3":
+"@identity.com/dsr@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@identity.com/dsr/-/dsr-1.0.4.tgz#31bd664884c98e364d6770b3ed056d64715898ea"
+  integrity sha512-iZjjamDdkvWdj8I0Texa+EmLaQOSXY0aZ/mEHGiEfEGkTk7SRfry8vmuGwKmUuHHWP0TtquQXJsOlW72yaGkvQ==
+  dependencies:
+    "@identity.com/credential-commons" "^1.0.8"
+    "@identity.com/uca" "^1.0.3"
+    bottlejs "^1.7.1"
+    dotenv "^6.0.0"
+    json-stable-stringify "^1.0.1"
+    lodash "^4.17.10"
+    mkdirp "^0.5.1"
+    sift "^6.0.0"
+    sjcl "github:civicteam/sjcl#v1.0.8-ecc"
+    type-of-is "^3.5.1"
+    winston "^3.2.0"
+
+"@identity.com/uca@1.0.3", "@identity.com/uca@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@identity.com/uca/-/uca-1.0.3.tgz#2722d3cb7b8d57d90727ec0a8008e87eea4accc1"
   integrity sha512-Xw5baLGuYc0F88v6lcBmrjz+8QXvoCRAf1azDkKV04qb7qNLMXZQAZtNLnnSqDieCM3yQUSUPJqh4PnlXDAvJw==
@@ -249,7 +266,7 @@ bluebird@^3.5.4:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.4.tgz#d6cc661595de30d5b3af5fcedd3c0b3ef6ec5714"
   integrity sha512-FG+nFEZChJrbQ9tIccIfZJBz3J7mLrAhxakAbnrJWn8d7aKOC+LWifa0G+p4ZqKp4y13T7juYvdhq9NzKdsrjw==
 
-bottlejs@^1.7.2:
+bottlejs@^1.7.1, bottlejs@^1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/bottlejs/-/bottlejs-1.7.2.tgz#a9a29c937cda3c4b4dcbcfc71c473c7f79108ca6"
   integrity sha512-voMPQ+g8/4GBiDE5lp43fgfoBn7Q5fZI7k3ye8ErrPoHzuuRS0Gff9lZYeyalh86uz5P304iZ14wNAM+3TZguQ==
@@ -961,10 +978,22 @@ json-schema@0.2.3:
   resolved "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
   integrity sha1-tIDIkuWaLwWVTOcnvT8qTogvnhM=
 
+json-stable-stringify@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/json-stable-stringify/-/json-stable-stringify-1.0.1.tgz#9a759d39c5f2ff503fd5300646ed445f88c4f9af"
+  integrity sha1-mnWdOcXy/1A/1TAGRu1EX4jE+a8=
+  dependencies:
+    jsonify "~0.0.0"
+
 json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
+
+jsonify@~0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
+  integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -983,7 +1012,7 @@ kuler@1.0.x:
   dependencies:
     colornames "^1.1.1"
 
-lodash@^4.17.11:
+lodash@^4.17.10, lodash@^4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -1495,6 +1524,10 @@ sjcl@^1.0.7:
   resolved "https://registry.yarnpkg.com/sjcl/-/sjcl-1.0.8.tgz#f2ec8d7dc1f0f21b069b8914a41a8f236b0e252a"
   integrity sha512-LzIjEQ0S0DpIgnxMEayM1rq9aGwGRG4OnZhCdjx7glTaJtf4zRfpg87ImfjSJjoW9vKpagd82McDOwbRT5kQKQ==
 
+"sjcl@github:civicteam/sjcl#v1.0.8-ecc":
+  version "1.0.8"
+  resolved "https://codeload.github.com/civicteam/sjcl/tar.gz/74fcc71a486a41d39200767d9235f6eac9e51f26"
+
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
@@ -1790,7 +1823,7 @@ winston-transport@^4.3.0:
     readable-stream "^2.3.6"
     triple-beam "^1.2.0"
 
-winston@^3.1.0, winston@^3.2.1:
+winston@^3.1.0, winston@^3.2.0, winston@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/winston/-/winston-3.2.1.tgz#63061377976c73584028be2490a1846055f77f07"
   integrity sha512-zU6vgnS9dAWCEKg/QYigd6cgMVVNwyTzKs81XZtTFuRwJOcDdBg7AU0mXVyNbs7O5RH2zdv+BdNZUlx7mXPuOw==

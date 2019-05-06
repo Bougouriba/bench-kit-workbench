@@ -1,37 +1,39 @@
-Processing /home/ewelton/Desktop/korsimoro/projects/kit-workbench/tool_kernel
+Processing /Users/korsimoro/Desktop/korsimoro/kit-workbench/tool_kernel
 Collecting ipykernel (from KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/d8/b0/f0be5c5ab335196f5cce96e5b889a4fcf5bfe462eb0acc05cd7e2caf65eb/ipykernel-5.1.0-py3-none-any.whl
+Collecting tornado>=4.2 (from ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+Collecting ipython>=5.0.0 (from ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Downloading https://files.pythonhosted.org/packages/a9/2e/41dce4ed129057e05a555a7f9629aa2d5f81fdcd4d16568bc24b75a1d2c9/ipython-7.5.0-py3-none-any.whl (770kB)
 Collecting traitlets>=4.1.0 (from ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/93/d6/abcb22de61d78e2fc3959c964628a5771e47e7cc60d53e9342e21ed6cc9a/traitlets-4.3.2-py2.py3-none-any.whl
-Collecting ipython>=5.0.0 (from ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/46/b5/ca080401b8dbde51a0f4377b4e22ce02b266340a1cda389b6dea702d06d1/ipython-7.4.0-py3-none-any.whl
-Collecting tornado>=4.2 (from ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
 Collecting jupyter-client (from ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/3b/c3/3043fe9ffd140d03c9d091a056794ccdc427c56ec19b8eea74f9ea0a498f/jupyter_client-5.2.4-py2.py3-none-any.whl
-Collecting decorator (from traitlets>=4.1.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/5f/88/0075e461560a1e750a0dcbf77f1d9de775028c37a19a346a6c565a257399/decorator-4.4.0-py2.py3-none-any.whl
-Collecting six (from traitlets>=4.1.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
-Collecting ipython-genutils (from traitlets>=4.1.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools>=18.5 in ./venv/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1) (41.0.1)
 Collecting prompt-toolkit<2.1.0,>=2.0.0 (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/f7/a7/9b1dd14ef45345f186ef69d175bdd2491c40ab1dfa4b2b3e4352df719ed7/prompt_toolkit-2.0.9-py3-none-any.whl
-Collecting pexpect; sys_platform != "win32" (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/0e/3e/377007e3f36ec42f1b84ec322ee12141a9e10d808312e5738f52f80a232c/pexpect-4.7.0-py2.py3-none-any.whl
 Collecting pickleshare (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl
-Collecting backcall (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-Collecting jedi>=0.10 (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/25/2b/1f188901be099d52d7b06f4d3b7cb9f8f09692c50697b139eaf6fa2928d8/jedi-0.13.3-py2.py3-none-any.whl
-Requirement already satisfied: setuptools>=18.5 in ./venv/lib/python3.6/site-packages (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1) (41.0.0)
 Collecting pygments (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/13/e5/6d710c9cf96c31ac82657bcfb441df328b22df8564d58d0c4cd62612674c/Pygments-2.3.1-py2.py3-none-any.whl
-Collecting python-dateutil>=2.1 (from jupyter-client->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/41/17/c62faccbfbd163c7f57f3844689e3a78bae1f403648a6afb1d0866d87fbb/python_dateutil-2.8.0-py2.py3-none-any.whl
+Collecting backcall (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+Collecting decorator (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Using cached https://files.pythonhosted.org/packages/5f/88/0075e461560a1e750a0dcbf77f1d9de775028c37a19a346a6c565a257399/decorator-4.4.0-py2.py3-none-any.whl
+Collecting appnope; sys_platform == "darwin" (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Using cached https://files.pythonhosted.org/packages/87/a9/7985e6a53402f294c8f0e8eff3151a83f1fb901fa92909bb3ff29b4d22af/appnope-0.1.0-py2.py3-none-any.whl
+Collecting pexpect; sys_platform != "win32" (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Using cached https://files.pythonhosted.org/packages/0e/3e/377007e3f36ec42f1b84ec322ee12141a9e10d808312e5738f52f80a232c/pexpect-4.7.0-py2.py3-none-any.whl
+Collecting jedi>=0.10 (from ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Using cached https://files.pythonhosted.org/packages/25/2b/1f188901be099d52d7b06f4d3b7cb9f8f09692c50697b139eaf6fa2928d8/jedi-0.13.3-py2.py3-none-any.whl
+Collecting ipython-genutils (from traitlets>=4.1.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Using cached https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl
+Collecting six (from traitlets>=4.1.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Using cached https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
 Collecting jupyter-core (from jupyter-client->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/1d/44/065d2d7bae7bebc06f1dd70d23c36da8c50c0f08b4236716743d706762a8/jupyter_core-4.4.0-py2.py3-none-any.whl
+Collecting python-dateutil>=2.1 (from jupyter-client->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
+  Using cached https://files.pythonhosted.org/packages/41/17/c62faccbfbd163c7f57f3844689e3a78bae1f403648a6afb1d0866d87fbb/python_dateutil-2.8.0-py2.py3-none-any.whl
 Collecting pyzmq>=13 (from jupyter-client->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
-  Using cached https://files.pythonhosted.org/packages/5f/04/f6f0fa20b698b29c6e6b1d6b4b575c12607b0abf61810aab1df4099988c6/pyzmq-18.0.1-cp36-cp36m-manylinux1_x86_64.whl
+  Using cached https://files.pythonhosted.org/packages/30/08/64b910e8f5e0285598a15a8d8f2f4d06a1367f0d145c7554fdd02d926272/pyzmq-18.0.1-cp37-cp37m-macosx_10_9_x86_64.whl
 Collecting wcwidth (from prompt-toolkit<2.1.0,>=2.0.0->ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
   Using cached https://files.pythonhosted.org/packages/7e/9f/526a6947247599b084ee5232e4f9190a38f398d7300d866af3ab571a5bfe/wcwidth-0.1.7-py2.py3-none-any.whl
 Collecting ptyprocess>=0.5 (from pexpect; sys_platform != "win32"->ipython>=5.0.0->ipykernel->KISIA-CLI-Toolkit-Kernel==0.1)
@@ -41,7 +43,7 @@ Collecting parso>=0.3.0 (from jedi>=0.10->ipython>=5.0.0->ipykernel->KISIA-CLI-T
 Building wheels for collected packages: KISIA-CLI-Toolkit-Kernel
   Building wheel for KISIA-CLI-Toolkit-Kernel (setup.py): started
   Building wheel for KISIA-CLI-Toolkit-Kernel (setup.py): finished with status 'done'
-  Stored in directory: /tmp/pip-ephem-wheel-cache-cigb4ylj/wheels/78/21/a4/1d0e74aeacd2d64b7d6a4ba30dae20aabbdc920b90453373b2
+  Stored in directory: /private/var/folders/zk/mwy36d6j50183ydtfnmsvyj40000gp/T/pip-ephem-wheel-cache-1m5g0b_g/wheels/b5/c1/7d/6024924bd78c9a7c0ed60e3cc36e5e24ab480c13d84ed32f68
 Successfully built KISIA-CLI-Toolkit-Kernel
-Installing collected packages: decorator, six, ipython-genutils, traitlets, wcwidth, prompt-toolkit, ptyprocess, pexpect, pickleshare, backcall, parso, jedi, pygments, ipython, tornado, python-dateutil, jupyter-core, pyzmq, jupyter-client, ipykernel, KISIA-CLI-Toolkit-Kernel
-Successfully installed KISIA-CLI-Toolkit-Kernel-0.1 backcall-0.1.0 decorator-4.4.0 ipykernel-5.1.0 ipython-7.4.0 ipython-genutils-0.2.0 jedi-0.13.3 jupyter-client-5.2.4 jupyter-core-4.4.0 parso-0.4.0 pexpect-4.7.0 pickleshare-0.7.5 prompt-toolkit-2.0.9 ptyprocess-0.6.0 pygments-2.3.1 python-dateutil-2.8.0 pyzmq-18.0.1 six-1.12.0 tornado-6.0.2 traitlets-4.3.2 wcwidth-0.1.7
+Installing collected packages: tornado, decorator, ipython-genutils, six, traitlets, wcwidth, prompt-toolkit, pickleshare, pygments, backcall, appnope, ptyprocess, pexpect, parso, jedi, ipython, jupyter-core, python-dateutil, pyzmq, jupyter-client, ipykernel, KISIA-CLI-Toolkit-Kernel
+Successfully installed KISIA-CLI-Toolkit-Kernel-0.1 appnope-0.1.0 backcall-0.1.0 decorator-4.4.0 ipykernel-5.1.0 ipython-7.5.0 ipython-genutils-0.2.0 jedi-0.13.3 jupyter-client-5.2.4 jupyter-core-4.4.0 parso-0.4.0 pexpect-4.7.0 pickleshare-0.7.5 prompt-toolkit-2.0.9 ptyprocess-0.6.0 pygments-2.3.1 python-dateutil-2.8.0 pyzmq-18.0.1 six-1.12.0 tornado-6.0.2 traitlets-4.3.2 wcwidth-0.1.7

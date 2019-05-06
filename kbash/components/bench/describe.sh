@@ -2,7 +2,7 @@
 
 
 export BENCH_BASE=$KITWB/bench
-export BENCH_NODE_VERSION=
+export BENCH_NODE_VERSION=v11.6.0
 export BENCH_NODE_MODULES=$BENCH_BASE/node_modules
 
 export BENCH_LERNA_PACKAGES=$BENCH_BASE/packages
@@ -42,7 +42,6 @@ describe_environment_kd_bench() {
 export -f describe_environment_kd_bench
 
 vet_environment_kd_bench() {
-  echo "Component[bench]:vet"
-  check_basic_python_ability
+  check_basic_python_ability && check_basic_node_ability
 }
 export -f vet_environment_kd_bench

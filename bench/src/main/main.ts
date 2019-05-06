@@ -163,7 +163,7 @@ app.on('ready', () => {
           + ":" +
           process.env.PATH;
 
-        process.env.KITWB_KERNELSPECS=path.join(process.resourcesPath,"venv","share","jupyter","kernels");
+        //process.env.KITWB_KERNELSPECS=path.join(process.resourcesPath,"venv","share","jupyter","kernels");
 
 
         process.env.JUPYTER_CONFIG_DIR=path.join(workspaceDir,"config");

@@ -9,6 +9,8 @@ EOF
 export -f build_environment_kd_bench_help
 
 build_environment_kd_bench() {
-  echo "Component[bench]:build"
+  activate_environment_kd_bench
+  cd $BENCH_BASE
+  yarn build
 }
 export -f build_environment_kd_bench

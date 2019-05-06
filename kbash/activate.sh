@@ -9,7 +9,7 @@ export KITWB="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 . ~/.kbash/boot.sh\
     "kd"  \
     "KITWB"  \
-    "util/kernels.sh"            \
+    "kernels.sh"            \
     "python node ruby"
 #:
 #: # activate.sh

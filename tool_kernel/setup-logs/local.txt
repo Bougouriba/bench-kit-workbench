@@ -1,19 +1,20 @@
-Obtaining file:///home/ewelton/Desktop/korsimoro/projects/kit-workbench/gitworm/python (from -r local-requirements.txt (line 1))
-Obtaining file:///home/ewelton/Desktop/korsimoro/projects/kit-workbench/tool (from -r local-requirements.txt (line 2))
+Obtaining file:///Users/korsimoro/Desktop/korsimoro/kit-workbench/gitworm/python (from -r local-requirements.txt (line 1))
+Obtaining file:///Users/korsimoro/Desktop/korsimoro/kit-workbench/tool (from -r local-requirements.txt (line 2))
 Collecting PyGitHub (from gitworm==0.1->-r local-requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/f7/48/ec5ef5239f3a4043ee7e07b454b5f3a024a5f22a4e585400ac6caa22c3c4/PyGithub-1.43.7.tar.gz (107kB)
 Collecting google-api-python-client (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/55/e9/e8fb2e3a031cb69b9524b80a92b126665d9a17421700a219555e3233ab6a/google_api_python_client-1.7.8-py3-none-any.whl
 Collecting google-auth-oauthlib (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/47/02/95e7c5b0965cf5b6b182b5ab81bdecb2157ce2f34a507a3de07b5244decd/google_auth_oauthlib-0.3.0-py2.py3-none-any.whl
+  Downloading https://files.pythonhosted.org/packages/47/02/95e7c5b0965cf5b6b182b5ab81bdecb2157ce2f34a507a3de07b5244decd/google_auth_oauthlib-0.3.0-py2.py3-none-any.whl
 Collecting gspread (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/43/f8/45bd4a1419fd65ecc02eeaceb92f9dc72aca20c32e766a18d495c68006db/gspread-3.1.0-py3-none-any.whl
 Collecting datetime (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/73/22/a5297f3a1f92468cc737f8ce7ba6e5f245fcfafeae810ba37bd1039ea01c/DateTime-4.3-py2.py3-none-any.whl
-Requirement already satisfied: python-dateutil in ./venv/lib/python3.6/site-packages (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (2.8.0)
+Requirement already satisfied: python-dateutil in ./venv/lib/python3.7/site-packages (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (2.8.0)
 Collecting python-slugify (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
 Collecting click (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl
-Requirement already satisfied: six in ./venv/lib/python3.6/site-packages (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (1.12.0)
+Requirement already satisfied: six in ./venv/lib/python3.7/site-packages (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (1.12.0)
 Collecting beautifulsoup4==4.7.1 (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/1d/5d/3260694a59df0ec52f8b4883f5d23b130bc237602a1411fa670eae12351e/beautifulsoup4-4.7.1-py3-none-any.whl
 Collecting prettytable (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
@@ -21,97 +22,109 @@ Collecting gitpython (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt 
   Using cached https://files.pythonhosted.org/packages/fe/e5/fafe827507644c32d6dc553a1c435cdf882e0c28918a5bab29f7fbebfb70/GitPython-2.1.11-py2.py3-none-any.whl
 Collecting json-spec (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/2b/38/e6705aa66e5f67d9b7b5d4123750ecdc151e1427ea48d5e3817feee01fdd/json_spec-0.10.1-py2.py3-none-any.whl
+Collecting pytablewriter (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/d3/7b/b9aea9c452b602f08dd69f5a8f482ce9f838392da1456548b36c3c2a848b/pytablewriter-0.45.1-py2.py3-none-any.whl
+Collecting pytablereader (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/3b/e5/dd947d51a6a3bc7d56527c4998ccb3301413457781c413f089a5af46c4de/pytablereader-0.25.5-py2.py3-none-any.whl (48kB)
+Collecting xlrd (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/b0/16/63576a1a001752e34bf8ea62e367997530dc553b689356b9879339cf45a4/xlrd-1.2.0-py2.py3-none-any.whl
 Collecting sqlitebiter (from KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/6f/4c/08b2ffc5a38a2dcba2772eecd2e3c7d977cbc1fa3c4193b91e56be123b6a/sqlitebiter-0.27.2-py2.py3-none-any.whl
-Collecting pyjwt (from PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1))
-  Using cached https://files.pythonhosted.org/packages/87/8b/6a9f14b5f781697e51259d81657e6048fd31a113229cf346880bb7545565/PyJWT-1.7.1-py2.py3-none-any.whl
+  Downloading https://files.pythonhosted.org/packages/c2/27/86da546ab21cc5e2789959c5cd56c6d8f0e54bb2b207182cb6e41eab70dc/sqlitebiter-0.27.3-py2.py3-none-any.whl
 Collecting deprecated (from PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1))
   Using cached https://files.pythonhosted.org/packages/9f/7a/003fa432f1e45625626549726c2fbb7a29baa764e9d1fdb2323a5d779f8a/Deprecated-1.2.5-py2.py3-none-any.whl
-Requirement already satisfied: requests>=2.14.0 in ./venv/lib/python3.6/site-packages (from PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (2.21.0)
-Collecting uritemplate<4dev,>=3.0.0 (from google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/e5/7d/9d5a640c4f8bf2c8b1afc015e9a9d8de32e13c9016dcc4b0ec03481fb396/uritemplate-3.0.0-py2.py3-none-any.whl
+Collecting pyjwt (from PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1))
+  Using cached https://files.pythonhosted.org/packages/87/8b/6a9f14b5f781697e51259d81657e6048fd31a113229cf346880bb7545565/PyJWT-1.7.1-py2.py3-none-any.whl
+Requirement already satisfied: requests>=2.14.0 in ./venv/lib/python3.7/site-packages (from PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (2.21.0)
 Collecting google-auth-httplib2>=0.0.3 (from google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/33/49/c814d6d438b823441552198f096fcd0377fd6c88714dbed34f1d3c8c4389/google_auth_httplib2-0.0.3-py2.py3-none-any.whl
+Collecting uritemplate<4dev,>=3.0.0 (from google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/e5/7d/9d5a640c4f8bf2c8b1afc015e9a9d8de32e13c9016dcc4b0ec03481fb396/uritemplate-3.0.0-py2.py3-none-any.whl
 Collecting httplib2<1dev,>=0.9.2 (from google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/e8/b3/b34037575d6d75ff8dcfcf75315f56befbe409952be9f95c9b8cc9ee0499/httplib2-0.12.3-py3-none-any.whl (94kB)
 Collecting google-auth>=1.4.1 (from google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/c5/9b/ed0516cc1f7609fb0217e3057ff4f0f9f3e3ce79a369c6af4a6c5ca25664/google_auth-1.6.3-py2.py3-none-any.whl
 Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/c2/e2/9fd03d55ffb70fe51f587f20bcf407a6927eb121de86928b34d162f0b1ac/requests_oauthlib-1.2.0-py2.py3-none-any.whl
+Requirement already satisfied: pytz in ./venv/lib/python3.7/site-packages (from datetime->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (2019.1)
 Collecting zope.interface (from datetime->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/19/17/1d198a6aaa9aa4590862fe3d3a2ed7dd808050cab4eebe8a2f2f813c1376/zope.interface-4.6.0-cp36-cp36m-manylinux1_x86_64.whl
-Requirement already satisfied: pytz in ./venv/lib/python3.6/site-packages (from datetime->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (2019.1)
+  Using cached https://files.pythonhosted.org/packages/d9/3a/101934e0f2026f0a58698978bfedec6e2021b28b846d9e1d9b54369e044d/zope.interface-4.6.0-cp37-cp37m-macosx_10_14_x86_64.whl
 Collecting text-unidecode==1.2 (from python-slugify->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/79/42/d717cc2b4520fb09e45b344b1b0b4e81aa672001dd128c180fabc655c341/text_unidecode-1.2-py2.py3-none-any.whl
 Collecting soupsieve>=1.2 (from beautifulsoup4==4.7.1->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/b9/a5/7ea40d0f8676bde6e464a6435a48bc5db09b1a8f4f06d41dd997b8f3c616/soupsieve-1.9.1-py2.py3-none-any.whl
+  Downloading https://files.pythonhosted.org/packages/b9/a5/7ea40d0f8676bde6e464a6435a48bc5db09b1a8f4f06d41dd997b8f3c616/soupsieve-1.9.1-py2.py3-none-any.whl
 Collecting gitdb2>=2.0.0 (from gitpython->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/da/30/a407568aa8d8f25db817cf50121a958722f3fc5f87e3a6fba1f40c0633e3/gitdb2-2.0.5-py2.py3-none-any.whl
-Collecting msgfy<0.1.0,>=0.0.5 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/9d/85/a83cb9ae8044d56db415eb0a01df0c6c627904486b7d34cbc69ebe123ae4/msgfy-0.0.5-py2.py3-none-any.whl
-Collecting nbformat<5.0.0,>=4.4.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/da/27/9a654d2b6cc1eaa517d1c5a4405166c7f6d72f04f6e7eea41855fe808a46/nbformat-4.4.0-py2.py3-none-any.whl
-Collecting Logbook<2.0.0,>=1.1.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-Collecting pathvalidate<1.0.0,>=0.26.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/9d/b8/d2116fc4b1bbf9ec31523f6c7b0c39c0f151ad0dc098a38e5d7aa1894737/pathvalidate-0.26.0-py2.py3-none-any.whl
-Collecting simplejson<4.0.0,>=3.16.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-Collecting pytablereader[excel,sqlite,url]<1.0.0,>=0.25.4 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/33/cc/b13418951bf3773b0c289c94983bd3a31d124bc866d6bf45f3bd0b7d5d75/pytablereader-0.25.4-py2.py3-none-any.whl
-Collecting typepy<1.0.0,>=0.4.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+Collecting pathvalidate<1.0.0,>=0.26.0 (from pytablewriter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/87/d9/248128152718f05b96fc8491f549effd32190cdad3c08b2f43b31bf0f4e5/pathvalidate-0.27.2-py2.py3-none-any.whl
+Collecting typepy[datetime]<1.0.0,>=0.4.0 (from pytablewriter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/9b/9d/16dabf9be77a1778d25a09fdcd2d24be5a78020c35cff652d00bfbfce93e/typepy-0.4.0-py2.py3-none-any.whl
-Collecting appconfigpy<1.0.0,>=0.3.1 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/9a/f8/6760f6b2e03f8dabbf92087ccd659c0b0daf2554e69e167984d739e6106e/appconfigpy-0.3.1-py2.py3-none-any.whl
-Collecting SimpleSQLite<1.0.0,>=0.44.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/08/66/9c769ed9ee49c20bf3ae6014938832c64329cb18e95a90ba078c1f0f3218/SimpleSQLite-0.44.0-py2.py3-none-any.whl
-Collecting colorama<1.0.0,>=0.4.1 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/4f/a6/728666f39bfff1719fc94c481890b2106837da9318031f71a8424b662e12/colorama-0.4.1-py2.py3-none-any.whl
-Collecting path.py (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/40/62/1464f08672cac67e529967ba83b46f38da5d0ca48ac1ce2a9e7d7680ea10/path.py-12.0.1-py3-none-any.whl
+Collecting msgfy<0.1.0,>=0.0.5 (from pytablewriter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/9d/85/a83cb9ae8044d56db415eb0a01df0c6c627904486b7d34cbc69ebe123ae4/msgfy-0.0.5-py2.py3-none-any.whl
+Collecting mbstrdecoder[all]<1.0.0,>=0.7.0 (from pytablewriter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/82/1e/5659e4ef6ad2392203c6ddc010129011792eb8f32895a553c3e56972c26e/mbstrdecoder-0.7.1-py2.py3-none-any.whl
+Collecting DataProperty<1.0.0,>=0.42.2 (from pytablewriter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/99/c9/26210cbc6d412161e1ce52671a50342fff9092d16d6283e61a7c7674436d/DataProperty-0.42.2-py2.py3-none-any.whl
+Requirement already satisfied: setuptools>=38.3.0 in ./venv/lib/python3.7/site-packages (from pytablewriter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (41.0.1)
+Collecting tabledata<1.0.0,>=0.8.3 (from pytablewriter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/50/73/d4da1b84096af0b6d5a7a14cdb04960dcfe12c3b17b86baf457752d185a9/tabledata-0.8.3-py2.py3-none-any.whl
+Collecting markdown2<3.0.0,>=2.3.7 (from pytablereader->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/e4/0c/b5375c1c70adbafd0ded0459fa175468559ee5360219070d2f7fb60b2287/markdown2-2.3.7-py2.py3-none-any.whl
+Collecting path.py<13,>=12.0.1; python_version > "3.4" (from pytablereader->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/40/62/1464f08672cac67e529967ba83b46f38da5d0ca48ac1ce2a9e7d7680ea10/path.py-12.0.1-py3-none-any.whl
+Collecting jsonschema<4.0.0,>=2.6.0 (from pytablereader->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/aa/69/df679dfbdd051568b53c38ec8152a3ab6bc533434fc7ed11ab034bf5e82f/jsonschema-3.0.1-py2.py3-none-any.whl
 Collecting retryrequests<0.1.0,>=0.0.1 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/00/fb/eb685fd08ef4ba058dc8f6e15b615d73fdcd31075dd8d7fd62b4dc5658d1/retryrequests-0.0.1-py2.py3-none-any.whl
-Requirement already satisfied: setuptools>=38.3.0 in ./venv/lib/python3.6/site-packages (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (41.0.0)
+Collecting appconfigpy<1.0.0,>=0.3.1 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/9a/f8/6760f6b2e03f8dabbf92087ccd659c0b0daf2554e69e167984d739e6106e/appconfigpy-0.3.1-py2.py3-none-any.whl
+Collecting colorama<1.0.0,>=0.4.1 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/4f/a6/728666f39bfff1719fc94c481890b2106837da9318031f71a8424b662e12/colorama-0.4.1-py2.py3-none-any.whl
+Collecting Logbook<2.0.0,>=1.1.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+Collecting simplejson<4.0.0,>=3.16.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+Collecting nbformat<5.0.0,>=4.4.0 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/da/27/9a654d2b6cc1eaa517d1c5a4405166c7f6d72f04f6e7eea41855fe808a46/nbformat-4.4.0-py2.py3-none-any.whl
+Collecting SimpleSQLite<1.0.0,>=0.44.1 (from sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/11/09/baf85f0094e8ed058833f3fa4599b0146d41b769b70bd031cc0ad5bdb62f/SimpleSQLite-0.44.1-py2.py3-none-any.whl
 Collecting wrapt<2,>=1 (from deprecated->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1))
-Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.6/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (2019.3.9)
-Requirement already satisfied: urllib3<1.25,>=1.21.1 in ./venv/lib/python3.6/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (1.24.2)
-Requirement already satisfied: idna<2.9,>=2.5 in ./venv/lib/python3.6/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (2.8)
-Requirement already satisfied: chardet<3.1.0,>=3.0.2 in ./venv/lib/python3.6/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (3.0.4)
-Collecting pyasn1-modules>=0.2.1 (from google-auth>=1.4.1->google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/da/98/8ddd9fa4d84065926832bcf2255a2b69f1d03330aa4d1c49cc7317ac888e/pyasn1_modules-0.2.4-py2.py3-none-any.whl
-Collecting cachetools>=2.0.0 (from google-auth>=1.4.1->google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/39/2b/d87fc2369242bd743883232c463f28205902b8579cb68dcf5b11eee1652f/cachetools-3.1.0-py2.py3-none-any.whl
+Requirement already satisfied: idna<2.9,>=2.5 in ./venv/lib/python3.7/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (2.8)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in ./venv/lib/python3.7/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (3.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.7/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (2019.3.9)
+Requirement already satisfied: urllib3<1.25,>=1.21.1 in ./venv/lib/python3.7/site-packages (from requests>=2.14.0->PyGitHub->gitworm==0.1->-r local-requirements.txt (line 1)) (1.24.2)
 Collecting rsa>=3.1.4 (from google-auth>=1.4.1->google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl
+Collecting cachetools>=2.0.0 (from google-auth>=1.4.1->google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/39/2b/d87fc2369242bd743883232c463f28205902b8579cb68dcf5b11eee1652f/cachetools-3.1.0-py2.py3-none-any.whl
+Collecting pyasn1-modules>=0.2.1 (from google-auth>=1.4.1->google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/91/f0/b03e00ce9fddf4827c42df1c3ce10c74eadebfb706231e8d6d1c356a4062/pyasn1_modules-0.2.5-py2.py3-none-any.whl (74kB)
 Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/16/95/699466b05b72b94a41f662dc9edf87fda4289e3602ecd42d27fcaddf7b56/oauthlib-3.0.1-py2.py3-none-any.whl
 Collecting smmap2>=2.0.0 (from gitdb2>=2.0.0->gitpython->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/55/d2/866d45e3a121ee15a1dc013824d58072fd5c7799c9c34d01378eb262ca8f/smmap2-2.0.5-py2.py3-none-any.whl
-Requirement already satisfied: jupyter-core in ./venv/lib/python3.6/site-packages (from nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (4.4.0)
-Requirement already satisfied: ipython-genutils in ./venv/lib/python3.6/site-packages (from nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (0.2.0)
-Requirement already satisfied: traitlets>=4.1 in ./venv/lib/python3.6/site-packages (from nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (4.3.2)
-Collecting jsonschema!=2.5.0,>=2.4 (from nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/aa/69/df679dfbdd051568b53c38ec8152a3ab6bc533434fc7ed11ab034bf5e82f/jsonschema-3.0.1-py2.py3-none-any.whl
-Collecting tabledata<1.0.0,>=0.8.2 (from pytablereader[excel,sqlite,url]<1.0.0,>=0.25.4->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/da/1e/350f1f04780bf4d934fc07627a7b753ae611acd87948921e6945d68254d9/tabledata-0.8.2-py2.py3-none-any.whl
-Collecting DataProperty<1.0.0,>=0.42.1 (from pytablereader[excel,sqlite,url]<1.0.0,>=0.25.4->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/b1/34/4a40ce515b1ce466ea3d70942c686d5d9c0bb0df589d96f1facdad4a13fb/DataProperty-0.42.1-py2.py3-none-any.whl
-Collecting markdown2<3.0.0,>=2.3.7 (from pytablereader[excel,sqlite,url]<1.0.0,>=0.25.4->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/e4/0c/b5375c1c70adbafd0ded0459fa175468559ee5360219070d2f7fb60b2287/markdown2-2.3.7-py2.py3-none-any.whl
-Collecting mbstrdecoder[all]<1.0.0,>=0.7.0 (from pytablereader[excel,sqlite,url]<1.0.0,>=0.25.4->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/e0/96/41158aac54fd42124e3bd68af404b7bbbceaa63ecae7747d94743bb222ce/mbstrdecoder-0.7.0-py2.py3-none-any.whl
-Collecting xlrd>=1.2.0; extra == "excel" (from pytablereader[excel,sqlite,url]<1.0.0,>=0.25.4->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/b0/16/63576a1a001752e34bf8ea62e367997530dc553b689356b9879339cf45a4/xlrd-1.2.0-py2.py3-none-any.whl
-Collecting sqliteschema<1.0.0,>=0.15.2 (from SimpleSQLite<1.0.0,>=0.44.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/0b/38/25f9d1072d3993bff8519f7256cee71d4a106606a209039ea9319f478dab/sqliteschema-0.15.2-py2.py3-none-any.whl
-Collecting importlib-metadata>=0.5 (from path.py->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+Collecting importlib-metadata>=0.5 (from path.py<13,>=12.0.1; python_version > "3.4"->pytablereader->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/58/64/1ce5a6427b9152ef71c14db9e54e74f6f11e8411995bda41979abab817b1/importlib_metadata-0.9-py2.py3-none-any.whl
-Collecting pyasn1<0.5.0,>=0.4.1 (from pyasn1-modules>=0.2.1->google-auth>=1.4.1->google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/7b/7c/c9386b82a25115cccf1903441bba3cbadcfae7b678a20167347fa8ded34c/pyasn1-0.4.5-py2.py3-none-any.whl
-Requirement already satisfied: decorator in ./venv/lib/python3.6/site-packages (from traitlets>=4.1->nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (4.4.0)
-Collecting attrs>=17.4.0 (from jsonschema!=2.5.0,>=2.4->nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+Collecting pyrsistent>=0.14.0 (from jsonschema<4.0.0,>=2.6.0->pytablereader->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/2c/a7/8a50738eb27e204aa271abe170dec7bdbb07128ed892fb3a92f14a69bae3/pyrsistent-0.15.1.tar.gz (106kB)
+Collecting attrs>=17.4.0 (from jsonschema<4.0.0,>=2.6.0->pytablereader->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
   Using cached https://files.pythonhosted.org/packages/23/96/d828354fa2dbdf216eaa7b7de0db692f12c234f7ef888cc14980ef40d1d2/attrs-19.1.0-py2.py3-none-any.whl
-Collecting pyrsistent>=0.14.0 (from jsonschema!=2.5.0,>=2.4->nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-Collecting zipp>=0.3.2 (from importlib-metadata>=0.5->path.py->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
-  Using cached https://files.pythonhosted.org/packages/00/42/10a1f8d29eaf9c7f2b555a5d1d602b9261f2a0cbec08f8f23d9056f5915d/zipp-0.3.3-py2.py3-none-any.whl
-Installing collected packages: pyjwt, wrapt, deprecated, PyGitHub, gitworm, uritemplate, pyasn1, pyasn1-modules, cachetools, rsa, google-auth, httplib2, google-auth-httplib2, google-api-python-client, oauthlib, requests-oauthlib, google-auth-oauthlib, gspread, zope.interface, datetime, text-unidecode, python-slugify, click, soupsieve, beautifulsoup4, prettytable, smmap2, gitdb2, gitpython, json-spec, msgfy, attrs, pyrsistent, jsonschema, nbformat, Logbook, pathvalidate, simplejson, mbstrdecoder, typepy, DataProperty, tabledata, zipp, importlib-metadata, path.py, markdown2, xlrd, sqliteschema, SimpleSQLite, retryrequests, pytablereader, appconfigpy, colorama, sqlitebiter, KISIA-Python-Toolkit
+Requirement already satisfied: traitlets>=4.1 in ./venv/lib/python3.7/site-packages (from nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (4.3.2)
+Requirement already satisfied: ipython-genutils in ./venv/lib/python3.7/site-packages (from nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (0.2.0)
+Requirement already satisfied: jupyter-core in ./venv/lib/python3.7/site-packages (from nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (4.4.0)
+Collecting sqliteschema<1.0.0,>=0.15.3 (from SimpleSQLite<1.0.0,>=0.44.1->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/aa/91/50ab213d9744879e342ff059c80de1e44b1a33748c85a792aaf6c5600824/sqliteschema-0.15.3-py2.py3-none-any.whl
+Collecting pyasn1>=0.1.3 (from rsa>=3.1.4->google-auth>=1.4.1->google-api-python-client->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/7b/7c/c9386b82a25115cccf1903441bba3cbadcfae7b678a20167347fa8ded34c/pyasn1-0.4.5-py2.py3-none-any.whl
+Collecting zipp>=0.3.2 (from importlib-metadata>=0.5->path.py<13,>=12.0.1; python_version > "3.4"->pytablereader->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/93/bc/6633bc2b7bb9ded59358636966914e23f7531b2c770aee3286fd7de9bfb8/zipp-0.4.0-py2.py3-none-any.whl
+Requirement already satisfied: decorator in ./venv/lib/python3.7/site-packages (from traitlets>=4.1->nbformat<5.0.0,>=4.4.0->sqlitebiter->KISIA-Python-Toolkit==0.1->-r local-requirements.txt (line 2)) (4.4.0)
+Building wheels for collected packages: PyGitHub, pyrsistent
+  Building wheel for PyGitHub (setup.py): started
+  Building wheel for PyGitHub (setup.py): finished with status 'done'
+  Stored in directory: /Users/korsimoro/Library/Caches/pip/wheels/41/a2/13/f40c7a91db4b3743ef1830234526054d62f8c502510f3eb18a
+  Building wheel for pyrsistent (setup.py): started
+  Building wheel for pyrsistent (setup.py): finished with status 'done'
+  Stored in directory: /Users/korsimoro/Library/Caches/pip/wheels/93/03/43/ed0b3c9666e2001e2e6cce51efebdf3ce5e8edfa92966b1f6f
+Successfully built PyGitHub pyrsistent
+Installing collected packages: wrapt, deprecated, pyjwt, PyGitHub, gitworm, pyasn1, rsa, cachetools, pyasn1-modules, google-auth, httplib2, google-auth-httplib2, uritemplate, google-api-python-client, oauthlib, requests-oauthlib, google-auth-oauthlib, gspread, zope.interface, datetime, text-unidecode, python-slugify, click, soupsieve, beautifulsoup4, prettytable, smmap2, gitdb2, gitpython, json-spec, pathvalidate, mbstrdecoder, typepy, msgfy, DataProperty, tabledata, pytablewriter, markdown2, zipp, importlib-metadata, path.py, pyrsistent, attrs, jsonschema, pytablereader, xlrd, retryrequests, appconfigpy, colorama, Logbook, simplejson, nbformat, sqliteschema, SimpleSQLite, sqlitebiter, KISIA-Python-Toolkit
   Running setup.py develop for gitworm
   Running setup.py develop for KISIA-Python-Toolkit
-Successfully installed DataProperty-0.42.1 KISIA-Python-Toolkit Logbook-1.4.3 PyGitHub-1.43.7 SimpleSQLite-0.44.0 appconfigpy-0.3.1 attrs-19.1.0 beautifulsoup4-4.7.1 cachetools-3.1.0 click-7.0 colorama-0.4.1 datetime-4.3 deprecated-1.2.5 gitdb2-2.0.5 gitpython-2.1.11 gitworm google-api-python-client-1.7.8 google-auth-1.6.3 google-auth-httplib2-0.0.3 google-auth-oauthlib-0.3.0 gspread-3.1.0 httplib2-0.12.1 importlib-metadata-0.9 json-spec-0.10.1 jsonschema-3.0.1 markdown2-2.3.7 mbstrdecoder-0.7.0 msgfy-0.0.5 nbformat-4.4.0 oauthlib-3.0.1 path.py-12.0.1 pathvalidate-0.26.0 prettytable-0.7.2 pyasn1-0.4.5 pyasn1-modules-0.2.4 pyjwt-1.7.1 pyrsistent-0.14.11 pytablereader-0.25.4 python-slugify-3.0.2 requests-oauthlib-1.2.0 retryrequests-0.0.1 rsa-4.0 simplejson-3.16.0 smmap2-2.0.5 soupsieve-1.9.1 sqlitebiter-0.27.2 sqliteschema-0.15.2 tabledata-0.8.2 text-unidecode-1.2 typepy-0.4.0 uritemplate-3.0.0 wrapt-1.11.1 xlrd-1.2.0 zipp-0.3.3 zope.interface-4.6.0
+Successfully installed DataProperty-0.42.2 KISIA-Python-Toolkit Logbook-1.4.3 PyGitHub-1.43.7 SimpleSQLite-0.44.1 appconfigpy-0.3.1 attrs-19.1.0 beautifulsoup4-4.7.1 cachetools-3.1.0 click-7.0 colorama-0.4.1 datetime-4.3 deprecated-1.2.5 gitdb2-2.0.5 gitpython-2.1.11 gitworm google-api-python-client-1.7.8 google-auth-1.6.3 google-auth-httplib2-0.0.3 google-auth-oauthlib-0.3.0 gspread-3.1.0 httplib2-0.12.3 importlib-metadata-0.9 json-spec-0.10.1 jsonschema-3.0.1 markdown2-2.3.7 mbstrdecoder-0.7.1 msgfy-0.0.5 nbformat-4.4.0 oauthlib-3.0.1 path.py-12.0.1 pathvalidate-0.27.2 prettytable-0.7.2 pyasn1-0.4.5 pyasn1-modules-0.2.5 pyjwt-1.7.1 pyrsistent-0.15.1 pytablereader-0.25.5 pytablewriter-0.45.1 python-slugify-3.0.2 requests-oauthlib-1.2.0 retryrequests-0.0.1 rsa-4.0 simplejson-3.16.0 smmap2-2.0.5 soupsieve-1.9.1 sqlitebiter-0.27.3 sqliteschema-0.15.3 tabledata-0.8.3 text-unidecode-1.2 typepy-0.4.0 uritemplate-3.0.0 wrapt-1.11.1 xlrd-1.2.0 zipp-0.4.0 zope.interface-4.6.0
